@@ -54,16 +54,33 @@ func main() {
 		log.Fatalf("fetch %s: %v", *source, err)
 	}
 	if expressions, ok := data["billing_expr"].(map[string]any); ok {
+		var placeholders []string
 		for name, value := range expressions {
 			expression, ok := value.(string)
 			if !ok {
 				log.Fatalf("model %q: billing_expr is not a string", name)
+			}
+			// All-zero expressions are upstream placeholders for missing cost
+			// data; drop them so a genuinely free model must be declared in
+			// overrides instead of silently syncing a paid model to free.
+			if ExprHasOnlyZeroPrices(expression) {
+				placeholders = append(placeholders, name)
+				continue
 			}
 			scaled, err := ScaleExprPrices(expression, *factor)
 			if err != nil {
 				log.Fatalf("model %q: scale billing_expr: %v", name, err)
 			}
 			expressions[name] = scaled
+		}
+		if len(placeholders) > 0 {
+			sort.Strings(placeholders)
+			fmt.Printf("dropped %d zero-price placeholder expressions: %v\n", len(placeholders), placeholders)
+			modes, _ := data["billing_mode"].(map[string]any)
+			for _, name := range placeholders {
+				delete(expressions, name)
+				delete(modes, name)
+			}
 		}
 	}
 	for _, field := range moneyFields {

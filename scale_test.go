@@ -43,3 +43,11 @@ func TestScaleExprPrices(t *testing.T) {
 		require.Error(t, err)
 	})
 }
+
+func TestExprHasOnlyZeroPrices(t *testing.T) {
+	assert.True(t, ExprHasOnlyZeroPrices(`tier("standard", p * 0 + c * 0)`))
+	assert.False(t, ExprHasOnlyZeroPrices(`tier("standard", p * 0 + c * 1.2)`))
+	assert.False(t, ExprHasOnlyZeroPrices(`tier("base", fixed(0.04)) * image_count`))
+	assert.False(t, ExprHasOnlyZeroPrices(`tier("base", p)`))
+	assert.False(t, ExprHasOnlyZeroPrices(`broken (`))
+}

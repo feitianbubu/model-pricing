@@ -56,6 +56,30 @@ func ScaleExprPrices(exprStr string, factor float64) (string, error) {
 	return scaled.String(), nil
 }
 
+// ExprHasOnlyZeroPrices reports whether the expression carries price
+// literals and every one of them is zero — the shape of upstream
+// placeholder entries generated from missing cost data, never a real
+// free price.
+func ExprHasOnlyZeroPrices(exprStr string) bool {
+	body, _ := strings.CutPrefix(exprStr, "v1:")
+	tree, err := parser.Parse(body)
+	if err != nil {
+		return false
+	}
+	spans := make(map[int]int)
+	collectPriceSpans(tree.Node, false, spans)
+	if len(spans) == 0 {
+		return false
+	}
+	for from, to := range spans {
+		literal, err := decimal.NewFromString(body[from:to])
+		if err != nil || !literal.IsZero() {
+			return false
+		}
+	}
+	return true
+}
+
 // collectPriceSpans records the source spans of USD literals. Money only
 // exists inside tier() cost bodies and fixed() amounts; condition subtrees
 // are always dimensionless, even when nested in a tier body.

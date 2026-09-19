@@ -38,7 +38,7 @@ data/overrides.json ──────┘（overrides 不过滤、不缩放）
 ## 运行
 
 ```bash
-go run . -models https://api.everai.cloud/v1/models   # 需 env MODELS_API_KEY
+go run . -models https://sea.api.everai.cloud/v1/models   # 需 env MODELS_API_KEY
 go run .                                              # 不过滤（本地调试）
 go test ./...
 ```

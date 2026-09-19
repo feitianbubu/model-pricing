@@ -44,7 +44,6 @@
       "gemini-3.8-flash": "tier(\"standard\", p * 1.2 + cr * 0.12 + ai * 1.2 + c * 6)",
       "glm-4.6": "tier(\"standard\", p * 0.96 + cr * 0.176 + cc * 0 + c * 3.52)",
       "glm-4.7": "tier(\"standard\", p * 0.96 + cr * 0.176 + cc * 0 + c * 3.52)",
-      "glm-4.7-flash": "tier(\"standard\", p * 0 + cr * 0 + cc * 0 + c * 0)",
       "glm-5": "tier(\"standard\", p * 1.6 + cr * 0.32 + cc * 0 + c * 5.12)",
       "glm-5.1": "tier(\"standard\", p * 2.24 + cr * 0.416 + cc * 0 + c * 7.04)",
       "glm-5.2": "tier(\"standard\", p * 2.24 + cr * 0.416 + cc * 0 + c * 7.04)",
@@ -60,10 +59,6 @@
       "gpt-6-astra": "len \u003c= 272000 ? tier(\"0_272k\", p * 16 + cr * 1.6 + cc * 20 + c * 80) : tier(\"272k_plus\", p * 32 + cr * 3.2 + cc * 40 + c * 120)",
       "gpt-image-2": "tier(\"standard\", p * 8 + cr * 2 + c * 48)",
       "gpt-realtime-2.1": "tier(\"standard\", p * 6.4 + cr * 0.64 + ai * 51.2 + c * 38.4 + ao * 102.4)",
-      "happyhorse-1.1-i2v": "tier(\"standard\", p * 0 + c * 0)",
-      "happyhorse-1.1-r2v": "tier(\"standard\", p * 0 + c * 0)",
-      "happyhorse-1.1-t2v": "tier(\"standard\", p * 0 + c * 0)",
-      "hy3": "tier(\"standard\", p * 0 + cr * 0 + cc * 0 + c * 0)",
       "hy4-preview": "tier(\"standard\", p * 1.3344 + cr * 0.0672 + c * 4.0016)",
       "kimi-k2.6": "tier(\"standard\", p * 1.52 + cr * 0.256 + c * 6.4)",
       "kimi-k2.7-code": "tier(\"standard\", p * 1.52 + cr * 0.304 + c * 6.4)",
@@ -84,9 +79,7 @@
       "step-3.5-flash": "tier(\"standard\", p * 0.16 + cr * 0.032 + c * 0.48)",
       "veo-3.1-fast-generate-preview": "u(\"resolution\") == \"720p\" ? tier(\"720p\", u(\"seconds\") * 0.16) : u(\"resolution\") == \"1080p\" ? tier(\"1080p\", u(\"seconds\") * 0.192) : tier(\"4k\", u(\"seconds\") * 0.48)",
       "veo-3.1-generate-preview": "u(\"resolution\") == \"720p\" ? tier(\"720p\", u(\"seconds\") * 0.64) : u(\"resolution\") == \"1080p\" ? tier(\"1080p\", u(\"seconds\") * 0.64) : tier(\"4k\", u(\"seconds\") * 0.96)",
-      "veo-3.1-lite-generate-preview": "u(\"resolution\") == \"720p\" ? tier(\"720p\", u(\"seconds\") * 0.08) : u(\"resolution\") == \"1080p\" ? tier(\"1080p\", u(\"seconds\") * 0.128) : tier(\"4k\", u(\"seconds\") * 0.256)",
-      "wan2.7-image": "tier(\"standard\", p * 0 + c * 0)",
-      "wan2.7-image-pro": "tier(\"standard\", p * 0 + c * 0)"
+      "veo-3.1-lite-generate-preview": "u(\"resolution\") == \"720p\" ? tier(\"720p\", u(\"seconds\") * 0.08) : u(\"resolution\") == \"1080p\" ? tier(\"1080p\", u(\"seconds\") * 0.128) : tier(\"4k\", u(\"seconds\") * 0.256)"
     },
     "billing_mode": {
       "MiniMax-M2": "tiered_expr",
@@ -132,7 +125,6 @@
       "gemini-3.8-flash": "tiered_expr",
       "glm-4.6": "tiered_expr",
       "glm-4.7": "tiered_expr",
-      "glm-4.7-flash": "tiered_expr",
       "glm-5": "tiered_expr",
       "glm-5.1": "tiered_expr",
       "glm-5.2": "tiered_expr",
@@ -148,10 +140,6 @@
       "gpt-6-astra": "tiered_expr",
       "gpt-image-2": "tiered_expr",
       "gpt-realtime-2.1": "tiered_expr",
-      "happyhorse-1.1-i2v": "tiered_expr",
-      "happyhorse-1.1-r2v": "tiered_expr",
-      "happyhorse-1.1-t2v": "tiered_expr",
-      "hy3": "tiered_expr",
       "hy4-preview": "tiered_expr",
       "kimi-k2.6": "tiered_expr",
       "kimi-k2.7-code": "tiered_expr",
@@ -172,13 +160,12 @@
       "step-3.5-flash": "tiered_expr",
       "veo-3.1-fast-generate-preview": "tiered_expr",
       "veo-3.1-generate-preview": "tiered_expr",
-      "veo-3.1-lite-generate-preview": "tiered_expr",
-      "wan2.7-image": "tiered_expr",
-      "wan2.7-image-pro": "tiered_expr"
+      "veo-3.1-lite-generate-preview": "tiered_expr"
     },
     "cache_ratio": {
       "gpt-image-2.5-flare": 0.4,
       "gpt-image-2.5-sunburst": 0.4,
+      "hy3": 0.25,
       "qwen3.8-omni-flash": 0.125
     },
     "completion_ratio": {
@@ -190,6 +177,7 @@
       "gpt-image-2.5-flare": 6,
       "gpt-image-2.5-sunburst": 6,
       "gpt-realtime-2.1-mini": 2,
+      "hy3": 4,
       "nano-banana": 100,
       "qwen3-asr-flash-realtime": 0,
       "qwen3-tts-flash": 0,
@@ -218,6 +206,9 @@
       "happyhorse-1.0-r2v": 0.18,
       "happyhorse-1.0-t2v": 0.18,
       "happyhorse-1.0-video-edit": 0.18,
+      "happyhorse-1.1-i2v": 0.18,
+      "happyhorse-1.1-r2v": 0.18,
+      "happyhorse-1.1-t2v": 0.18,
       "hy-3d-3.1": 0.48,
       "hy-3d-express": 0.36,
       "image-01-live": 0.005,
@@ -262,6 +253,8 @@
       "wan2.6-r2v": 0.2,
       "wan2.6-t2v": 0.2,
       "wan2.7-i2v": 0.2,
+      "wan2.7-image": 0.04,
+      "wan2.7-image-pro": 0.1,
       "wan2.7-r2v": 0.2,
       "wan2.7-t2v": 0.2,
       "wan2.7-videoedit": 0.2,
@@ -274,6 +267,7 @@
       "doubao-seed3d-2-0-260328": 8,
       "doubao-seedance-1-5-pro-251215": 1.6,
       "fun-asr-realtime": 33,
+      "glm-4.7-flash": 0.05,
       "gpt-4o-transcribe": 2,
       "gpt-5-search-api": 1,
       "gpt-image-1.5": 4,
@@ -281,6 +275,7 @@
       "gpt-image-2.5-sunburst": 4,
       "gpt-realtime-2.1-mini": 8,
       "hitem3d-2-0-251223": 8,
+      "hy3": 0.1,
       "hyper3d-gen2-260112": 6,
       "kling-v3": 100000,
       "nano-banana": 0.24,
@@ -311,6 +306,6 @@
       "wiki-en": 0.01
     }
   },
-  "generated_at": "2026-09-19T14:04:05Z",
+  "generated_at": "2026-09-19T14:45:40Z",
   "success": true
 }
