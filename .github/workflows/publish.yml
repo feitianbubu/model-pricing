@@ -1,0 +1,31 @@
+name: publish
+
+on:
+  push:
+    branches: [main]
+    paths-ignore: ['docs/**']
+  schedule:
+    - cron: '23 3 * * *'
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+jobs:
+  publish:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-go@v5
+        with:
+          go-version: '1.25'
+      - run: go test ./...
+      - run: go run . -models https://api.everai.cloud/v1/models
+        env:
+          MODELS_API_KEY: ${{ secrets.MODELS_API_KEY }}
+      - name: commit regenerated pricing
+        run: |
+          git config user.name github-actions
+          git config user.email github-actions@users.noreply.github.com
+          git add docs/ratio_config.json
+          git diff --cached --quiet || { git commit -m "chore: regenerate ratio_config" && git push; }
