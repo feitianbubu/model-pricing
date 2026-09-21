@@ -127,16 +127,9 @@
     "v30_jimeng": 0.06,
     "v30_pro_jimeng": 0.2,
     "videoretalk": 0.016,
-    "wan2.5-i2v-preview": 0.2,
-    "wan2.6-i2v": 0.2,
     "wan2.6-r2v": 0.2,
-    "wan2.6-t2v": 0.2,
-    "wan2.7-i2v": 0.2,
     "wan2.7-r2v": 0.2,
-    "wan2.7-t2v": 0.2,
-    "wan2.7-videoedit": 0.2,
-    "wan3.0-video": 0.06,
-    "wan3.0-video-prime": 0.09
+    "wan2.7-videoedit": 0.2
   },
   "billing_mode": {
     "doubao-seedance-2-0-260128": "tiered_expr",
@@ -149,8 +142,15 @@
     "veo-3.1-fast-generate-preview": "tiered_expr",
     "veo-3.1-generate-preview": "tiered_expr",
     "veo-3.1-lite-generate-preview": "tiered_expr",
+    "wan2.5-i2v-preview": "tiered_expr",
+    "wan2.6-i2v": "tiered_expr",
+    "wan2.6-t2v": "tiered_expr",
+    "wan2.7-i2v": "tiered_expr",
     "wan2.7-image": "tiered_expr",
     "wan2.7-image-pro": "tiered_expr",
+    "wan2.7-t2v": "tiered_expr",
+    "wan3.0-video": "tiered_expr",
+    "wan3.0-video-prime": "tiered_expr",
     "z-image-turbo": "tiered_expr"
   },
   "billing_expr": {
@@ -164,8 +164,15 @@
     "veo-3.1-fast-generate-preview": "u(\"resolution\") == \"720p\" ? tier(\"720p\", u(\"seconds\") * 0.16) : u(\"resolution\") == \"1080p\" ? tier(\"1080p\", u(\"seconds\") * 0.192) : tier(\"4k\", u(\"seconds\") * 0.48)",
     "veo-3.1-generate-preview": "u(\"resolution\") == \"720p\" ? tier(\"720p\", u(\"seconds\") * 0.64) : u(\"resolution\") == \"1080p\" ? tier(\"1080p\", u(\"seconds\") * 0.64) : tier(\"4k\", u(\"seconds\") * 0.96)",
     "veo-3.1-lite-generate-preview": "u(\"resolution\") == \"720p\" ? tier(\"720p\", u(\"seconds\") * 0.08) : u(\"resolution\") == \"1080p\" ? tier(\"1080p\", u(\"seconds\") * 0.128) : tier(\"4k\", u(\"seconds\") * 0.256)",
+    "wan2.5-i2v-preview": "u(\"resolution\") == \"480P\" ? tier(\"480P\", u(\"seconds\") * 0.06) : u(\"resolution\") == \"720P\" ? tier(\"720P\", u(\"seconds\") * 0.12) : tier(\"1080P\", u(\"seconds\") * 0.2)",
+    "wan2.6-i2v": "u(\"resolution\") == \"720P\" ? tier(\"720P\", u(\"seconds\") * 0.12) : tier(\"1080P\", u(\"seconds\") * 0.2)",
+    "wan2.6-t2v": "u(\"resolution\") == \"720P\" ? tier(\"720P\", u(\"seconds\") * 0.12) : tier(\"1080P\", u(\"seconds\") * 0.2)",
+    "wan2.7-i2v": "u(\"resolution\") == \"720P\" ? tier(\"720P\", u(\"seconds\") * 0.12) : tier(\"1080P\", u(\"seconds\") * 0.2)",
     "wan2.7-image": "tier(\"base\", u(\"image_count\") * 0.04)",
     "wan2.7-image-pro": "tier(\"base\", u(\"image_count\") * 0.1)",
+    "wan2.7-t2v": "u(\"resolution\") == \"720P\" ? tier(\"720P\", u(\"seconds\") * 0.12) : tier(\"1080P\", u(\"seconds\") * 0.2)",
+    "wan3.0-video": "u(\"resolution\") == \"480P\" ? tier(\"480P\", u(\"seconds\") * 0.06) : u(\"resolution\") == \"720P\" ? tier(\"720P\", u(\"seconds\") * 0.12) : tier(\"1080P\", u(\"seconds\") * 0.24)",
+    "wan3.0-video-prime": "u(\"resolution\") == \"480P\" ? tier(\"480P\", u(\"seconds\") * 0.09) : u(\"resolution\") == \"720P\" ? tier(\"720P\", u(\"seconds\") * 0.18) : tier(\"1080P\", u(\"seconds\") * 0.36)",
     "z-image-turbo": "u(\"prompt_extend\") == true ? tier(\"prompt_extend\", u(\"image_count\") * 0.04) : tier(\"base\", u(\"image_count\") * 0.02)"
   }
 }
