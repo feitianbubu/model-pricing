@@ -63,6 +63,8 @@
       "kimi-k2.6": "tier(\"standard\", p * 1.52 + cr * 0.256 + c * 6.4)",
       "kimi-k2.7-code": "tier(\"standard\", p * 1.52 + cr * 0.304 + c * 6.4)",
       "kimi-k3": "tier(\"standard\", p * 4.8 + cr * 0.48 + c * 24)",
+      "qwen-image-3.0": "tier(\"base\", u(\"image_count\") * 0.036 + u(\"input_image_count\") * 0.004)",
+      "qwen-image-3.0-pro": "u(\"output_image_type\") == \"qima_output_2k\" ? tier(\"2k\", u(\"image_count\") * 0.1 + u(\"input_image_count\") * 0.004) : tier(\"1k\", u(\"image_count\") * 0.05 + u(\"input_image_count\") * 0.004)",
       "qwen3-235b-a22b": "param(\"enable_thinking\") == true ? tier(\"thinking\", p * 1.12 + c * 13.44) : tier(\"standard\", p * 1.12 + c * 4.48)",
       "qwen3-asr-flash": "tier(\"standard\", p * 0.056 + c * 0.056)",
       "qwen3-max": "tier(\"standard\", p * 1.92 + c * 9.6)",
@@ -79,7 +81,10 @@
       "step-3.5-flash": "tier(\"standard\", p * 0.16 + cr * 0.032 + c * 0.48)",
       "veo-3.1-fast-generate-preview": "u(\"resolution\") == \"720p\" ? tier(\"720p\", u(\"seconds\") * 0.16) : u(\"resolution\") == \"1080p\" ? tier(\"1080p\", u(\"seconds\") * 0.192) : tier(\"4k\", u(\"seconds\") * 0.48)",
       "veo-3.1-generate-preview": "u(\"resolution\") == \"720p\" ? tier(\"720p\", u(\"seconds\") * 0.64) : u(\"resolution\") == \"1080p\" ? tier(\"1080p\", u(\"seconds\") * 0.64) : tier(\"4k\", u(\"seconds\") * 0.96)",
-      "veo-3.1-lite-generate-preview": "u(\"resolution\") == \"720p\" ? tier(\"720p\", u(\"seconds\") * 0.08) : u(\"resolution\") == \"1080p\" ? tier(\"1080p\", u(\"seconds\") * 0.128) : tier(\"4k\", u(\"seconds\") * 0.256)"
+      "veo-3.1-lite-generate-preview": "u(\"resolution\") == \"720p\" ? tier(\"720p\", u(\"seconds\") * 0.08) : u(\"resolution\") == \"1080p\" ? tier(\"1080p\", u(\"seconds\") * 0.128) : tier(\"4k\", u(\"seconds\") * 0.256)",
+      "wan2.7-image": "tier(\"base\", u(\"image_count\") * 0.04)",
+      "wan2.7-image-pro": "tier(\"base\", u(\"image_count\") * 0.1)",
+      "z-image-turbo": "u(\"prompt_extend\") == true ? tier(\"prompt_extend\", u(\"image_count\") * 0.04) : tier(\"base\", u(\"image_count\") * 0.02)"
     },
     "billing_mode": {
       "MiniMax-M2": "tiered_expr",
@@ -144,6 +149,8 @@
       "kimi-k2.6": "tiered_expr",
       "kimi-k2.7-code": "tiered_expr",
       "kimi-k3": "tiered_expr",
+      "qwen-image-3.0": "tiered_expr",
+      "qwen-image-3.0-pro": "tiered_expr",
       "qwen3-235b-a22b": "tiered_expr",
       "qwen3-asr-flash": "tiered_expr",
       "qwen3-max": "tiered_expr",
@@ -160,7 +167,10 @@
       "step-3.5-flash": "tiered_expr",
       "veo-3.1-fast-generate-preview": "tiered_expr",
       "veo-3.1-generate-preview": "tiered_expr",
-      "veo-3.1-lite-generate-preview": "tiered_expr"
+      "veo-3.1-lite-generate-preview": "tiered_expr",
+      "wan2.7-image": "tiered_expr",
+      "wan2.7-image-pro": "tiered_expr",
+      "z-image-turbo": "tiered_expr"
     },
     "cache_ratio": {
       "gpt-image-2.5-flare": 0.4,
@@ -224,8 +234,6 @@
       "pixverse/pixverse-lipsync": 0.024,
       "pixverse/pixverse-motioncontrol": 0.072,
       "pixverse/pixverse-upscale": 0.03,
-      "qwen-image-3.0": 0.036,
-      "qwen-image-3.0-pro": 0.05,
       "search_pro": 0.006,
       "search_pro_quark": 0.01,
       "search_pro_sogou": 0.01,
@@ -253,14 +261,11 @@
       "wan2.6-r2v": 0.2,
       "wan2.6-t2v": 0.2,
       "wan2.7-i2v": 0.2,
-      "wan2.7-image": 0.04,
-      "wan2.7-image-pro": 0.1,
       "wan2.7-r2v": 0.2,
       "wan2.7-t2v": 0.2,
       "wan2.7-videoedit": 0.2,
       "wan3.0-video": 0.06,
-      "wan3.0-video-prime": 0.09,
-      "z-image-turbo": 0.04
+      "wan3.0-video-prime": 0.09
     },
     "model_ratio": {
       "doubao-embedding-vision-251215": 0.18,
@@ -306,6 +311,6 @@
       "wiki-en": 0.01
     }
   },
-  "generated_at": "2026-09-20T08:42:08Z",
+  "generated_at": "2026-09-21T09:05:10Z",
   "success": true
 }
