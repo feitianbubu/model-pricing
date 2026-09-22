@@ -47,11 +47,13 @@
     "suno_wav": 0.032
   },
   "billing_mode": {
+    "claude-opus-5-5": "tiered_expr",
     "veo-3.1-fast-generate-preview": "tiered_expr",
     "veo-3.1-generate-preview": "tiered_expr",
     "veo-3.1-lite-generate-preview": "tiered_expr"
   },
   "billing_expr": {
+    "claude-opus-5-5": "tier(\"standard\", p * 6.4 + cr * 0.32 + cc * 8 + cc1h * 12.8 + c * 32)",
     "veo-3.1-fast-generate-preview": "u(\"resolution\") == \"720p\" ? tier(\"720p\", u(\"seconds\") * 0.16) : u(\"resolution\") == \"1080p\" ? tier(\"1080p\", u(\"seconds\") * 0.192) : tier(\"4k\", u(\"seconds\") * 0.48)",
     "veo-3.1-generate-preview": "u(\"resolution\") == \"720p\" ? tier(\"720p\", u(\"seconds\") * 0.64) : u(\"resolution\") == \"1080p\" ? tier(\"1080p\", u(\"seconds\") * 0.64) : tier(\"4k\", u(\"seconds\") * 0.96)",
     "veo-3.1-lite-generate-preview": "u(\"resolution\") == \"720p\" ? tier(\"720p\", u(\"seconds\") * 0.08) : u(\"resolution\") == \"1080p\" ? tier(\"1080p\", u(\"seconds\") * 0.128) : tier(\"4k\", u(\"seconds\") * 0.256)"

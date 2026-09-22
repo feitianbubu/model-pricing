@@ -14,6 +14,7 @@
       "claude-opus-4-7": "tier(\"standard\", p * 8 + cr * 0.8 + cc * 10 + cc1h * 16 + c * 40)",
       "claude-opus-4-8": "tier(\"standard\", p * 8 + cr * 0.8 + cc * 10 + cc1h * 16 + c * 40)",
       "claude-opus-5": "tier(\"standard\", p * 8 + cr * 0.8 + cc * 10 + cc1h * 16 + c * 40)",
+      "claude-opus-5-5": "tier(\"standard\", p * 6.4 + cr * 0.32 + cc * 8 + cc1h * 12.8 + c * 32)",
       "claude-sonnet-4-5-20250929": "tier(\"standard\", p * 4.8 + cr * 0.48 + cc * 6 + cc1h * 9.6 + c * 24)",
       "claude-sonnet-4-6": "tier(\"standard\", p * 4.8 + cr * 0.48 + cc * 6 + cc1h * 9.6 + c * 24)",
       "claude-sonnet-5": "tier(\"standard\", p * 3.2 + cr * 0.32 + cc * 4 + cc1h * 6.4 + c * 16)",
@@ -108,6 +109,7 @@
       "claude-opus-4-7": "tiered_expr",
       "claude-opus-4-8": "tiered_expr",
       "claude-opus-5": "tiered_expr",
+      "claude-opus-5-5": "tiered_expr",
       "claude-sonnet-4-5-20250929": "tiered_expr",
       "claude-sonnet-4-6": "tiered_expr",
       "claude-sonnet-5": "tiered_expr",
@@ -311,6 +313,6 @@
       "wiki-en": 0.01
     }
   },
-  "generated_at": "2026-09-22T14:42:16Z",
+  "generated_at": "2026-09-22T23:48:58Z",
   "success": true
 }
