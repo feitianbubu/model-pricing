@@ -39,20 +39,22 @@ func ScaleExprPrices(exprStr string, factor float64) (string, error) {
 	spans := make(map[int]int)
 	collectPriceSpans(tree.Node, false, spans)
 	factorDecimal := decimal.NewFromFloat(factor)
+	// expr-lang locations count runes; tier names such as "480p·none" are multibyte
+	runes := []rune(body)
 	var scaled strings.Builder
 	scaled.WriteString(prefix)
 	previous := 0
 	for _, from := range slices.Sorted(maps.Keys(spans)) {
 		to := spans[from]
-		literal, err := decimal.NewFromString(body[from:to])
+		literal, err := decimal.NewFromString(string(runes[from:to]))
 		if err != nil {
-			return "", fmt.Errorf("price literal %q: %w", body[from:to], err)
+			return "", fmt.Errorf("price literal %q: %w", string(runes[from:to]), err)
 		}
-		scaled.WriteString(body[previous:from])
+		scaled.WriteString(string(runes[previous:from]))
 		scaled.WriteString(literal.Mul(factorDecimal).String())
 		previous = to
 	}
-	scaled.WriteString(body[previous:])
+	scaled.WriteString(string(runes[previous:]))
 	return scaled.String(), nil
 }
 
@@ -71,8 +73,9 @@ func ExprHasOnlyZeroPrices(exprStr string) bool {
 	if len(spans) == 0 {
 		return false
 	}
+	runes := []rune(body)
 	for from, to := range spans {
-		literal, err := decimal.NewFromString(body[from:to])
+		literal, err := decimal.NewFromString(string(runes[from:to]))
 		if err != nil || !literal.IsZero() {
 			return false
 		}

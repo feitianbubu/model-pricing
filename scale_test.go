@@ -1,6 +1,7 @@
 package main
 
 import (
+	"encoding/json"
 	"testing"
 
 	"github.com/stretchr/testify/assert"
@@ -50,4 +51,41 @@ func TestExprHasOnlyZeroPrices(t *testing.T) {
 	assert.False(t, ExprHasOnlyZeroPrices(`tier("base", fixed(0.04)) * image_count`))
 	assert.False(t, ExprHasOnlyZeroPrices(`tier("base", p)`))
 	assert.False(t, ExprHasOnlyZeroPrices(`broken (`))
+}
+
+func TestScaleExprPricesMultibyteTierName(t *testing.T) {
+	// tier names with non-ASCII runes must not shift the literal offsets
+	got, err := ScaleExprPrices(`u("r") == "480p" ? tier("480p·none", u("tokens") * 23 / 1000000) : tier("4k·video", u("tokens") * 14 / 1000000)`, 0.2)
+	if err != nil {
+		t.Fatal(err)
+	}
+	want := `u("r") == "480p" ? tier("480p·none", u("tokens") * 4.6 / 1000000) : tier("4k·video", u("tokens") * 2.8 / 1000000)`
+	if got != want {
+		t.Fatalf("got %s", got)
+	}
+}
+
+func TestMergeOverrideFieldsCNY(t *testing.T) {
+	fields := map[string]map[string]any{}
+	usd := map[string]json.RawMessage{"model_ratio": json.RawMessage(`{"a": 1}`)}
+	cny := map[string]json.RawMessage{
+		"billing_expr": json.RawMessage(`{"b": "tier(\"s\", p * 8 + c * 28 + cr * 0.23) * (hour(\"UTC\") >= 9 ? 2 : 1)"}`),
+		"model_price":  json.RawMessage(`{"c": 0.6}`),
+	}
+	if err := mergeOverrideFields(fields, usd, 1); err != nil {
+		t.Fatal(err)
+	}
+	if err := mergeOverrideFields(fields, cny, 0.2); err != nil {
+		t.Fatal(err)
+	}
+	if got := fields["billing_expr"]["b"]; got != `tier("s", p * 1.6 + c * 5.6 + cr * 0.046) * (hour("UTC") >= 9 ? 2 : 1)` {
+		t.Fatalf("cny expr not divided by 5: %v", got)
+	}
+	if got := fields["model_price"]["c"]; got != 0.12 {
+		t.Fatalf("cny price not divided by 5: %v", got)
+	}
+	dup := map[string]json.RawMessage{"model_ratio": json.RawMessage(`{"a": 5}`)}
+	if err := mergeOverrideFields(fields, dup, 0.2); err == nil {
+		t.Fatal("model priced in both sections must be rejected")
+	}
 }

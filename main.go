@@ -17,6 +17,7 @@ import (
 	"net/http"
 	"os"
 	"path/filepath"
+	"slices"
 	"sort"
 	"strings"
 	"time"
@@ -44,6 +45,7 @@ type overrides struct {
 func main() {
 	source := flag.String("source", defaultSource, "upstream ratio_config URL quoting real USD")
 	factor := flag.Float64("factor", 1.6, "real-USD to accounting-USD multiplier (REAL_USD_EXCHANGE_RATE / USDExchangeRate)")
+	cnyRate := flag.Float64("cny-rate", 5, "CNY to accounting-USD divisor (USDExchangeRate) applied to the overrides \"cny\" block")
 	overridesPath := flag.String("overrides", "data/overrides.json", "hand-maintained entries in accounting units")
 	modelsSource := flag.String("models", "", "deployed model list (URL of /v1/models with MODELS_API_KEY env, or a local JSON file); upstream entries outside it are dropped, overrides always pass")
 	out := flag.String("out", "docs/ratio_config.json", "output path served by GitHub Pages")
@@ -97,7 +99,7 @@ func main() {
 		}
 	}
 
-	local, err := loadOverrides(*overridesPath)
+	local, err := loadOverrides(*overridesPath, *cnyRate)
 	if err != nil {
 		log.Fatalf("load overrides: %v", err)
 	}
@@ -267,7 +269,7 @@ func loadModelList(source string) (map[string]bool, error) {
 	return names, nil
 }
 
-func loadOverrides(path string) (*overrides, error) {
+func loadOverrides(path string, cnyRate float64) (*overrides, error) {
 	raw, err := os.ReadFile(path)
 	if err != nil {
 		return nil, err
@@ -282,20 +284,71 @@ func loadOverrides(path string) (*overrides, error) {
 			return nil, fmt.Errorf("exclude: %w", err)
 		}
 	}
+	if err := mergeOverrideFields(result.Fields, full, 1); err != nil {
+		return nil, err
+	}
+	if rawCNY, ok := full["cny"]; ok {
+		var cny map[string]json.RawMessage
+		if err := json.Unmarshal(rawCNY, &cny); err != nil {
+			return nil, fmt.Errorf("cny: %w", err)
+		}
+		if err := mergeOverrideFields(result.Fields, cny, 1/cnyRate); err != nil {
+			return nil, fmt.Errorf("cny: %w", err)
+		}
+	}
+	return result, nil
+}
+
+// mergeOverrideFields adds one overrides section to fields, scaling its
+// money values (model_ratio, model_price, billing_expr prices) by factor.
+// A model priced in both the accounting-USD and the CNY section is
+// rejected: two sources for one price is always a mistake.
+func mergeOverrideFields(fields map[string]map[string]any, section map[string]json.RawMessage, factor float64) error {
 	for _, field := range syncFields {
-		raw, ok := full[field]
+		raw, ok := section[field]
 		if !ok {
 			continue
 		}
 		entries := make(map[string]any)
 		if err := json.Unmarshal(raw, &entries); err != nil {
-			return nil, fmt.Errorf("%s: %w", field, err)
+			return fmt.Errorf("%s: %w", field, err)
 		}
-		if len(entries) > 0 {
-			result.Fields[field] = entries
+		if len(entries) == 0 {
+			continue
+		}
+		target := fields[field]
+		if target == nil {
+			target = make(map[string]any)
+			fields[field] = target
+		}
+		for name, value := range entries {
+			if _, dup := target[name]; dup {
+				return fmt.Errorf("%s: model %q priced in both overrides sections", field, name)
+			}
+			if factor != 1 {
+				switch {
+				case field == "billing_expr":
+					expression, ok := value.(string)
+					if !ok {
+						return fmt.Errorf("%s: model %q is not a string", field, name)
+					}
+					scaled, err := ScaleExprPrices(expression, factor)
+					if err != nil {
+						return fmt.Errorf("%s: model %q: %w", field, name, err)
+					}
+					value = scaled
+				case slices.Contains(moneyFields, field):
+					number, ok := value.(float64)
+					if !ok {
+						return fmt.Errorf("%s: model %q is not a number", field, name)
+					}
+					value = math.Round(number*factor*1e6) / 1e6
+				}
+			}
+			target[name] = value
 		}
 	}
-	return result, nil
+	return nil
 }
 
 func modelNames(data map[string]any) map[string]struct{} {

@@ -27,9 +27,9 @@ data/overrides.json ──────┘（overrides 不过滤、不缩放）
 
 ## overrides.json 填写规则
 
-值**已经是记账美元**（不再乘系数）：**官方 CNY 价 ÷ 5**（÷ USDExchangeRate 记账单位，恒定）。用途：
+顶层字段的值**已经是记账美元**（不再乘系数）。国内厂商请写进顶层 `cny` 块（结构与顶层相同：`billing_expr` / `billing_mode` / `model_ratio` / `model_price` …），**直接填官方人民币原数**，生成器按 `-cny-rate`（默认 5 = USDExchangeRate）自动 ÷5；同一模型不得同时出现在两处。用途：
 
-1. 国内厂商按官方 CNY 精确定价（上游预设的国产价折算率混乱，不可信）；
+1. 国内厂商（阿里/火山/智谱/DeepSeek/MiniMax/Kimi/腾讯/阶跃等）在 `cny` 块按官方人民币精确定价。对话类模型写 `billing_expr` + `billing_mode: tiered_expr` 整套覆盖，不能只写倍率（overrides 按字段覆盖，单写 `model_ratio` 顶不掉上游的表达式）；按次/按秒/按字符计量的模型（TTS/ASR/向量/重排/3D/积分制视频）沿用 `model_price`（元/次）或 `model_ratio`（= 元/百万计量单位 ÷ 2），u() 表达式只有走 JS 任务插件的模型才有用量事实。上游对国内厂商用国际站美元价或 7.3 汇率折算，×1.6 后不等于 CNY÷5，不可信；
 2. video / 任务类模型（上游无此数据），`u()` 的 key 必须匹配网关任务插件的 `usageSchema`；
 3. `exclude` 剔除不想出现在预设里的模型。
 
