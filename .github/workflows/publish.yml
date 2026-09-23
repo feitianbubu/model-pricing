@@ -20,7 +20,7 @@ jobs:
         with:
           go-version: '1.25'
       - run: go test ./...
-      - run: go run . -models https://sea.api.everai.cloud/v1/models
+      - run: go run . -models https://api.everai.cloud/v1/models
         env:
           MODELS_API_KEY: ${{ secrets.MODELS_API_KEY }}
       - name: commit regenerated pricing
