@@ -1,7 +1,8 @@
 {
   "exclude": [
     "doubao-seed-1-6-251015",
-    "doubao-seed-1-8-251228"
+    "doubao-seed-1-8-251228",
+    "doubao-seedance-1-5-pro-251215"
   ],
   "model_ratio": {
     "gpt-4o-transcribe": 2,
@@ -51,6 +52,8 @@
   },
   "billing_mode": {
     "claude-opus-5-5": "tiered_expr",
+    "gpt-6-luna": "tiered_expr",
+    "gpt-6-sol": "tiered_expr",
     "jev-1.13.0": "tiered_expr",
     "jev-latest": "tiered_expr",
     "veo-3.1-fast-generate-preview": "tiered_expr",
@@ -59,6 +62,8 @@
   },
   "billing_expr": {
     "claude-opus-5-5": "tier(\"standard\", p * 6.4 + cr * 0.32 + cc * 8 + cc1h * 12.8 + c * 32)",
+    "gpt-6-luna": "len <= 272000 ? tier(\"0_272k\", p * 0.16 + cr * 0.016 + cc * 0.2 + c * 0.8) : tier(\"272k_plus\", p * 0.32 + cr * 0.032 + cc * 0.4 + c * 1.2)",
+    "gpt-6-sol": "len <= 272000 ? tier(\"0_272k\", p * 3.2 + cr * 0.32 + cc * 4 + c * 16) : tier(\"272k_plus\", p * 6.4 + cr * 0.64 + cc * 8 + c * 24)",
     "jev-1.13.0": "tier(\"base\", u(\"input_tokens\") * 0.0672 / 1000000)",
     "jev-latest": "tier(\"base\", u(\"input_tokens\") * 0.0672 / 1000000)",
     "veo-3.1-fast-generate-preview": "u(\"resolution\") == \"720p\" ? tier(\"720p\", u(\"seconds\") * 0.16) : u(\"resolution\") == \"1080p\" ? tier(\"1080p\", u(\"seconds\") * 0.192) : tier(\"4k\", u(\"seconds\") * 0.48)",
@@ -187,7 +192,6 @@
     "model_ratio": {
       "doubao-embedding-vision-251215": 0.9,
       "doubao-seed3d-2-0-260328": 40,
-      "doubao-seedance-1-5-pro-251215": 8.0,
       "fun-asr-realtime": 165,
       "hitem3d-2-0-251223": 40,
       "hyper3d-gen2-260112": 30,
@@ -213,7 +217,6 @@
       "volc.seedasr.sauc.duration": 625
     },
     "completion_ratio": {
-      "doubao-seedance-1-5-pro-251215": 1,
       "fun-asr-realtime": 0,
       "qwen3-asr-flash-realtime": 0,
       "qwen3-tts-flash": 0,

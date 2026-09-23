@@ -1,4 +1,7 @@
 {
+  "success": true,
+  "generated_at": "2026-09-23T02:24:07Z",
+  "model_count": 197,
   "data": {
     "billing_expr": {
       "MiniMax-M2": "tier(\"standard\", p * 0.42 + c * 1.68 + cr * 0.042 + cc * 0.525)",
@@ -57,6 +60,8 @@
       "gpt-5.6-sol": "len \u003c= 272000 ? tier(\"0_272k\", p * 6.4 + cr * 0.64 + cc * 8 + c * 32) : tier(\"272k_plus\", p * 12.8 + cr * 1.28 + cc * 16 + c * 48)",
       "gpt-5.6-terra": "len \u003c= 272000 ? tier(\"0_272k\", p * 3.2 + cr * 0.32 + cc * 4 + c * 19.2) : tier(\"272k_plus\", p * 6.4 + cr * 0.64 + cc * 8 + c * 28.8)",
       "gpt-6-astra": "len \u003c= 272000 ? tier(\"0_272k\", p * 16 + cr * 1.6 + cc * 20 + c * 80) : tier(\"272k_plus\", p * 32 + cr * 3.2 + cc * 40 + c * 120)",
+      "gpt-6-luna": "len \u003c= 272000 ? tier(\"0_272k\", p * 0.16 + cr * 0.016 + cc * 0.2 + c * 0.8) : tier(\"272k_plus\", p * 0.32 + cr * 0.032 + cc * 0.4 + c * 1.2)",
+      "gpt-6-sol": "len \u003c= 272000 ? tier(\"0_272k\", p * 3.2 + cr * 0.32 + cc * 4 + c * 16) : tier(\"272k_plus\", p * 6.4 + cr * 0.64 + cc * 8 + c * 24)",
       "gpt-image-2": "tier(\"standard\", p * 8 + cr * 2 + c * 48)",
       "gpt-realtime-2.1": "tier(\"standard\", p * 6.4 + cr * 0.64 + ai * 51.2 + c * 38.4 + ao * 102.4)",
       "hy3": "tier(\"standard\", p * 0.2 + c * 0.8 + cr * 0.05)",
@@ -155,6 +160,8 @@
       "gpt-5.6-sol": "tiered_expr",
       "gpt-5.6-terra": "tiered_expr",
       "gpt-6-astra": "tiered_expr",
+      "gpt-6-luna": "tiered_expr",
+      "gpt-6-sol": "tiered_expr",
       "gpt-image-2": "tiered_expr",
       "gpt-realtime-2.1": "tiered_expr",
       "hy3": "tiered_expr",
@@ -201,7 +208,6 @@
       "gpt-image-2.5-sunburst": 0.4
     },
     "completion_ratio": {
-      "doubao-seedance-1-5-pro-251215": 1,
       "fun-asr-realtime": 0,
       "gpt-4o-transcribe": 4,
       "gpt-5-search-api": 8,
@@ -282,7 +288,6 @@
     "model_ratio": {
       "doubao-embedding-vision-251215": 0.18,
       "doubao-seed3d-2-0-260328": 8,
-      "doubao-seedance-1-5-pro-251215": 1.6,
       "fun-asr-realtime": 33,
       "gpt-4o-transcribe": 2,
       "gpt-5-search-api": 1,
@@ -318,7 +323,5 @@
       "wiki": 0.01,
       "wiki-en": 0.01
     }
-  },
-  "generated_at": "2026-09-23T02:05:23Z",
-  "success": true
+  }
 }

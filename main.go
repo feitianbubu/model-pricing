@@ -174,11 +174,13 @@ func main() {
 		}
 	}
 
-	payload, err := json.MarshalIndent(map[string]any{
-		"success":      true,
-		"generated_at": time.Now().UTC().Format(time.RFC3339),
-		"data":         data,
-	}, "", "  ")
+	// struct keeps the summary fields ahead of the large data map
+	payload, err := json.MarshalIndent(struct {
+		Success     bool           `json:"success"`
+		GeneratedAt string         `json:"generated_at"`
+		ModelCount  int            `json:"model_count"`
+		Data        map[string]any `json:"data"`
+	}{true, time.Now().UTC().Format(time.RFC3339), len(modelNames(data)), data}, "", "  ")
 	if err != nil {
 		log.Fatalf("marshal output: %v", err)
 	}
