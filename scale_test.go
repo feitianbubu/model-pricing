@@ -2,6 +2,8 @@ package main
 
 import (
 	"encoding/json"
+	"os"
+	"path/filepath"
 	"testing"
 
 	"github.com/stretchr/testify/assert"
@@ -62,6 +64,21 @@ func TestScaleExprPricesMultibyteTierName(t *testing.T) {
 	want := `u("r") == "480p" ? tier("480p·none", u("tokens") * 4.6 / 1000000) : tier("4k·video", u("tokens") * 2.8 / 1000000)`
 	if got != want {
 		t.Fatalf("got %s", got)
+	}
+}
+
+func TestPreviousModelNamesStickToOutput(t *testing.T) {
+	// models in the last preset survive a channel outage; a missing file is a first run
+	path := filepath.Join(t.TempDir(), "ratio_config.json")
+	if names, err := previousModelNames(path); err != nil || len(names) != 0 {
+		t.Fatalf("missing file: %v %v", names, err)
+	}
+	if err := os.WriteFile(path, []byte(`{"data":{"model_ratio":{"kimi-k2.7-code":1},"billing_expr":{"glm-5":"tier(\"a\", p)"}}}`), 0o644); err != nil {
+		t.Fatal(err)
+	}
+	names, err := previousModelNames(path)
+	if err != nil || !names["kimi-k2.7-code"] || !names["glm-5"] || len(names) != 2 {
+		t.Fatalf("got %v %v", names, err)
 	}
 }
 

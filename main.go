@@ -119,36 +119,46 @@ func main() {
 		if err != nil {
 			log.Fatalf("load model list %s: %v", *modelsSource, err)
 		}
+		// A model already published stays even when it drops out of /v1/models:
+		// a disabled channel (unpaid balance, maintenance) must not erase its
+		// price from the preset. Only the exclude list removes a model.
+		published, err := previousModelNames(*out)
+		if err != nil {
+			log.Fatalf("read previous output %s: %v", *out, err)
+		}
 		for _, field := range syncFields {
 			entries, ok := data[field].(map[string]any)
 			if !ok {
 				continue
 			}
 			for name := range entries {
-				if !deployed[name] {
+				if !deployed[name] && !published[name] {
 					delete(entries, name)
 				}
 			}
 		}
 		defer func() {
 			priced := modelNames(data)
-			var uncovered []string
+			var uncovered, sticky []string
 			for name := range deployed {
 				if _, ok := priced[name]; !ok {
 					uncovered = append(uncovered, name)
 				}
 			}
+			for name := range priced {
+				if !deployed[name] {
+					sticky = append(sticky, name)
+				}
+			}
 			sort.Strings(uncovered)
+			sort.Strings(sticky)
 			fmt.Printf("deployed %d models, priced %d, uncovered %d:\n", len(deployed), len(priced), len(uncovered))
 			for _, name := range uncovered {
 				fmt.Println("  " + name)
 			}
-			for field, entries := range local.Fields {
-				for name := range entries {
-					if !deployed[name] {
-						fmt.Printf("warn: override %q (%s) is not in the deployed model list\n", name, field)
-					}
-				}
+			fmt.Printf("kept %d priced models not in the deployed list (previous output or overrides):\n", len(sticky))
+			for _, name := range sticky {
+				fmt.Println("  " + name)
 			}
 		}()
 	}
@@ -349,6 +359,29 @@ func mergeOverrideFields(fields map[string]map[string]any, section map[string]js
 		}
 	}
 	return nil
+}
+
+// previousModelNames returns the models priced in the last generated preset;
+// a missing file means a first run.
+func previousModelNames(path string) (map[string]bool, error) {
+	raw, err := os.ReadFile(path)
+	if err != nil {
+		if os.IsNotExist(err) {
+			return map[string]bool{}, nil
+		}
+		return nil, err
+	}
+	var previous struct {
+		Data map[string]any `json:"data"`
+	}
+	if err := json.Unmarshal(raw, &previous); err != nil {
+		return nil, err
+	}
+	names := make(map[string]bool)
+	for name := range modelNames(previous.Data) {
+		names[name] = true
+	}
+	return names, nil
 }
 
 func modelNames(data map[string]any) map[string]struct{} {

@@ -19,6 +19,7 @@ data/overrides.json ──────┘（overrides 不过滤、不缩放）
 ```
 
 - 上架清单来自 `/v1/models`（MODELS_API_KEY，vip 分组全模型可见）。注意网关会过滤未配价模型：**全新模型先在 overrides 配价 → 同步 → 出现在列表**；或给该 key 用户开启「接受未定价模型」。
+- 过滤是**粘性**的：上一版 `docs/ratio_config.json` 里已有的模型即使暂时不在 `/v1/models`（渠道欠费/禁用）也保留，生成日志单列 `kept … not in the deployed list`；真要下线写进 `exclude`。
 - 未覆盖模型每次构建打印清单；任何表达式解析失败会中止构建——宁可数据陈旧，不可价格错误。
 
 ## 缩放规则
