@@ -1,7 +1,7 @@
 {
   "success": true,
-  "generated_at": "2026-09-23T02:24:07Z",
-  "model_count": 197,
+  "generated_at": "2026-09-24T15:43:52Z",
+  "model_count": 198,
   "data": {
     "billing_expr": {
       "MiniMax-M2": "tier(\"standard\", p * 0.42 + c * 1.68 + cr * 0.042 + cc * 0.525)",
@@ -9,6 +9,7 @@
       "MiniMax-M2.5": "tier(\"standard\", p * 0.42 + c * 1.68 + cr * 0.042 + cc * 0.525)",
       "MiniMax-M2.7": "tier(\"standard\", p * 0.42 + c * 1.68 + cr * 0.084 + cc * 0.525)",
       "MiniMax-M3": "len \u003c= 512000 ? tier(\"short\", p * 0.42 + c * 1.68 + cr * 0.084) : tier(\"long\", p * 0.84 + c * 3.36 + cr * 0.168)",
+      "MultiLanguageOCR": "tier(\"base\", u(\"image_count\") * 0.003)",
       "claude-fable-5": "tier(\"standard\", p * 16 + cr * 1.6 + cc * 20 + cc1h * 32 + c * 80)",
       "claude-fable-5-1": "tier(\"standard\", p * 16 + cr * 0.4 + cc * 20 + cc1h * 32 + c * 80)",
       "claude-haiku-4-5-20251001": "tier(\"standard\", p * 1.6 + cr * 0.16 + cc * 2 + cc1h * 3.2 + c * 8)",
@@ -109,6 +110,7 @@
       "MiniMax-M2.5": "tiered_expr",
       "MiniMax-M2.7": "tiered_expr",
       "MiniMax-M3": "tiered_expr",
+      "MultiLanguageOCR": "tiered_expr",
       "claude-fable-5": "tiered_expr",
       "claude-fable-5-1": "tiered_expr",
       "claude-haiku-4-5-20251001": "tiered_expr",
