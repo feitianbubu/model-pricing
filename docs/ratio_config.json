@@ -1,7 +1,7 @@
 {
   "success": true,
-  "generated_at": "2026-09-24T15:43:52Z",
-  "model_count": 198,
+  "generated_at": "2026-09-28T11:11:22Z",
+  "model_count": 196,
   "data": {
     "billing_expr": {
       "MiniMax-M2": "tier(\"standard\", p * 0.42 + c * 1.68 + cr * 0.042 + cc * 0.525)",
@@ -265,8 +265,6 @@
       "search_pro_quark": 0.01,
       "search_pro_sogou": 0.01,
       "search_std": 0.002,
-      "sora-2": 0.16,
-      "sora-2-pro": 0.48,
       "suno_extend": 0.096,
       "suno_generate-persona": 0.02,
       "suno_midi": 0.032,
