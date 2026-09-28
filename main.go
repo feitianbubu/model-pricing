@@ -13,6 +13,7 @@ import (
 	"fmt"
 	"io"
 	"log"
+	"maps"
 	"math"
 	"net/http"
 	"os"
@@ -47,7 +48,7 @@ func main() {
 	factor := flag.Float64("factor", 1.6, "real-USD to accounting-USD multiplier (REAL_USD_EXCHANGE_RATE / USDExchangeRate)")
 	cnyRate := flag.Float64("cny-rate", 5, "CNY to accounting-USD divisor (USDExchangeRate) applied to the overrides \"cny\" block")
 	overridesPath := flag.String("overrides", "data/overrides.json", "hand-maintained entries in accounting units")
-	modelsSource := flag.String("models", "", "deployed model list (URL of /v1/models with MODELS_API_KEY env, or a local JSON file); upstream entries outside it are dropped, overrides always pass")
+	modelsSource := flag.String("models", "", "deployed model list (URL of /v1/models with MODELS_API_KEY env, or a local JSON file); upstream entries outside it are dropped, overrides always pass; entries past deprecated_time are dropped for good")
 	out := flag.String("out", "docs/ratio_config.json", "output path served by GitHub Pages")
 	flag.Parse()
 
@@ -103,14 +104,13 @@ func main() {
 	if err != nil {
 		log.Fatalf("load overrides: %v", err)
 	}
-	for _, name := range local.Exclude {
-		for _, field := range syncFields {
-			if entries, ok := data[field].(map[string]any); ok {
-				delete(entries, name)
-			}
-		}
+	// A model already published stays even when it drops out of /v1/models:
+	// a disabled channel (unpaid balance, maintenance) must not erase its
+	// price from the preset. Only exclude and deprecation remove a model.
+	published, deprecated, err := previousPreset(*out)
+	if err != nil {
+		log.Fatalf("read previous output %s: %v", *out, err)
 	}
-
 	// The deployed model list keeps the preset strongly consistent with the
 	// gateway: upstream models not deployed are dropped; overrides pass the
 	// filter so a brand-new model can be priced here before its first sync.
@@ -119,12 +119,15 @@ func main() {
 		if err != nil {
 			log.Fatalf("load model list %s: %v", *modelsSource, err)
 		}
-		// A model already published stays even when it drops out of /v1/models:
-		// a disabled channel (unpaid balance, maintenance) must not erase its
-		// price from the preset. Only the exclude list removes a model.
-		published, err := previousModelNames(*out)
-		if err != nil {
-			log.Fatalf("read previous output %s: %v", *out, err)
+		// Deprecation is remembered in the output because the model vanishes
+		// from /v1/models once its channel is removed.
+		now := time.Now().Unix()
+		for name, deprecatedTime := range deployed {
+			if deprecatedTime > 0 && deprecatedTime <= now {
+				deprecated[name] = deprecatedTime
+			} else {
+				delete(deprecated, name)
+			}
 		}
 		for _, field := range syncFields {
 			entries, ok := data[field].(map[string]any)
@@ -132,7 +135,9 @@ func main() {
 				continue
 			}
 			for name := range entries {
-				if !deployed[name] && !published[name] {
+				_, isDeployed := deployed[name]
+				_, isPublished := published[name]
+				if !isDeployed && !isPublished {
 					delete(entries, name)
 				}
 			}
@@ -146,7 +151,7 @@ func main() {
 				}
 			}
 			for name := range priced {
-				if !deployed[name] {
+				if _, ok := deployed[name]; !ok {
 					sticky = append(sticky, name)
 				}
 			}
@@ -160,6 +165,7 @@ func main() {
 			for _, name := range sticky {
 				fmt.Println("  " + name)
 			}
+			fmt.Printf("deprecated %d models: %v\n", len(deprecated), slices.Sorted(maps.Keys(deprecated)))
 		}()
 	}
 
@@ -173,14 +179,23 @@ func main() {
 			target[name] = value
 		}
 	}
+	// after overrides so hand-priced models are removed too
+	for _, name := range slices.Concat(local.Exclude, slices.Collect(maps.Keys(deprecated))) {
+		for _, field := range syncFields {
+			if entries, ok := data[field].(map[string]any); ok {
+				delete(entries, name)
+			}
+		}
+	}
 
 	// struct keeps the summary fields ahead of the large data map
 	payload, err := json.MarshalIndent(struct {
-		Success     bool           `json:"success"`
-		GeneratedAt string         `json:"generated_at"`
-		ModelCount  int            `json:"model_count"`
-		Data        map[string]any `json:"data"`
-	}{true, time.Now().UTC().Format(time.RFC3339), len(modelNames(data)), data}, "", "  ")
+		Success     bool             `json:"success"`
+		GeneratedAt string           `json:"generated_at"`
+		ModelCount  int              `json:"model_count"`
+		Deprecated  map[string]int64 `json:"deprecated,omitempty"`
+		Data        map[string]any   `json:"data"`
+	}{true, time.Now().UTC().Format(time.RFC3339), len(modelNames(data)), deprecated, data}, "", "  ")
 	if err != nil {
 		log.Fatalf("marshal output: %v", err)
 	}
@@ -225,8 +240,9 @@ func fetchRatioConfig(url string) (map[string]any, error) {
 
 // loadModelList reads the deployed model names from an OpenAI /v1/models
 // URL (Authorization from MODELS_API_KEY) or a local JSON file holding
-// either the same shape or a plain string array.
-func loadModelList(source string) (map[string]bool, error) {
+// either the same shape or a plain string array, mapped to deprecated_time
+// (0 when not scheduled).
+func loadModelList(source string) (map[string]int64, error) {
 	var raw []byte
 	if strings.HasPrefix(source, "http://") || strings.HasPrefix(source, "https://") {
 		request, err := http.NewRequest(http.MethodGet, source, nil)
@@ -256,24 +272,25 @@ func loadModelList(source string) (map[string]bool, error) {
 			return nil, err
 		}
 	}
-	names := make(map[string]bool)
+	names := make(map[string]int64)
 	var plain []string
 	if err := json.Unmarshal(raw, &plain); err == nil {
 		for _, name := range plain {
-			names[name] = true
+			names[name] = 0
 		}
 		return names, nil
 	}
 	var listing struct {
 		Data []struct {
-			ID string `json:"id"`
+			ID             string `json:"id"`
+			DeprecatedTime int64  `json:"deprecated_time"`
 		} `json:"data"`
 	}
 	if err := json.Unmarshal(raw, &listing); err != nil {
 		return nil, err
 	}
 	for _, item := range listing.Data {
-		names[item.ID] = true
+		names[item.ID] = item.DeprecatedTime
 	}
 	if len(names) == 0 {
 		return nil, fmt.Errorf("empty model list")
@@ -363,27 +380,27 @@ func mergeOverrideFields(fields map[string]map[string]any, section map[string]js
 	return nil
 }
 
-// previousModelNames returns the models priced in the last generated preset;
-// a missing file means a first run.
-func previousModelNames(path string) (map[string]bool, error) {
+// previousPreset returns the models priced and the models deprecated in the
+// last generated preset; a missing file means a first run.
+func previousPreset(path string) (map[string]struct{}, map[string]int64, error) {
 	raw, err := os.ReadFile(path)
 	if err != nil {
 		if os.IsNotExist(err) {
-			return map[string]bool{}, nil
+			return map[string]struct{}{}, map[string]int64{}, nil
 		}
-		return nil, err
+		return nil, nil, err
 	}
 	var previous struct {
-		Data map[string]any `json:"data"`
+		Deprecated map[string]int64 `json:"deprecated"`
+		Data       map[string]any   `json:"data"`
 	}
 	if err := json.Unmarshal(raw, &previous); err != nil {
-		return nil, err
+		return nil, nil, err
 	}
-	names := make(map[string]bool)
-	for name := range modelNames(previous.Data) {
-		names[name] = true
+	if previous.Deprecated == nil {
+		previous.Deprecated = map[string]int64{}
 	}
-	return names, nil
+	return modelNames(previous.Data), previous.Deprecated, nil
 }
 
 func modelNames(data map[string]any) map[string]struct{} {

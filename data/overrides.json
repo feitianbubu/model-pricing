@@ -2,7 +2,9 @@
   "exclude": [
     "doubao-seed-1-6-251015",
     "doubao-seed-1-8-251228",
-    "doubao-seedance-1-5-pro-251215"
+    "doubao-seedance-1-5-pro-251215",
+    "sora-2",
+    "sora-2-pro"
   ],
   "model_ratio": {
     "gpt-4o-transcribe": 2,
