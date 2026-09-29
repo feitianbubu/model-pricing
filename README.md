@@ -1,6 +1,6 @@
 # model-pricing
 
-网关 https://api.everai.cloud/ 的**唯一定价源**。每天从 [basellm/llm-metadata](https://github.com/basellm/llm-metadata) 拉取官方真实美元定价并乘记账系数（默认 1.6 = REAL_USD_EXCHANGE_RATE 8 / USDExchangeRate 5），按网关实际上架模型列表过滤，再叠加 `data/overrides.json` 手工维护的条目，输出 `docs/ratio_config.json` 由 GitHub Pages 托管。
+new-api 网关的**定价源**。每天从 [basellm/llm-metadata](https://github.com/basellm/llm-metadata) 拉取官方真实美元定价并乘记账系数（默认 1.6 = 真实汇率 8 / USDExchangeRate 5），按网关实际上架模型列表过滤，再叠加 `data/overrides.json` 手工维护的条目，输出 `docs/ratio_config.json` 由 GitHub Pages 托管。
 
 改价格只改本仓库；网关在「同步模型定价」里指向：
 
@@ -34,8 +34,6 @@ data/overrides.json ──────┘（overrides 不过滤、不缩放）
 1. 国内厂商（阿里/火山/智谱/DeepSeek/MiniMax/Kimi/腾讯/阶跃等）在 `cny` 块按官方人民币精确定价。对话类模型写 `billing_expr` + `billing_mode: tiered_expr` 整套覆盖，不能只写倍率（overrides 按字段覆盖，单写 `model_ratio` 顶不掉上游的表达式）；按次/按秒/按字符计量的模型（TTS/ASR/向量/重排/3D/积分制视频）沿用 `model_price`（元/次）或 `model_ratio`（= 元/百万计量单位 ÷ 2），u() 表达式只有走 JS 任务插件的模型才有用量事实。上游对国内厂商用国际站美元价或 7.3 汇率折算，×1.6 后不等于 CNY÷5，不可信；
 2. video / 任务类模型（上游无此数据），`u()` 的 key 必须匹配网关任务插件的 `usageSchema`；
 3. `exclude` 剔除不想出现在预设里的模型（overrides 里的同名条目也会被剔除）。
-
-首批 117 个条目由生产 `/api/ratio_config` 一次性反向生成（2026-09-19），此后以本仓库为准。
 
 ## 运行
 

@@ -1,6 +1,6 @@
 // model-pricing regenerates a new-api ratio_config preset in this
 // deployment's accounting unit (USDExchangeRate=5 as a bookkeeping unit,
-// real rate REAL_USD_EXCHANGE_RATE=8): upstream real-USD prices are
+// real exchange rate 8): upstream real-USD prices are
 // multiplied by factor (8/5=1.6), then hand-maintained overrides —
 // already authored in accounting units (official CNY / 5) — are merged on
 // top. Any expression the scaler cannot parse aborts the build: publishing
@@ -45,7 +45,7 @@ type overrides struct {
 
 func main() {
 	source := flag.String("source", defaultSource, "upstream ratio_config URL quoting real USD")
-	factor := flag.Float64("factor", 1.6, "real-USD to accounting-USD multiplier (REAL_USD_EXCHANGE_RATE / USDExchangeRate)")
+	factor := flag.Float64("factor", 1.6, "real-USD to accounting-USD multiplier (real exchange rate / USDExchangeRate)")
 	cnyRate := flag.Float64("cny-rate", 5, "CNY to accounting-USD divisor (USDExchangeRate) applied to the overrides \"cny\" block")
 	overridesPath := flag.String("overrides", "data/overrides.json", "hand-maintained entries in accounting units")
 	modelsSource := flag.String("models", "", "deployed model list (URL of /v1/models with MODELS_API_KEY env, or a local JSON file); upstream entries outside it are dropped, overrides always pass; entries past deprecated_time are dropped for good")
