@@ -8,7 +8,7 @@ on:
   workflow_dispatch:
 
 permissions:
-  contents: read
+  contents: write
   pages: write
   id-token: write
 
@@ -26,6 +26,23 @@ jobs:
         with:
           go-version: '1.25'
       - run: go test ./...
+      # pushes build from the pinned basellm; only a change to our output commits a bump
+      - name: bump basellm when our prices change
+        if: github.event_name != 'push'
+        run: |
+          go run . && mv docs/ratio_config.json /tmp/pinned.json
+          latest=$(git ls-remote https://github.com/basellm/llm-metadata refs/heads/main | cut -f1)
+          echo "$latest" > data/basellm.sha
+          go run .
+          changes=$(diff -U0 <(jq -S 'del(.generated_at)' /tmp/pinned.json) <(jq -S 'del(.generated_at)' docs/ratio_config.json) | grep '^[-+] ' || true)
+          if [ -z "$changes" ]; then
+            git checkout data/basellm.sha
+            exit 0
+          fi
+          git config user.name github-actions
+          git config user.email github-actions@users.noreply.github.com
+          git commit -m "chore: bump basellm to ${latest:0:7}" -m "$changes" data/basellm.sha
+          git push
       - run: go run .
       - uses: actions/upload-pages-artifact@v3
         with:

@@ -1,6 +1,6 @@
 # model-pricing
 
-new-api 网关的**定价源**。每天从 [basellm/llm-metadata](https://github.com/basellm/llm-metadata) 拉取官方真实美元定价并乘记账系数（默认 1.6 = 真实汇率 8 / USDExchangeRate 5），按 `data/models.json` 白名单过滤，再叠加 `data/overrides.json` 手工维护的条目，生成 `ratio_config.json` 由 GitHub Pages 托管（生成结果不进 git）。
+new-api 网关的**定价源**。从 [basellm/llm-metadata](https://github.com/basellm/llm-metadata) 固定在 `data/basellm.sha` 的提交取官方真实美元定价并乘记账系数（默认 1.6 = 真实汇率 8 / USDExchangeRate 5），按 `data/models.json` 白名单过滤，再叠加 `data/overrides.json` 手工维护的条目，生成 `ratio_config.json` 由 GitHub Pages 托管（生成结果不进 git：输出完全由源码 + 固定的 basellm 版本决定，所有价格变化都可在 `git log -p data/` 追溯）。
 
 改价格只改本仓库；网关在「同步模型定价」里指向：
 
@@ -44,5 +44,5 @@ go test ./...
 ## 部署
 
 1. Settings → Pages → Source 选 `GitHub Actions`；
-2. `.github/workflows/publish.yml` 在 push 与每日 cron（03:23 UTC）生成并直接部署到 Pages，不产生提交；
+2. `.github/workflows/publish.yml`：push 只按固定版本生成并部署，不产生提交；每日 cron（03:23 UTC）对比 basellm 最新版，仅当白名单模型价格变化时提交 `chore: bump basellm`（提交信息附价格 diff），此时本地需 pull；
 3. GitHub 会在仓库约 60 天无活动后自动停用 scheduled workflow（发邮件提醒，重新启用即可）。

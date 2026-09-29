@@ -19,10 +19,11 @@ import (
 	"path/filepath"
 	"slices"
 	"sort"
+	"strings"
 	"time"
 )
 
-const defaultSource = "https://basellm.github.io/llm-metadata/api/newapi/ratio_config-v1-base.json"
+const sourceTemplate = "https://raw.githubusercontent.com/basellm/llm-metadata/%s/dist/api/newapi/ratio_config-v1-base.json"
 
 // moneyFields are absolute-price maps; the other numeric ratio_config
 // fields are dimensionless multipliers and are never rescaled.
@@ -35,13 +36,22 @@ var syncFields = []string{
 }
 
 func main() {
-	source := flag.String("source", defaultSource, "upstream ratio_config URL quoting real USD")
+	source := flag.String("source", "", "upstream ratio_config URL quoting real USD; defaults to the basellm commit pinned in -basellm-ref")
+	refPath := flag.String("basellm-ref", "data/basellm.sha", "file holding the pinned basellm/llm-metadata commit")
 	factor := flag.Float64("factor", 1.6, "real-USD to accounting-USD multiplier (real exchange rate / USDExchangeRate)")
 	cnyRate := flag.Float64("cny-rate", 5, "CNY to accounting-USD divisor (USDExchangeRate) applied to the overrides \"cny\" block")
 	overridesPath := flag.String("overrides", "data/overrides.json", "hand-maintained entries in accounting units")
 	modelsPath := flag.String("models", "data/models.json", "allowlist of published model names; the only thing that decides membership")
 	out := flag.String("out", "docs/ratio_config.json", "output path served by GitHub Pages")
 	flag.Parse()
+
+	if *source == "" {
+		ref, err := os.ReadFile(*refPath)
+		if err != nil {
+			log.Fatalf("read %s: %v", *refPath, err)
+		}
+		*source = fmt.Sprintf(sourceTemplate, strings.TrimSpace(string(ref)))
+	}
 
 	data, err := fetchRatioConfig(*source)
 	if err != nil {
