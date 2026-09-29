@@ -1,7 +1,7 @@
 {
   "success": true,
-  "generated_at": "2026-09-29T00:47:42Z",
-  "model_count": 196,
+  "generated_at": "2026-09-29T01:56:28Z",
+  "model_count": 197,
   "data": {
     "billing_expr": {
       "MiniMax-M2": "tier(\"standard\", p * 0.42 + c * 1.68 + cr * 0.042 + cc * 0.525)",
@@ -22,6 +22,7 @@
       "claude-sonnet-4-5-20250929": "tier(\"standard\", p * 4.8 + cr * 0.48 + cc * 6 + cc1h * 9.6 + c * 24)",
       "claude-sonnet-4-6": "tier(\"standard\", p * 4.8 + cr * 0.48 + cc * 6 + cc1h * 9.6 + c * 24)",
       "claude-sonnet-5": "tier(\"standard\", p * 3.2 + cr * 0.32 + cc * 4 + cc1h * 6.4 + c * 16)",
+      "claude-sonnet-5-5": "tier(\"standard\", p * 3.2 + cr * 0.32 + cc * 4 + cc1h * 6.4 + c * 16)",
       "deepseek-flash": "(tier(\"base\", p * 0.2 + c * 0.8 + cr * 0.004)) * (weekday(\"Asia/Shanghai\") \u003e= 1 \u0026\u0026 weekday(\"Asia/Shanghai\") \u003c= 5 \u0026\u0026 hour(\"Asia/Shanghai\") \u003e= 9 \u0026\u0026 hour(\"Asia/Shanghai\") \u003c 12 ? 2 : 1) * (weekday(\"Asia/Shanghai\") \u003e= 1 \u0026\u0026 weekday(\"Asia/Shanghai\") \u003c= 5 \u0026\u0026 hour(\"Asia/Shanghai\") \u003e= 14 \u0026\u0026 hour(\"Asia/Shanghai\") \u003c 18 ? 2 : 1)",
       "deepseek-v4-flash": "(tier(\"base\", p * 0.2 + c * 0.8 + cr * 0.004)) * (weekday(\"Asia/Shanghai\") \u003e= 1 \u0026\u0026 weekday(\"Asia/Shanghai\") \u003c= 5 \u0026\u0026 hour(\"Asia/Shanghai\") \u003e= 9 \u0026\u0026 hour(\"Asia/Shanghai\") \u003c 12 ? 2 : 1) * (weekday(\"Asia/Shanghai\") \u003e= 1 \u0026\u0026 weekday(\"Asia/Shanghai\") \u003c= 5 \u0026\u0026 hour(\"Asia/Shanghai\") \u003e= 14 \u0026\u0026 hour(\"Asia/Shanghai\") \u003c 18 ? 2 : 1)",
       "deepseek-v4-flash-vision-exp": "(tier(\"base\", p * 0.2 + c * 0.8 + cr * 0.004)) * (weekday(\"Asia/Shanghai\") \u003e= 1 \u0026\u0026 weekday(\"Asia/Shanghai\") \u003c= 5 \u0026\u0026 hour(\"Asia/Shanghai\") \u003e= 9 \u0026\u0026 hour(\"Asia/Shanghai\") \u003c 12 ? 2 : 1) * (weekday(\"Asia/Shanghai\") \u003e= 1 \u0026\u0026 weekday(\"Asia/Shanghai\") \u003c= 5 \u0026\u0026 hour(\"Asia/Shanghai\") \u003e= 14 \u0026\u0026 hour(\"Asia/Shanghai\") \u003c 18 ? 2 : 1)",
@@ -123,6 +124,7 @@
       "claude-sonnet-4-5-20250929": "tiered_expr",
       "claude-sonnet-4-6": "tiered_expr",
       "claude-sonnet-5": "tiered_expr",
+      "claude-sonnet-5-5": "tiered_expr",
       "deepseek-flash": "tiered_expr",
       "deepseek-v4-flash": "tiered_expr",
       "deepseek-v4-flash-vision-exp": "tiered_expr",

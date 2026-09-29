@@ -54,6 +54,7 @@
   },
   "billing_mode": {
     "claude-opus-5-5": "tiered_expr",
+    "claude-sonnet-5-5": "tiered_expr",
     "gpt-6-luna": "tiered_expr",
     "gpt-6-sol": "tiered_expr",
     "jev-1.13.0": "tiered_expr",
@@ -64,6 +65,7 @@
   },
   "billing_expr": {
     "claude-opus-5-5": "tier(\"standard\", p * 6.4 + cr * 0.32 + cc * 8 + cc1h * 12.8 + c * 32)",
+    "claude-sonnet-5-5": "tier(\"standard\", p * 3.2 + cr * 0.32 + cc * 4 + cc1h * 6.4 + c * 16)",
     "gpt-6-luna": "len <= 272000 ? tier(\"0_272k\", p * 0.16 + cr * 0.016 + cc * 0.2 + c * 0.8) : tier(\"272k_plus\", p * 0.32 + cr * 0.032 + cc * 0.4 + c * 1.2)",
     "gpt-6-sol": "len <= 272000 ? tier(\"0_272k\", p * 3.2 + cr * 0.32 + cc * 4 + c * 16) : tier(\"272k_plus\", p * 6.4 + cr * 0.64 + cc * 8 + c * 24)",
     "jev-1.13.0": "tier(\"base\", u(\"input_tokens\") * 0.0672 / 1000000)",
