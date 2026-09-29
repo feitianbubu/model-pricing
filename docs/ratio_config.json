@@ -1,6 +1,6 @@
 {
   "success": true,
-  "generated_at": "2026-09-28T11:11:22Z",
+  "generated_at": "2026-09-29T00:47:42Z",
   "model_count": 196,
   "data": {
     "billing_expr": {
@@ -255,7 +255,7 @@
       "jimeng_v30_pro": 0.2,
       "mureka-8": 0.066,
       "mureka-9": 0.066,
-      "mureka-9.5": 0.066,
+      "mureka-9.5": 0.2,
       "music-3.0": 0.2,
       "music-cover": 0.02,
       "pixverse/pixverse-lipsync": 0.024,
