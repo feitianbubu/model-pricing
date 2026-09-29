@@ -2,8 +2,6 @@ package main
 
 import (
 	"encoding/json"
-	"os"
-	"path/filepath"
 	"testing"
 
 	"github.com/stretchr/testify/assert"
@@ -65,21 +63,6 @@ func TestScaleExprPricesMultibyteTierName(t *testing.T) {
 	if got != want {
 		t.Fatalf("got %s", got)
 	}
-}
-
-func TestPreviousPresetStickToOutput(t *testing.T) {
-	// priced and deprecated models in the last preset carry over; a missing file is a first run
-	path := filepath.Join(t.TempDir(), "ratio_config.json")
-	names, deprecated, err := previousPreset(path)
-	require.NoError(t, err)
-	assert.Empty(t, names)
-	assert.Empty(t, deprecated)
-
-	require.NoError(t, os.WriteFile(path, []byte(`{"deprecated":{"sora-2":1758000000},"data":{"model_ratio":{"kimi-k2.7-code":1},"billing_expr":{"glm-5":"tier(\"a\", p)"}}}`), 0o644))
-	names, deprecated, err = previousPreset(path)
-	require.NoError(t, err)
-	assert.Equal(t, map[string]struct{}{"kimi-k2.7-code": {}, "glm-5": {}}, names)
-	assert.Equal(t, map[string]int64{"sora-2": 1758000000}, deprecated)
 }
 
 func TestMergeOverrideFieldsCNY(t *testing.T) {

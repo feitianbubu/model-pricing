@@ -1,11 +1,4 @@
 {
-  "exclude": [
-    "doubao-seed-1-6-251015",
-    "doubao-seed-1-8-251228",
-    "doubao-seedance-1-5-pro-251215",
-    "sora-2",
-    "sora-2-pro"
-  ],
   "model_ratio": {
     "gpt-4o-transcribe": 2,
     "gpt-5-search-api": 1,
@@ -37,8 +30,6 @@
     "mureka-8": 0.066,
     "mureka-9": 0.066,
     "mureka-9.5": 0.2,
-    "sora-2": 0.16,
-    "sora-2-pro": 0.48,
     "suno_extend": 0.096,
     "suno_generate-persona": 0.02,
     "suno_midi": 0.032,
