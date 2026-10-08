@@ -44,6 +44,7 @@
     "suno_wav": 0.032
   },
   "billing_mode": {
+    "claude-haiku-5-5": "tiered_expr",
     "claude-opus-5-5": "tiered_expr",
     "claude-sonnet-5-5": "tiered_expr",
     "gpt-6-luna": "tiered_expr",
@@ -56,6 +57,7 @@
     "veo-3.1-lite-generate-preview": "tiered_expr"
   },
   "billing_expr": {
+    "claude-haiku-5-5": "len <= 100000 ? tier(\"0_100k\", p * 0.16 + cr * 0.016 + cc * 0.2 + cc1h * 0.32 + c * 0.8) : tier(\"100k_plus\", p * 0.8 + cr * 0.08 + cc * 1 + cc1h * 1.6 + c * 4)",
     "claude-opus-5-5": "tier(\"standard\", p * 6.4 + cr * 0.32 + cc * 8 + cc1h * 12.8 + c * 32)",
     "claude-sonnet-5-5": "tier(\"standard\", p * 3.2 + cr * 0.32 + cc * 4 + cc1h * 6.4 + c * 16)",
     "gpt-6-luna": "len <= 272000 ? tier(\"0_272k\", p * 0.16 + cr * 0.016 + cc * 0.2 + c * 0.8) : tier(\"272k_plus\", p * 0.32 + cr * 0.032 + cc * 0.4 + c * 1.2)",
