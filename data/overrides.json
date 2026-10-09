@@ -81,7 +81,7 @@
       "deepseek-v4-flash": "(tier(\"base\", p * 1 + c * 4 + cr * 0.02)) * (weekday(\"Asia/Shanghai\") >= 1 && weekday(\"Asia/Shanghai\") <= 5 && hour(\"Asia/Shanghai\") >= 9 && hour(\"Asia/Shanghai\") < 12 ? 2 : 1) * (weekday(\"Asia/Shanghai\") >= 1 && weekday(\"Asia/Shanghai\") <= 5 && hour(\"Asia/Shanghai\") >= 14 && hour(\"Asia/Shanghai\") < 18 ? 2 : 1)",
       "deepseek-v4-flash-vision-exp": "(tier(\"base\", p * 1 + c * 4 + cr * 0.02)) * (weekday(\"Asia/Shanghai\") >= 1 && weekday(\"Asia/Shanghai\") <= 5 && hour(\"Asia/Shanghai\") >= 9 && hour(\"Asia/Shanghai\") < 12 ? 2 : 1) * (weekday(\"Asia/Shanghai\") >= 1 && weekday(\"Asia/Shanghai\") <= 5 && hour(\"Asia/Shanghai\") >= 14 && hour(\"Asia/Shanghai\") < 18 ? 2 : 1)",
       "deepseek-v4-pro": "(tier(\"base\", p * 4.5 + c * 13.5 + cr * 0.15)) * (weekday(\"Asia/Shanghai\") >= 1 && weekday(\"Asia/Shanghai\") <= 5 && hour(\"Asia/Shanghai\") >= 9 && hour(\"Asia/Shanghai\") < 12 ? 2 : 1) * (weekday(\"Asia/Shanghai\") >= 1 && weekday(\"Asia/Shanghai\") <= 5 && hour(\"Asia/Shanghai\") >= 14 && hour(\"Asia/Shanghai\") < 18 ? 2 : 1)",
-      "doubao-seed-2-0-pro-260215": "len <= 32000 ? tier(\"short\", p * 3.2 + c * 16 + cr * 0.64) : len <= 128000 ? tier(\"mid\", p * 4.8 + c * 24 + cr * 0.64) : tier(\"long\", p * 9.6 + c * 48 + cr * 0.64)",
+      "doubao-seed-2-0-pro-260215": "len <= 32000 ? tier(\"short\", p * 3.2 + c * 16 + cr * 0.64) : len <= 128000 ? tier(\"mid\", p * 4.8 + c * 24 + cr * 0.96) : tier(\"long\", p * 9.6 + c * 48 + cr * 1.92)",
       "doubao-seed-2-1-pro-260628": "tier(\"standard\", p * 6 + c * 3E+1 + cr * 1.2)",
       "doubao-seed-2-1-pro-260915": "tier(\"standard\", p * 6 + c * 3E+1 + cr * 1.2)",
       "doubao-seed-evolving": "tier(\"standard\", p * 6 + c * 3E+1 + cr * 1.2)",
