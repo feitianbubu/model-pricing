@@ -240,6 +240,8 @@
       "Tripo/Tripo-P1.0": 2.8,
       "animate-anyone-gen2": 0.08,
       "animate-anyone-template-gen2": 0.08,
+      "deepseek-fetch": 0.005,
+      "deepseek-search": 0.005,
       "doubao-seedream-4-0-250828": 0.2,
       "doubao-seedream-4-5-251128": 0.25,
       "doubao-seedream-5-0-260128": 0.22,
