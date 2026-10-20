@@ -214,12 +214,26 @@
       "released_at": "2026-09-28T00:00:00-07:00",
       "source": "https://www.anthropic.com/claude-sonnet-5-5"
     },
+    "deepseek-fetch": {
+      "vendor": "DeepSeek",
+      "description": "深度求索网页抓取 API，抓取单个公开网页并以 Markdown 返回正文，未返回内容不计费",
+      "tags": "web-search-api",
+      "released_at": "2026-10-17T00:00:00+08:00",
+      "source": "https://api-docs.deepseek.com/guides/search/"
+    },
     "deepseek-flash": {
       "vendor": "DeepSeek",
       "description": "深度求索于 2026-9-10 发布的原生支持多模态的新一代高速大模型(DeepSeek-V4.1 Flash)，综合性能、速度与成本全面超越 V4 ProDeepSeek",
       "tags": "chat,think,vision",
       "released_at": "2026-09-10T00:00:00+08:00",
       "source": "https://api-docs.deepseek.com/updates/"
+    },
+    "deepseek-search": {
+      "vendor": "DeepSeek",
+      "description": "深度求索自研搜索引擎的网页搜索 API，返回带相关性评分的结构化结果，支持 site:、lang:、after: 等搜索运算符，无结果不计费",
+      "tags": "web-search-api",
+      "released_at": "2026-10-17T00:00:00+08:00",
+      "source": "https://api-docs.deepseek.com/guides/search/"
     },
     "deepseek-v4-flash": {
       "vendor": "DeepSeek",
