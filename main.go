@@ -43,6 +43,7 @@ func main() {
 	overridesPath := flag.String("overrides", "data/overrides.json", "hand-maintained entries in accounting units")
 	modelsPath := flag.String("models", "data/models.json", "allowlist of published model names; the only thing that decides membership")
 	out := flag.String("out", "docs/ratio_config.json", "output path served by GitHub Pages")
+	catalogPath := flag.String("catalog", "data/catalog.json", "hand-maintained model metadata published for the gateway metadata sync")
 	flag.Parse()
 
 	if *source == "" {
@@ -162,6 +163,12 @@ func main() {
 		log.Fatalf("write %s: %v", *out, err)
 	}
 	fmt.Printf("wrote %s (%d models, factor %v)\n", *out, len(modelNames(data)), *factor)
+
+	count, err := writeCatalog(*catalogPath, filepath.Dir(*out))
+	if err != nil {
+		log.Fatalf("catalog %s: %v", *catalogPath, err)
+	}
+	fmt.Printf("wrote metadata catalog (%d models)\n", count)
 }
 
 func fetchRatioConfig(url string) (map[string]any, error) {

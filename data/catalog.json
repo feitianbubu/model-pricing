@@ -1,0 +1,1471 @@
+{
+  "vendors": {
+    "Alibaba (China)": {},
+    "aliyun-bailian": {},
+    "Anthropic": {
+      "description": "Anthropic AI 模型供应商",
+      "icon": "Claude.Color"
+    },
+    "Azure": {
+      "icon": "AzureAI.Color"
+    },
+    "Cortecs": {},
+    "DeepSeek": {
+      "description": "DeepSeek AI 模型供应商",
+      "icon": "DeepSeek.Color"
+    },
+    "GitHub Copilot": {
+      "icon": "GithubCopilot"
+    },
+    "Google": {
+      "description": "Google AI 模型供应商",
+      "icon": "Gemini.Color"
+    },
+    "iFlow": {},
+    "Local": {
+      "description": "本地自部署",
+      "icon": "Ollama.Color"
+    },
+    "MiniMax": {
+      "description": "全球领先的通用人工智能科技公司，自主研发了一系列多模态通用大模型，包括MiniMax M2、Hailuo 2.3、Speech 2.6 和 Music 2.0，具备强大的代码和Agent能力，以及超长上下文处理能力，能够理解、生成并整合包括文本、音频、图像、视频和音乐在内的多种模态。",
+      "icon": "Minimax.Color"
+    },
+    "Moonshot": {
+      "description": "Moonshot AI 模型供应商",
+      "icon": "Moonshot.Color"
+    },
+    "Moonshot AI (China)": {
+      "icon": "Moonshot.Color"
+    },
+    "Nvidia": {},
+    "OpenAI": {
+      "description": "OpenAI AI 模型供应商",
+      "icon": "OpenAI.Color"
+    },
+    "OpenRouter": {
+      "description": "AI 模型聚合网关，提供 OpenAI 兼容统一 API，单密钥可调用数百家厂商数百款大模型，支持智能路由、故障自动降级、统一计费与成本管控",
+      "icon": "OpenRouter"
+    },
+    "Skywork": {
+      "description": "昆仑万维自研全栈 AI ，包含基座大模型、多模态生成、Agent 智能体，Mureka（AI 音乐）、SkyReels（AI 视频）",
+      "icon": "Skywork"
+    },
+    "Suno": {
+      "description": "支持多语言、多曲风的 AI 音乐创作平台，用户输入文本即可快速生成广播级音质的完整原创歌曲",
+      "icon": "Suno.Color"
+    },
+    "Tencent": {
+      "description": "腾讯混元大模型",
+      "icon": "Hunyuan.Color"
+    },
+    "TypeSafe": {
+      "description": "TypeSafe AI 是专注结构化决策大模型的 AI 服务商，主打 System One 系列 Jev 模",
+      "icon": "BAAI"
+    },
+    "Vertex": {
+      "icon": "VertexAI.Color"
+    },
+    "Vertex_ai-language-models": {},
+    "Vidu": {
+      "description": "Vidu AI 模型供应商",
+      "icon": "Vidu.Color"
+    },
+    "Wikipedia": {
+      "description": "维基百科（Wikipedia）是全球规模最大、最具影响力的自由、开放、多语言网络百科全书",
+      "icon": "Wikipedia.Color"
+    },
+    "Zhipu AI Coding Plan": {},
+    "即梦": {
+      "description": "即梦 AI 模型供应商",
+      "icon": "Jimeng.Color"
+    },
+    "字节跳动": {
+      "description": "字节跳动 AI 模型供应商",
+      "icon": "Doubao.Color"
+    },
+    "快手": {
+      "description": "快手 AI 模型供应商",
+      "icon": "Kling.Color"
+    },
+    "智谱": {
+      "description": "具备大模型全链路自研能力的清华系 AGI 企业，独创 GLM 架构，持续开源旗舰基座并面向政企提供私有化与云端 MaaS 方案 https://open.bigmodel.cn/pricing",
+      "icon": "Zhipu.Color"
+    },
+    "阶跃星辰": {
+      "description": "前微软全球副总裁姜大昕创立的上海通用人工智能创新企业，专注自研千亿级参数大模型，以 “基础大模型 + AI + 终端” 为核心战略，推出 Step 系列开源模型（如 Step 3.5 Flash），在多模态、端云协同及国产芯片适配领域技术领先，推动 AI 普惠化。",
+      "icon": "Stepfun.Color"
+    },
+    "阿里巴巴": {
+      "description": "阿里巴巴 AI 模型供应商",
+      "icon": "Qwen.Color"
+    },
+    "零一万物": {
+      "icon": "Yi.Color"
+    }
+  },
+  "models": {
+    "charge": {
+      "vendor": "Local",
+      "description": "网关扣费模型"
+    },
+    "claude-fable-5": {
+      "vendor": "Anthropic",
+      "description": "Anthropic 于 2026 年 6 月推出的首款面向公众开放的 Mythos 级旗舰大模型，带安全护栏，擅长超长上下文（100 万 token）、复杂推理与长周期智能体任务，在编程、知识工作、视觉与科研等领域达到业界顶尖水平Claude",
+      "tags": "chat,think,vision",
+      "released_at": "2026-06-09T00:00:00-07:00",
+      "source": "https://www.anthropic.com/claude/fable"
+    },
+    "claude-fable-5-1": {
+      "vendor": "Anthropic",
+      "description": "Anthropic 于 2026‑09‑01 推出的面向长周期 Agent、代码与科研知识工作的旗舰大模型，具备 1M 上下文",
+      "tags": "chat,think,vision",
+      "released_at": "2026-09-01T00:00:00-07:00",
+      "source": "https://platform.claude.com/docs/en/release-notes/overview"
+    },
+    "claude-haiku-4-5-20251001": {
+      "vendor": "Anthropic",
+      "description": "具备延伸思考与上下文感知能力，以两倍于 Sonnet 4 的速度、三分之一的成本提供接近前沿的编程、推理及图文处理性能，适用于实时交互、大规模部署等场景。",
+      "tags": "chat",
+      "released_at": "2025-10-15T00:00:00-07:00",
+      "source": "https://www.cnbc.com/2025/10/15/anthropic-claude-haiku-4-5-ai.html"
+    },
+    "claude-haiku-5-5": {
+      "vendor": "Anthropic",
+      "description": "Anthropic于 2026-10-08 发布最快的模型，适合分类、抽取、路由这类大批量、要求低延迟的任务，支持 1M 上下文",
+      "tags": "chat,think,vision",
+      "released_at": "2026-10-07T00:00:00-07:00",
+      "source": "https://platform.claude.com/docs/en/release-notes/overview"
+    },
+    "claude-opus-4-5-20251101": {
+      "vendor": "Anthropic",
+      "description": "Anthropic旗舰级通用 AI 模型",
+      "icon": "Claude.Color",
+      "tags": "chat,vision",
+      "endpoints": "[\"anthropic\",\"openai\"]",
+      "released_at": "2025-11-24T00:00:00-08:00",
+      "source": "https://platform.claude.com/docs/en/release-notes/overview"
+    },
+    "claude-opus-4-6": {
+      "vendor": "Anthropic",
+      "description": "Anthropic 旗舰大模型，主打100 万 token 长上下文、自适应思考、强编码与 Agent 任务能力，面向复杂推理与专业生产场景",
+      "tags": "chat,vision,think",
+      "endpoints": "[\"openai\"]",
+      "released_at": "2026-02-05T00:00:00-08:00",
+      "source": "https://platform.claude.com/docs/en/release-notes/overview"
+    },
+    "claude-opus-4-7": {
+      "vendor": "Anthropic",
+      "description": "Anthropic 于 2026 年 4 月发布的旗舰大模型，主打超长时自主任务、超强代码与推理、百万级上下文、高精细视觉，并大幅强化 AI Agent 协作与安全能力。",
+      "tags": "chat,think,vision",
+      "released_at": "2026-04-16T00:00:00-07:00",
+      "source": "https://x.com/claudeai/status/2044785261393977612"
+    },
+    "claude-opus-4-8": {
+      "vendor": "Anthropic",
+      "description": "Anthropic 于 2026 年 5 月 28 日发布的旗舰大模型，主打更强编程 / 智能体、更高诚实度、可调思考强度、快速模式提速降本",
+      "tags": "chat,think,vision",
+      "released_at": "2026-05-28T00:00:00-07:00",
+      "source": "https://www.anthropic.com/news/claude-opus-4-8"
+    },
+    "claude-opus-5": {
+      "vendor": "Anthropic",
+      "description": "Anthropic 于 2026 年 7 月推出的高性价比旗舰大模型，复杂推理、代码与知识工作能力逼近 Fable 5，成本仅其二分之一，支持可调思考档位，主打日常重度工程与长文本智能体任务",
+      "tags": "chat,think,vision",
+      "endpoints": "[\"anthropic\",\"openai\"]",
+      "released_at": "2026-07-24T00:00:00-07:00",
+      "source": "https://www.anthropic.com/news/claude-opus-5"
+    },
+    "claude-opus-5-5": {
+      "vendor": "Anthropic",
+      "description": "Anthropic 于 2026-09-22 发布，为 Opus 系列旗舰模型，默认 1M 上下文、内置 Adaptive Thinking，多数任务性能对标 Claude Fable 5.1，成本较 Opus 5 降低 40%，强化 Agent、代码与长周期专业任务能力",
+      "tags": "chat,think,vision",
+      "released_at": "2026-09-22T00:00:00-07:00",
+      "source": "https://www.anthropic.com/claude-opus-5-5"
+    },
+    "claude-sonnet-4-5-20250929": {
+      "vendor": "Anthropic",
+      "description": "Anthropic2025 年 9 月 29 日推出的混合推理均衡旗舰模型，200K 上下文窗口，代码、长时智能体与计算机操作能力大幅强化，定价与前代 Sonnet 4 持平，兼顾推理精度、响应速度与调用成本",
+      "icon": "Claude.Color",
+      "tags": "chat,vision",
+      "endpoints": "[\"openai\",\"anthropic\"]",
+      "released_at": "2025-09-29T00:00:00-07:00",
+      "retired_at": "2026-11-30T00:00:00+08:00",
+      "deprecation_note": "上游计划下线，请升级至 claude-sonnet-5-5，详见 https://platform.claude.com/docs/en/about-claude/model-deprecations",
+      "source": "https://www.anthropic.com/news/claude-sonnet-4-5"
+    },
+    "claude-sonnet-4-6": {
+      "vendor": "Anthropic",
+      "description": "Anthropic 推出的中端定价、接近旗舰性能的全能大模型，编程、电脑操作、长上下文推理大幅升级，100 万 token 上下文，性价比极高",
+      "tags": "chat,think,vision",
+      "released_at": "2026-02-17T00:00:00-08:00",
+      "source": "https://platform.claude.com/docs/en/release-notes/overview"
+    },
+    "claude-sonnet-5": {
+      "vendor": "Anthropic",
+      "description": "Anthropic 推出的中端主力大模型，拥有百万级上下文，编程与 Agent 工具调用能力比肩高端 Opus 系列，兼具高性能与低成本性价比",
+      "tags": "chat,think,vision",
+      "released_at": "2026-06-30T00:00:00-07:00",
+      "source": "https://platform.claude.com/docs/en/release-notes/overview"
+    },
+    "claude-sonnet-5-5": {
+      "vendor": "Anthropic",
+      "description": "Anthropic 于 2026-09-28 发布面向智能体、代码与复杂推理的中端大模型，相比 Sonnet 5 提速 30%、常规任务成本最高降低 30%",
+      "tags": "chat,think,vision",
+      "released_at": "2026-09-28T00:00:00-07:00",
+      "source": "https://www.anthropic.com/claude-sonnet-5-5"
+    },
+    "deepseek-flash": {
+      "vendor": "DeepSeek",
+      "description": "深度求索于 2026-9-10 发布的原生支持多模态的新一代高速大模型(DeepSeek-V4.1 Flash)，综合性能、速度与成本全面超越 V4 ProDeepSeek",
+      "tags": "chat,think,vision",
+      "released_at": "2026-09-10T00:00:00+08:00",
+      "source": "https://api-docs.deepseek.com/updates/"
+    },
+    "deepseek-v4-flash": {
+      "vendor": "DeepSeek",
+      "description": "DeepSeek V4 系列高性价比 MoE 模型，总参数 284B、激活参数 13B，支持 100 万 token 上下文，主打高效推理、日常开发与轻量任务，兼顾速度与成本优势。",
+      "tags": "chat,think",
+      "released_at": "2026-04-24T00:00:00+08:00",
+      "source": "https://api-docs.deepseek.com/news/news260424"
+    },
+    "deepseek-v4-flash-vision-exp": {
+      "vendor": "DeepSeek",
+      "description": "深度求索于 2026‑08‑21 发布的实验性多模态模型，文本能力对齐 V4‑Flash 正式版，强化视觉 Agent 能力，支持图文输入，API 计费与 V4‑Flash 保持一致",
+      "tags": "chat,think,vision",
+      "released_at": "2026-08-21T00:00:00+08:00",
+      "source": "https://api-docs.deepseek.com/news/news261017"
+    },
+    "deepseek-v4-pro": {
+      "vendor": "DeepSeek",
+      "description": "DeepSeek V4 系列旗舰 MoE 模型，总参数 1.6 万亿、激活参数 49B，支持 100 万 token 上下文，主打顶级推理、复杂 Agent 任务与深度科研，性能比肩顶级闭源模型。",
+      "tags": "chat,think",
+      "released_at": "2026-04-24T00:00:00+08:00",
+      "source": "https://api-docs.deepseek.com/news/news260424"
+    },
+    "doubao-embedding-vision-251215": {
+      "vendor": "字节跳动",
+      "description": "字节跳动研发的一款多模态向量化模型，能将文本、图片、视频统一转为高维向量，支持中英双语与128K 上下文，主要用于文搜图、图搜图、跨模态语义检索",
+      "tags": "embedding",
+      "released_at": "2025-12-15T00:00:00+08:00",
+      "source": "https://ark.volcengine.com/docs/model-release-announcement-2025"
+    },
+    "doubao-seed-2-0-pro-260215": {
+      "vendor": "字节跳动",
+      "description": "旗舰级全能通用模型，面向 Agent 时代的复杂推理与长链路任务执行场景。强调多模态理解、长上下文推理、结构化生成与工具增强执行。复杂指令与多约束执行能力突出，可稳定应对多步复杂规划、复杂图文推理、视频内容理解与高难度分析等场景。",
+      "tags": "chat,think,vision",
+      "released_at": "2026-02-14T00:00:00+08:00",
+      "source": "https://seed.bytedance.com/en/blog/seed2-0-%E6%AD%A3%E5%BC%8F%E5%8F%91%E5%B8%83"
+    },
+    "doubao-seed-2-1-pro-260628": {
+      "vendor": "字节跳动",
+      "description": "字节自研 Seed 2.1 系列旗舰 Pro 大模型，强化深度逻辑、多模态文档 / 视频理解与工具调用能力，适配科研、办公、开发等高难度复杂场景",
+      "tags": "chat,think,vision",
+      "released_at": "2026-06-23T00:00:00+08:00",
+      "source": "http://jjckb.xinhuanet.com/20260623/6df6b0efbf124f80bb5917b2a10ac8e4/c.html"
+    },
+    "doubao-seed-2-1-pro-260915": {
+      "vendor": "字节跳动",
+      "description": "字节跳动于 2026-09-15 发布面向生产级场景的深度思考大模型，强化 Agent 长链路执行、代码与多模态能力，可胜任企业复杂任务",
+      "tags": "chat,think,vision",
+      "released_at": "2026-09-16T00:00:00+08:00",
+      "source": "https://i.ifeng.com/c/8wStnR1hIiJ"
+    },
+    "doubao-seed-evolving": {
+      "vendor": "字节跳动",
+      "description": "火山引擎于 2026 年 6 月 23 日推出、面向 Coding 与 Agent 场景的持续迭代型 Seed 大模型，依托统一 Model ID 周级自动更新，无需切换接口即可持续获取最新模型能力",
+      "tags": "chat,think,vision",
+      "released_at": "2026-06-23T00:00:00+08:00",
+      "source": "https://docs.volcengine.com/docs/ark/model-release-announcement?lang=zh"
+    },
+    "doubao-seed3d-2-0-260328": {
+      "vendor": "字节跳动",
+      "description": "字节跳动 2026 年 4 月发布的 Seed3D 2.0 高精度 3D 生成大模型，可从单图生成带 PBR 材质的生产级 3D 资产",
+      "tags": "3d",
+      "released_at": "2026-04-23T00:00:00+08:00",
+      "source": "https://seed.bytedance.com/en/blog/seed3d-2-0-released-higher-precision-and-greater-usability"
+    },
+    "doubao-seedance-2-0-260128": {
+      "vendor": "字节跳动",
+      "description": "字节跳动豆包自研的工业级多模态 AI 视频生成模型，支持文 / 图 / 音 / 视频四模态输入，可一键生成电影级、多镜头、原生音画同步的高质量视频。",
+      "tags": "video",
+      "released_at": "2026-02-12T00:00:00+08:00",
+      "source": "https://finance.sina.com.cn/tech/digi/2026-02-12/doc-inhmpusm3955173.shtml"
+    },
+    "doubao-seedance-2-0-fast-260128": {
+      "vendor": "字节跳动",
+      "description": "字节跳动豆包自研的高速版多模态 AI 视频生成模型，在保持 Seedance 2.0 核心画质与音画同步能力的同时，生成更快、成本更低，适合轻量化、高并发视频生成场景。",
+      "tags": "video",
+      "released_at": "2026-04-14T00:00:00+08:00",
+      "source": "https://www.stdaily.com/web/gdxw/2026-04/14/content_502009.html"
+    },
+    "doubao-seedance-2-0-mini-260615": {
+      "vendor": "字节跳动",
+      "description": "字节跳动 2026-06-15 发布、面向规模化商用的高性价比多模态短音视频生成轻量模型，支持图文视频参考、原生音画同步生成",
+      "tags": "video",
+      "released_at": "2026-06-15T00:00:00+08:00",
+      "source": "https://view.inews.qq.com/a/20260616A02WBW00"
+    },
+    "doubao-seedance-2-5-260628": {
+      "vendor": "字节跳动",
+      "description": "字节跳动 Seed 团队 2026‑08‑07 API 公测上线，支持单段原生 30 秒视频输出、最多 50 个多模态参考素材与视频局部编辑，面向内容创作与产业视频生产场景",
+      "tags": "video",
+      "endpoints": "[\"openai\"]",
+      "released_at": "2026-07-31T00:00:00+08:00",
+      "source": "https://m.thepaper.cn/newsDetail_forward_33740258"
+    },
+    "doubao-seedream-4-0-250828": {
+      "vendor": "字节跳动",
+      "description": "字节 Seed 团队 2025 年推出的新一代商用图像生成模型，原生支持 4K 高清输出、多图融合与批量组图生成，推理速度大幅提升，中文文字渲染、人物主体一致性与精细图像编辑能力行业顶尖",
+      "tags": "image",
+      "endpoints": "[\"openai\"]",
+      "released_at": "2025-09-09T00:00:00+08:00",
+      "source": "https://seed.bytedance.com/en/blog/%E4%B8%8D%E6%AD%A2%E4%BC%9A-%E7%94%BB-%E6%9B%B4%E4%BC%9A-%E6%83%B3-seedream-4-0-%E5%9B%BE%E5%83%8F%E5%88%9B%E4%BD%9C%E6%A8%A1%E5%9E%8B%E6%AD%A3%E5%BC%8F%E5%8F%91%E5%B8%83"
+    },
+    "doubao-seedream-4-5-251128": {
+      "vendor": "字节跳动",
+      "description": "原生支持文本、单图和多图输入，实现基于主体一致性的多图融合创作、图像编辑、组图生成等多样玩法，让图像创作更加自由可控",
+      "tags": "image",
+      "endpoints": "[\"openai\"]",
+      "released_at": "2025-12-03T00:00:00+08:00",
+      "source": "https://finance.eastmoney.com/a/202512033581724048.html"
+    },
+    "doubao-seedream-5-0-260128": {
+      "vendor": "字节跳动",
+      "description": "Seed 大模型的Seedream 5.0 系列 AI 图像创作模型，主打知识推理、实时联网检索、精准编辑, 支持2K和3K 高清生成",
+      "tags": "image",
+      "endpoints": "[\"openai\"]",
+      "released_at": "2026-02-13T00:00:00+08:00",
+      "source": "https://seed.bytedance.com/en/blog/deeper-thinking-more-accurate-generation-introducing-seedream-5-0-lite"
+    },
+    "doubao-seedream-5-0-pro-260628": {
+      "vendor": "字节跳动",
+      "description": "字节跳动 Seed 团队 2026 年7 月 8 日正式发布的旗舰级专业文生图多模态模型，主打精准文字渲染、像素级可控编辑、写实人像与复杂信息可视化，适配商业设计全流程生产",
+      "tags": "image",
+      "endpoints": "[\"image-generation\",\"openai\"]",
+      "released_at": "2026-07-08T00:00:00+08:00",
+      "source": "https://seed.bytedance.com/en/blog/beyond-generation-it-understands-design-introducing-seedream-5-0-pro"
+    },
+    "fun-asr-realtime": {
+      "vendor": "阿里巴巴",
+      "description": "阿里云百炼通义实验室推出的流式实时语音识别模型，依托 WebSocket 双工流式传输实现百毫秒级低延迟转写，支持 30 种语言、16 种方言，具备上下文纠错、热词定制、VAD 智能断句、字级时间戳输出能力，适配直播字幕、实时会议、在线语音通话等云端实时音频识别场景",
+      "tags": "asr-realtime",
+      "endpoints": "[\"openai\"]",
+      "released_at": "2025-09-23T00:00:00+08:00",
+      "source": "https://help.aliyun.com/zh/model-studio/newly-released-models"
+    },
+    "gemini-2.5-flash": {
+      "vendor": "Google",
+      "description": "Gemini 2.5 Flash 是由 google-vertex 提供的人工智能模型。",
+      "tags": "chat,vision",
+      "endpoints": "[\"gemini\",\"openai\"]",
+      "retired_at": "2026-10-20T00:00:00+08:00",
+      "deprecation_note": "上游计划下线，请升级至 gemini-3.8-flash，详见 https://docs.cloud.google.com/gemini-enterprise-agent-platform/models/gemini/2-5-flash"
+    },
+    "gemini-2.5-pro": {
+      "vendor": "Google",
+      "description": "谷歌 2025 年发布的 2.5 系列旗舰思考型多模态模型，搭载百万级上下文，主打深度逻辑推理、全量代码库解析与图文音视频复杂综合任务处理",
+      "tags": "chat,vision",
+      "endpoints": "[\"openai\",\"gemini\"]",
+      "retired_at": "2026-10-20T00:00:00+08:00",
+      "deprecation_note": "上游计划下线，请升级至 gemini-3.8-flash，详见 https://docs.cloud.google.com/gemini-enterprise-agent-platform/models/gemini/2-5-pro"
+    },
+    "gemini-3-flash-preview": {
+      "vendor": "Google",
+      "description": "gemini最智能的模型，专为速度而打造，将前沿智能与卓越的搜索和接地能力相结合",
+      "tags": "chat,vision"
+    },
+    "gemini-3-pro-image": {
+      "vendor": "Google",
+      "description": "Gemini 3 Pro Image（代号 Nano Banana Pro）是谷歌基于 Gemini 3 Pro 打造的旗舰专业图像生成编辑模型，依托多模态推理，支持 4K 高清、精准图文渲染、多角色稳定生成与精细化画面操控，适配商业设计、分镜、信息图表等专业视觉创作场景",
+      "tags": "image"
+    },
+    "gemini-3.1-flash-image": {
+      "vendor": "Google",
+      "description": "Gemini 3.1 Flash Image（Nano Banana 2）是谷歌兼顾极速出图与专业画质的高性价比多模态图像生成模型，支持 4K 输出、网页搜索实景校准、多角色稳定绘制与精准文字渲染，适配批量商用绘图、交互式图像编辑场景",
+      "tags": "image"
+    },
+    "gemini-3.1-flash-lite": {
+      "vendor": "Google",
+      "description": "谷歌 Gemini3 系列原生多模态高效轻量模型，GA 正式版 2026‑05‑07 上线，主打低延迟、高性价比，面向翻译、内容审核等高吞吐业务场景，支持 1M 上下文窗口",
+      "tags": "chat,think,vision"
+    },
+    "gemini-3.1-flash-lite-image": {
+      "vendor": "Google",
+      "description": "Nano Banana 2 Lite（gemini-3.1-flash-lite-image）是谷歌轻量化批量生图模型，限 1K 分辨率、 秒级出图，成本仅标准版一半，主打大批量低成本素材生成",
+      "tags": "image",
+      "endpoints": "[\"gemini\",\"openai\"]"
+    },
+    "gemini-3.1-pro-preview": {
+      "vendor": "Google",
+      "description": "谷歌 2026 年 2 月推出的旗舰级预览版大模型，主打推理能力翻倍、SOTA 级复杂问题求解，兼具强多模态理解与代码能力，面向高阶 AI 任务与智能体工作流。",
+      "tags": "chat,think,vision",
+      "released_at": "2026-02-19T00:00:00-08:00",
+      "source": "https://blog.google/innovation-and-ai/models-and-research/gemini-models/gemini-3-1-pro/"
+    },
+    "gemini-3.5-flash": {
+      "vendor": "Google",
+      "description": "谷歌 DeepMind 于 2026 年 5 月 19 日在 I/O 大会发布的 Gemini 3.5 系列首个模型，作为原生多模态推理模型，主打智能体与编程能力，支持 100 万 token 上下文窗口",
+      "tags": "chat,think,vision",
+      "endpoints": "[\"gemini\",\"openai\"]",
+      "released_at": "2026-05-19T00:00:00-07:00",
+      "source": "https://ai.google.dev/gemini-api/docs/changelog"
+    },
+    "gemini-3.6-flash": {
+      "vendor": "Google",
+      "description": "谷歌 2026 年 7 月推出的主力原生多模态商用轻量模型，相较 3.5 Flash 代码与智能体能力增强、Token 利用率更高、定价下调，适配大规模多步骤任务、代码开发与图文音视频处理",
+      "tags": "chat,think,vision",
+      "released_at": "2026-07-21T00:00:00-07:00",
+      "source": "https://9to5google.com/2026/07/21/gemini-3-6-flash-launch/"
+    },
+    "gemini-3.7-flash": {
+      "vendor": "Google",
+      "description": "谷歌于2026 年 8 月 13 日发布、主打编程与智能体任务的多模态高速主力模型，支持最高 100 万上下文窗口，具备可调推理模式，相较前代代码能力显著增强且定价更低",
+      "tags": "chat,think,vision",
+      "released_at": "2026-08-13T00:00:00-07:00",
+      "source": "https://ai.google.dev/gemini-api/docs/changelog"
+    },
+    "gemini-3.8-flash": {
+      "vendor": "Google",
+      "description": "Google 于 2026‑09‑02 推出 gemini‑3.8‑flash，是面向智能体工作流的多模态主力模型，在保持前代速度与定价的前提下，大幅提升软件工程、多步复杂推理与长周期 Agent 任务能力",
+      "tags": "chat,think,vision"
+    },
+    "gemini-4-argon": {
+      "vendor": "Google",
+      "description": "Google 于 2026-0930 发布的旗舰前沿大模型，主打长流程深度推理，最高支持 100 万 token 输出，重点面向软件工程、网络安全防御、金融法律等复杂专业任务",
+      "tags": "chat,think,vision"
+    },
+    "gemini-nano-banana-2.1": {
+      "vendor": "Google",
+      "description": "Google 于 2026‑10‑06 发布的高效率图像生成与对话式编辑模型，作为 Nano Banana 2 的迭代版本，在维持 Flash 级速度与成本优势的同时，提升画质、提示词遵从度、多轮角色一致性、文本渲染等能力，最高支持 4K 输出、14 张参考图融合与搜索接地能力",
+      "tags": "image"
+    },
+    "glm-4.6": {
+      "vendor": "智谱",
+      "description": "GLM-4.6 是由 zhipuai-coding-plan 提供的人工智能模型。",
+      "tags": "chat",
+      "endpoints": "[\"openai\"]",
+      "released_at": "2025-09-30T00:00:00+08:00",
+      "source": "https://docs.bigmodel.cn/cn/update/new-releases"
+    },
+    "glm-4.7": {
+      "vendor": "智谱",
+      "description": "GLM-4.7 是智谱最新旗舰模型，GLM-4.7 面向 Agentic Coding 场景强化了编码能力、长程任务规划与工具协同，并在多个公开基准的当期榜单中取得开源模型中的领先表现。通用能力提升，回复更简洁自然，写作更具沉浸感。在执行复杂智能体任务，在工具调用时指令遵循更强，Artifacts 与 Agentic Coding 的前端美感和长程任务完成效率进一步提升。",
+      "tags": "chat,think",
+      "released_at": "2025-12-22T00:00:00+08:00",
+      "source": "https://docs.bigmodel.cn/cn/update/new-releases"
+    },
+    "glm-4.7-flash": {
+      "vendor": "智谱",
+      "description": "智谱 AI 开源的30B 总参、3B 激活 MoE 架构大模型，兼顾强代码与推理能力、低显存占用，支持 200k 上下文，可本地高效部署。",
+      "tags": "chat,think",
+      "released_at": "2026-01-19T00:00:00+08:00",
+      "source": "https://docs.bigmodel.cn/cn/update/new-releases"
+    },
+    "glm-5": {
+      "vendor": "智谱",
+      "description": "面向 Coding 与 Agent 场景的新一代大模型，在复杂系统工程与长程任务中达到开源 SOTA，真实编程体验逼近 Claude Opus 级别；基于 744B 新基座、异步强化学习与稀疏注意力，实现从“写代码”到“写工程”的全面升级。",
+      "tags": "chat,think,vision",
+      "released_at": "2026-02-12T00:00:00+08:00",
+      "source": "https://docs.bigmodel.cn/cn/update/new-releases"
+    },
+    "glm-5.1": {
+      "vendor": "智谱",
+      "description": "智谱 AI 于 2026 年 3 月 27 日发布的旗舰级编程大模型，面向全量 Coding Plan 用户开放，拥有200K 上下文、128K 最大输出，编程性能直逼 Claude Opus 4.6，主打复杂代码生成、工程推理与长程智能体任务。",
+      "tags": "chat,think",
+      "released_at": "2026-03-27T00:00:00+08:00",
+      "source": "https://finance.sina.com.cn/tech/digi/2026-03-27/doc-inhsmxrr8159531.shtml"
+    },
+    "glm-5.2": {
+      "vendor": "智谱",
+      "description": "智谱 AI 推出、采用 MIT 协议开源的 744B MoE 旗舰文本代码大模型，搭载稳定百万 Token 上下文，主打长程工程与强编码能力，原生适配国产算力平台",
+      "tags": "chat,think",
+      "released_at": "2026-06-16T00:00:00+08:00",
+      "source": "https://docs.bigmodel.cn/cn/update/new-releases"
+    },
+    "glm-5.3": {
+      "vendor": "智谱",
+      "description": "智谱于 2026 年 8 月 14 日推出的大模型迭代版本，它沿用 GLM-5.2 基座架构，依靠大规模后训练显著提升编程、智能体与网络安全能力，多项代码类基准取得开源第一",
+      "tags": "chat,think",
+      "released_at": "2026-08-14T00:00:00+08:00",
+      "source": "https://finance.sina.com.cn/stock/hkstock/ggscyd/2026-08-14/doc-ininhhrn4176747.shtml"
+    },
+    "glm-5.3-flash": {
+      "vendor": "智谱",
+      "description": "智谱于2026 年 8 月 26 日上线的GLM-5 系列首款原生多模态稀疏模型，320B 总参数、推理仅激活 18B 参数，性能超越 GLM-5.2 且对标顶级模型，同时具备**极致低价**的普惠特性",
+      "tags": "chat,think,vision",
+      "endpoints": "[\"openai\"]",
+      "released_at": "2026-08-26T00:00:00+08:00",
+      "source": "https://docs.bigmodel.cn/cn/update/new-releases"
+    },
+    "glm-5v-turbo": {
+      "vendor": "智谱",
+      "description": "智谱首个多模态 Agent 基座模型，面向视觉编程与复杂任务场景深度优化，支持图像、视频、文本与文件等多模态输入，强化视觉理解、长程规划与动作执行能力。相比通用多模态模型，它更适合融入 Agent 工作流，完成「环境感知 → 任务规划 → 执行落地」的完整闭环，让多模态能力从“能看懂”走向“能行动”。",
+      "tags": "chat,think,vision",
+      "released_at": "2026-04-02T00:00:00+08:00",
+      "source": "https://docs.bigmodel.cn/cn/update/new-releases"
+    },
+    "gpt-4.1": {
+      "vendor": "OpenAI",
+      "description": "2025 年 4 月推出的 API 专属旗舰多模态模型，支持百万 Token 上下文，代码、指令遵循与长文本检索能力大幅超越 GPT-4o",
+      "icon": "OpenAI.Color",
+      "tags": "chat,vision",
+      "endpoints": "[\"openai\"]",
+      "released_at": "2025-04-14T00:00:00-07:00",
+      "source": "https://openai.com/index/gpt-4-1/"
+    },
+    "gpt-4o-transcribe": {
+      "vendor": "OpenAI",
+      "description": "openai 4o STT模型, 该模型在口音适应、嘈杂环境处理以及不同语速识别方面均优于现有解决方案",
+      "tags": "asr",
+      "endpoints": "[\"openai-video\"]",
+      "released_at": "2025-03-20T00:00:00-07:00",
+      "retired_at": "2027-02-26T00:00:00+08:00",
+      "deprecation_note": "上游计划下线,详见 https://developers.openai.com/api/docs/deprecations",
+      "source": "https://developers.openai.com/api/docs/changelog"
+    },
+    "gpt-5-search-api": {
+      "vendor": "OpenAI",
+      "description": "OpenAI 在 Chat Completions 接口推出的新一代 Web 搜索模型，支持域过滤、多语言搜索与结构化数据提取，调用成本较前降低 60% 且低延迟响应，能助力开发者高效集成高精准的 AI 搜索功能。",
+      "tags": "chat,web-search",
+      "endpoints": "[\"openai\"]",
+      "released_at": "2025-10-14T00:00:00-07:00",
+      "source": "https://x.com/OpenAIDevs/status/1978224165997195559"
+    },
+    "gpt-5.4": {
+      "vendor": "OpenAI",
+      "description": "原生能操控电脑、百万上下文、83% 任务达人类专家水平的全能专业智能体。",
+      "tags": "chat,think,vision",
+      "released_at": "2026-03-05T00:00:00-08:00",
+      "source": "https://developers.openai.com/api/docs/changelog"
+    },
+    "gpt-5.4-mini": {
+      "vendor": "OpenAI",
+      "description": "OpenAI 高性能轻量模型，速度更快、成本更低，能力接近旗舰 GPT-5.4，主打编码、推理、多模态与工具调用。",
+      "tags": "chat,think,vision",
+      "released_at": "2026-03-17T00:00:00-07:00",
+      "source": "https://developers.openai.com/api/docs/changelog"
+    },
+    "gpt-5.5": {
+      "vendor": "OpenAI",
+      "description": "OpenAI 于 2026 年 4 月正式发布的智能体原生新一代通用大语言模型，可在极简人工指令下自主完成多步骤复杂专业任务，在代码开发、逻辑推理能力上实现跨越式升级。",
+      "tags": "chat,think,vision",
+      "endpoints": "[\"openai\"]",
+      "released_at": "2026-04-23T00:00:00-07:00",
+      "source": "https://openai.com/index/introducing-gpt-5-5/"
+    },
+    "gpt-5.6-sol": {
+      "vendor": "OpenAI",
+      "description": "OpenAI 于 2026 年 7 月推出的 GPT-5.6 系列旗舰大模型，搭载 Ultra 多智能体并行调度能力，在代码、网络安全、科研领域性能顶尖，支持 150 万上下文与多级推理强度，配套全链路安全防护体系，面向复杂开发、专业研究等高难度生产任务",
+      "tags": "chat,think,vision",
+      "released_at": "2026-07-09T00:00:00-07:00",
+      "source": "https://openai.com/index/gpt-5-6/"
+    },
+    "gpt-5.6-terra": {
+      "vendor": "OpenAI",
+      "description": "OpenAI 于 2026 年7月推出的 GPT-5.6 系列均衡通用主力模型，性能对标上代旗舰 GPT-5.5、调用成本减半，搭载 150 万 token 超长上下文与原生多模态，主打企业日常办公、内容创作、轻量化开发等高性价比规模化生产场景",
+      "tags": "chat,think,vision",
+      "released_at": "2026-07-09T00:00:00-07:00",
+      "source": "https://openai.com/index/gpt-5-6/"
+    },
+    "gpt-6-astra": {
+      "vendor": "OpenAI",
+      "description": "OpenAI 于 2026‑09‑03 推出代际跃迁的旗舰智能代理模型，核心主打计算机自主操作、复杂多步任务处理、编程与科研能力，具备百万级上下文窗口",
+      "tags": "chat,think,vision",
+      "endpoints": "[\"openai\"]",
+      "released_at": "2026-09-03T00:00:00-07:00",
+      "source": "https://developers.openai.com/api/docs/changelog"
+    },
+    "gpt-6-luna": {
+      "vendor": "OpenAI",
+      "description": "OpenAI 于 2026-09-22 发布的 GPT-6 系列里主打高性价比、高速推理的轻量模型，适合大批量、低延迟任务，继承 GPT-6 Astra 技术能力",
+      "tags": "chat,think,vision",
+      "released_at": "2026-09-22T00:00:00-07:00",
+      "source": "https://openai.com/index/introducing-gpt-6-sol-and-luna/"
+    },
+    "gpt-6-sol": {
+      "vendor": "OpenAI",
+      "description": "OpenAI 于 2026-09-22 发布的 GPT-6 系列均衡型主力模型，继承 Astra 核心推理能力，主打复杂推理、代码与企业 Agent 场景，兼顾性能与成本",
+      "tags": "chat,think,vision",
+      "released_at": "2026-09-22T00:00:00-07:00",
+      "source": "https://openai.com/index/introducing-gpt-6-sol-and-luna/"
+    },
+    "gpt-6.1-sol": {
+      "vendor": "OpenAI",
+      "description": "OpenAI于2026-09-29 发布的 GPT-6 系列模型，为 GPT-6 Sol 升级版，在智能体编程、电脑操作与专业工作上能力接近旗舰 GPT-6 Astra，API Token 定价仅为 Astra 的 1/5，主打高性价比复杂任务推理",
+      "tags": "chat,think,vision",
+      "released_at": "2026-09-29T00:00:00-07:00",
+      "source": "https://openai.com/index/introducing-gpt-6-1-sol/"
+    },
+    "gpt-image-1.5": {
+      "vendor": "OpenAI",
+      "description": "GPT-Image-1.5 是 OpenAI 于 2025 年 12 月 17 日发布的旗舰级图像生成与编辑模型，生成速度较前代最高提升 4 倍，支持精准多轮编辑且保持细节一致性，文字渲染更清晰。",
+      "tags": "image",
+      "released_at": "2025-12-16T00:00:00-08:00",
+      "retired_at": "2026-12-01T00:00:00+08:00",
+      "deprecation_note": "上游计划下线，请升级至 gpt-image-2，详见 https://developers.openai.com/api/docs/deprecations",
+      "source": "https://developers.openai.com/api/docs/changelog"
+    },
+    "gpt-image-2": {
+      "vendor": "OpenAI",
+      "description": "OpenAI 推出的第二代多模态大模型，具备更强的图像理解、图文生成与复杂视觉推理能力，支持更高精度、更细致的图文交互与逻辑分析",
+      "tags": "image",
+      "released_at": "2026-04-21T00:00:00-07:00",
+      "source": "https://developers.openai.com/api/docs/changelog"
+    },
+    "gpt-image-2.5-flare": {
+      "vendor": "OpenAI",
+      "description": "OpenAI 于 2026 年 9 月 8 日发布、面向 API 的图像生成与编辑模型，为 2.5 系列速度优先版本，相比 GPT-Image-2 延迟最高降低 50%，适合绝大多数批量图像创作场景",
+      "tags": "image",
+      "released_at": "2026-09-08T00:00:00-07:00",
+      "source": "https://openai.com/index/introducing-chatgpt-images-2-5/"
+    },
+    "gpt-image-2.5-sunburst": {
+      "vendor": "OpenAI",
+      "description": "OpenAI 于 2026 年 9 月 8 日发布的 GPT-Image-2.5-Sunburst 是 API 端图像生成编辑模型，主打高精度细节与强可控性，牺牲部分速度适配专业精细创作场景",
+      "tags": "image",
+      "endpoints": "[\"openai\"]",
+      "released_at": "2026-09-08T00:00:00-07:00",
+      "source": "https://openai.com/index/introducing-chatgpt-images-2-5/"
+    },
+    "gpt-realtime-2.1": {
+      "vendor": "OpenAI",
+      "description": "OpenAI 2026 年 7 月发布的 Realtime API 旗舰全双工语音模型，p95 延迟降低 25%，支持可配置推理强度与工具调用，字母数字识别和打断处理能力显著提升",
+      "tags": "voice-chat",
+      "endpoints": "[\"openai\"]",
+      "released_at": "2026-07-06T00:00:00-07:00",
+      "source": "https://developers.openai.com/api/docs/changelog"
+    },
+    "gpt-realtime-2.1-mini": {
+      "vendor": "OpenAI",
+      "description": "OpenAI 2026 年 7 月发布的 Realtime API 的轻量全双工语音模型，，首次在 mini 档位支持推理与函数调用，价格保持不变，适合大多数生产级语音 Agent 场景",
+      "tags": "voice-chat",
+      "endpoints": "[\"openai\"]",
+      "released_at": "2026-07-06T00:00:00-07:00",
+      "source": "https://developers.openai.com/api/docs/changelog"
+    },
+    "happyhorse-1.0-i2v": {
+      "vendor": "阿里巴巴",
+      "description": "阿里巴巴 ATH 团队推出的 HappyHorse 1.0 系列中的图生视频（Image-to-Video）模型，以单张首帧图为起点结合文本提示，生成画面连贯、运动自然的高清视频，支持音视频联合生成。",
+      "tags": "video",
+      "released_at": "2026-04-22T00:00:00+08:00",
+      "source": "https://help.aliyun.com/zh/model-studio/newly-released-models"
+    },
+    "happyhorse-1.0-r2v": {
+      "vendor": "阿里巴巴",
+      "description": "阿里巴巴 ATH 团队推出的 HappyHorse 1.0 系列中的参考生视频（Reference-to-Video）模型，支持传入多张参考图并结合文本提示，将参考主体融合生成主体一致、镜头流畅的高清视频。",
+      "tags": "video",
+      "released_at": "2026-04-26T00:00:00+08:00",
+      "source": "https://help.aliyun.com/zh/model-studio/newly-released-models"
+    },
+    "happyhorse-1.0-t2v": {
+      "vendor": "阿里巴巴",
+      "description": "阿里巴巴 ATH 团队推出的 HappyHorse 1.0 系列中的文生视频（Text-to-Video）模型，输入文本提示词即可生成物理真实、运动流畅的高清视频，支持音视频联合生成。",
+      "tags": "video",
+      "released_at": "2026-04-21T00:00:00+08:00",
+      "source": "https://help.aliyun.com/zh/model-studio/newly-released-models"
+    },
+    "happyhorse-1.0-video-edit": {
+      "vendor": "阿里巴巴",
+      "description": "阿里巴巴 ATH 团队推出的 HappyHorse 1.0 系列中的视频编辑（Video-Edit）模型，输入原始视频与参考图，结合文本指令完成风格迁移、局部替换等编辑任务，输出高清视频。",
+      "tags": "video",
+      "released_at": "2026-04-26T00:00:00+08:00",
+      "source": "https://help.aliyun.com/zh/model-studio/newly-released-models"
+    },
+    "happyhorse-1.1-i2v": {
+      "vendor": "阿里巴巴",
+      "description": "阿里图生视频模型，以单张首帧原图锁定主体与构图，搭配文本控制动作运镜，输出 3–15 秒 720p/1080p 流畅动态视频，主体不跑偏、动态质感与音画同步全面优化，适配海报动效、单镜头短视频批量生成",
+      "tags": "video",
+      "released_at": "2026-06-16T00:00:00+08:00",
+      "source": "https://help.aliyun.com/zh/model-studio/newly-released-models"
+    },
+    "happyhorse-1.1-r2v": {
+      "vendor": "阿里巴巴",
+      "description": "阿里多参考图生视频模型，支持参考图搭配文本生成视频，全程锁定角色与商品样貌不漂移，多分镜叙事连贯、音画同步稳定，适配短剧、品牌广告批量制作",
+      "tags": "video",
+      "released_at": "2026-06-16T00:00:00+08:00",
+      "source": "https://help.aliyun.com/zh/model-studio/newly-released-models"
+    },
+    "happyhorse-1.1-t2v": {
+      "vendor": "阿里巴巴",
+      "description": "阿里快乐马1.0升级后文生视频专用模型，依托优化运动与时序一致性，支持 3–15 秒 720p/1080p 多比例成片，强指令理解、主体稳定、画面质感细腻并同步生成匹配音效，适配短剧广告批量文生高清视频",
+      "tags": "video",
+      "released_at": "2026-06-16T00:00:00+08:00",
+      "source": "https://help.aliyun.com/zh/model-studio/newly-released-models"
+    },
+    "hitem3d-2-0-251223": {
+      "vendor": "字节跳动",
+      "description": "采用多视图引导一体化 PBR 纹理生成，自动补全模型盲区结构与贴图，输出拓扑干净、适配 3D 打印与渲染的工业级带贴图三维资产，擅长机甲、人像、生物高细节资产批量生成",
+      "tags": "3d",
+      "released_at": "2026-04-24T00:00:00+08:00",
+      "source": "https://www.163.com/dy/article/KR9P7VL20550WHYR.html"
+    },
+    "hy-3d-3.1": {
+      "vendor": "Tencent",
+      "description": "腾讯混元 2026 年 1 月 16 日推出的生产级高精度 AI 3D 生成模型，支持文生 3D、图生 3D、八视图重建与单几何白模生成，几何结构与纹理细节相比前代显著提升",
+      "tags": "3d",
+      "released_at": "2026-01-16T00:00:00+08:00",
+      "source": "https://cloud.tencent.com/document/product/1804/120694"
+    },
+    "hy-3d-express": {
+      "vendor": "Tencent",
+      "description": "混元生 3D 极速版）2025-09-16 正式上线，轻量化加速 3D 生成接口，90 秒内完成文 / 单图生成 3D 模型，功能精简，适合创意草稿与快速预览场景",
+      "tags": "3d",
+      "released_at": "2025-09-16T00:00:00+08:00",
+      "source": "https://cloud.tencent.com/document/product/1804/120694"
+    },
+    "hy3": {
+      "vendor": "Tencent",
+      "description": "腾讯混元2026 年 7 月发布、采用 295B 总参 / 21B 激活 MoE 混合专家架构、支持 256K 超长上下文、主打 Agent 与代码生产力、高性价比且开源商用的新一代旗舰大模型",
+      "tags": "chat,think",
+      "released_at": "2026-07-06T00:00:00+08:00",
+      "source": "https://www.ithome.com/0/973/106.htm"
+    },
+    "hy4-preview": {
+      "vendor": "Tencent",
+      "description": "腾讯混元于 2026‑08‑28 发布的开源 MoE 大语言模型，总参 770B、激活 49B，支持 1M 上下文，面向代码、办公、科研、游戏开发等生产力场景",
+      "tags": "chat,think",
+      "released_at": "2026-08-28T00:00:00+08:00",
+      "source": "http://www.news.cn/tech/20260828/b12d8417291b4193ba9e5d435a1a40db/c.html"
+    },
+    "hyper3d-gen2-260112": {
+      "vendor": "字节跳动",
+      "description": "影眸 Hyper3D Rodin Gen2 商用 3D 生成 API 版本，支持文生 3D、单 / 最多五张多视图图生 3D，输出带规整四边拓扑、UV 与高清 PBR 贴图的工业级三维资产，适配游戏、电商、3D 打印批量接入",
+      "tags": "3d",
+      "released_at": "2026-04-24T00:00:00+08:00",
+      "source": "https://www.163.com/dy/article/KR9P7VL20550WHYR.html"
+    },
+    "image-01-live": {
+      "vendor": "MiniMax",
+      "description": "MiniMax海螺生图模型,图像生成模型，画面表现细腻，支持文生图、图生图、人物主体参考, 支持多种画风设置",
+      "tags": "image"
+    },
+    "jev-1.13.0": {
+      "vendor": "TypeSafe",
+      "description": "TypeSafe AI 于 2026-09-5 推出的 System One 高速决策模型，不生成文本，直接返回可供代码使用的结构化概率判断",
+      "tags": "systemone",
+      "released_at": "2026-09-15T00:00:00Z",
+      "source": "https://en.wikipedia.org/wiki/Jev_(AI_model)"
+    },
+    "jev-latest": {
+      "vendor": "TypeSafe",
+      "description": "TypeSafe AI 于 2026-09-15 发布的 System One 结构化决策模型动态标识，始终代表系列最新版本，不生成文本，直接返回可代码调用的结构化概率判断",
+      "tags": "systemone",
+      "endpoints": "{\n  \"systemone\": {\n    \"path\": \"/typesafe/v1/systemone\",\n    \"method\": \"POST\"\n  }\n}",
+      "released_at": "2026-09-15T00:00:00Z",
+      "source": "https://en.wikipedia.org/wiki/Jev_(AI_model)"
+    },
+    "jimeng_realman_avatar_picture_omni_v15": {
+      "vendor": "字节跳动",
+      "description": "OmniHuman1.5（即梦同源数字人模型），该模型(jimeng_realman_avatar_picture_omni_v15)可根据用户上传的单张图片+音频，生成与图片对应的视频效果。支持输入任意画幅包含人物或其他主体（宠物、动漫等）的图片，结合音频，生成高质量的视频。",
+      "tags": "video"
+    },
+    "jimeng_v30": {
+      "vendor": "字节跳动",
+      "description": "即梦 AI 视频生成 3.0 系列模型 720P",
+      "tags": "video",
+      "endpoints": "[\"openai\"]",
+      "released_at": "2025-09-02T00:00:00+08:00",
+      "source": "https://www.stdaily.com/web/gdxw/2025-09/02/content_394033.html"
+    },
+    "jimeng_v30_1080p": {
+      "vendor": "字节跳动",
+      "description": "即梦 AI 视频生成 3.0 系列模型 1080P",
+      "tags": "video",
+      "endpoints": "[\"openai\"]",
+      "released_at": "2025-09-02T00:00:00+08:00",
+      "source": "https://www.stdaily.com/web/gdxw/2025-09/02/content_394033.html"
+    },
+    "jimeng_v30_pro": {
+      "vendor": "字节跳动",
+      "description": "即梦 AI 视频生成 3.0 系列模型 ，支持生成 1080P 高清且具专业级质感的视频",
+      "tags": "video",
+      "endpoints": "[\"openai\"]",
+      "released_at": "2025-09-02T00:00:00+08:00",
+      "source": "https://www.stdaily.com/web/gdxw/2025-09/02/content_394033.html"
+    },
+    "kimi-k2.6": {
+      "vendor": "Moonshot",
+      "description": "Moonshot AI 旗舰模型,采用原生多模态架构(支持文本/图像/视频),具备长链代码编写、深度思考推理、工具调用等能力,支持 256K 上下文窗口和自动缓存。行业领先（SOTA）的代码、长程任务执行和 Agent 集群能力。",
+      "tags": "chat,think,vision",
+      "endpoints": "[\"openai\"]"
+    },
+    "kimi-k2.7-code": {
+      "vendor": "Moonshot",
+      "description": "月之暗面（Moonshot AI）于 2026 年 6 月 12 日发布并开源的编程专用大模型，基于 MoE 架构（1T 总参、32B 激活），256k 上下文，主打长代码理解与智能体任务",
+      "tags": "chat,think",
+      "released_at": "2026-06-12T00:00:00+08:00",
+      "source": "https://platform.kimi.com/docs/changelog"
+    },
+    "kimi-k3": {
+      "vendor": "Moonshot",
+      "description": "Moonshot 2026年7月16日发布的旗舰模型，拥有 2.8 万亿参数。它基于 Kimi 混合线性注意力机制（Kimi Delta Attention）和注意力残差（Attention Residuals）技术构建，原生支持视觉理解，并拥有 100 万 token 上下文窗口，面向软件工程、知识工作和深度推理等前沿智能场景而设计",
+      "tags": "chat,think,vision",
+      "endpoints": "[\"openai\"]",
+      "released_at": "2026-07-16T00:00:00+08:00",
+      "source": "https://platform.kimi.com/docs/changelog"
+    },
+    "kling-v3": {
+      "vendor": "快手",
+      "description": "快手 2026 年 2 月推出的原生音画同步 AI 视频生成模型，支持最长 15 秒多镜头叙事、4K 分辨率与强角色一致性，含标准版与 Omni 多模态版",
+      "tags": "video",
+      "released_at": "2026-02-05T00:00:00+08:00",
+      "source": "https://finance.sina.com.cn/stock/t/2026-02-05/doc-inhktspm9045942.shtml"
+    },
+    "MiniMax-H3": {
+      "vendor": "MiniMax",
+      "description": "MiniMax 于 2026 年 7 月 31 日推出的首款开源通用全模态生成模型，可统一理解文本、图像、视频、音频多模态上下文，最高生成 15 秒 2K 原生双声道音视频",
+      "tags": "video,second",
+      "endpoints": "[\"openai\"]",
+      "released_at": "2026-07-31T00:00:00+08:00",
+      "source": "https://platform.minimax.io/docs/release-notes/models"
+    },
+    "MiniMax-H3-Max": {
+      "vendor": "MiniMax",
+      "description": "MiniMax 于 2026-8-29 联合 fal.ai 推出，是面向低时延实时场景的 H3 加速视频基座模型，主打超高吞吐、快速生成 768P 带原生立体声的 5‑15 秒短视频，适配 AI 直播、流式视频生成等业务场景",
+      "tags": "video,second",
+      "released_at": "2026-08-27T00:00:00+08:00",
+      "source": "https://fal.ai/minimax-h3-max"
+    },
+    "MiniMax-Hailuo-02": {
+      "vendor": "MiniMax",
+      "description": "海螺视频生成模型 v2",
+      "tags": "video",
+      "endpoints": "[\"openai\"]",
+      "released_at": "2025-06-18T00:00:00+08:00",
+      "source": "https://platform.minimax.io/docs/release-notes/models"
+    },
+    "MiniMax-Hailuo-2.3": {
+      "vendor": "MiniMax",
+      "description": "全新视频生成模型，肢体动作、物理表现与指令遵循能力全面升级",
+      "tags": "video",
+      "endpoints": "[\"openai\"]",
+      "released_at": "2025-10-28T00:00:00+08:00",
+      "source": "https://platform.minimax.io/docs/release-notes/models"
+    },
+    "MiniMax-M2": {
+      "vendor": "MiniMax",
+      "description": "MiniMax 最新旗舰 LLM2.0",
+      "tags": "chat",
+      "endpoints": "[\"openai\"]",
+      "released_at": "2025-10-27T00:00:00+08:00",
+      "source": "https://platform.minimax.io/docs/release-notes/models"
+    },
+    "MiniMax-M2.1": {
+      "vendor": "MiniMax",
+      "description": "MiniMax 最新旗舰 LLM2.1",
+      "tags": "chat,think",
+      "endpoints": "[\"openai\"]",
+      "released_at": "2025-12-22T00:00:00+08:00",
+      "source": "https://platform.minimax.io/docs/release-notes/models"
+    },
+    "MiniMax-M2.5": {
+      "vendor": "MiniMax",
+      "description": "MiniMax 最新旗舰 LLM2.5",
+      "tags": "chat,think",
+      "released_at": "2026-02-12T00:00:00+08:00",
+      "source": "https://www.minimax.io/news/minimax-m25"
+    },
+    "MiniMax-M2.7": {
+      "vendor": "MiniMax",
+      "description": "主打「模型自我进化」的 Agent 旗舰大模型，通过 Agent Harness 深度参与自身训练迭代，实现高性价比与强工具调用能力。",
+      "tags": "chat,think,vision",
+      "endpoints": "[\"openai\"]",
+      "released_at": "2026-03-18T00:00:00+08:00",
+      "source": "https://platform.minimax.io/docs/release-notes/models"
+    },
+    "MiniMax-M3": {
+      "vendor": "MiniMax",
+      "description": "MiniMax 于 2026 年 6 月 1 日发布的国产旗舰大模型，采用自研 MSA 稀疏注意力架构，同时具备前沿编程能力、100 万 token 超长上下文与原生多模态（图文视频 + 桌面操控）三大能力的开源通用模型",
+      "tags": "chat,think,vision",
+      "released_at": "2026-06-01T00:00:00+08:00",
+      "source": "https://platform.minimax.io/docs/release-notes/models"
+    },
+    "MultiLanguageOCR": {
+      "vendor": "字节跳动",
+      "description": "火山引擎于 2022-10-17 日上线，智能视觉（即梦 AI）多语种 OCR，可自动识别图片内中英日韩德法俄等 50 + 语种混合文字，输出文本与语种信息，适配模糊、倾斜、复杂背景等实景图像识别场景",
+      "tags": "ocr",
+      "released_at": "2022-10-17T00:00:00+08:00",
+      "source": "https://www.volcengine.com/theme/735214-R-7-1"
+    },
+    "mureka-8": {
+      "vendor": "Skywork",
+      "description": "昆仑万维 2026‑01‑28 发布、基于 MusiCoT 音乐思维链的国产 AI 音乐大模型，中文人声与编曲能力突出，可产出可商用发布级完整歌曲，在 Artificial Analysis 评测拿下人声、器乐双榜第一",
+      "tags": "music"
+    },
+    "mureka-9": {
+      "vendor": "Skywork",
+      "description": "昆仑万维 2026‑03‑27 发布、基于 MusiCoT 音乐思维链的 AI 音乐大模型，重点提升段落级文本可控性、混音音质与人声情绪表达，降低创作意图偏差，支持多语言，面向创作者与 B 端 API 商用落地",
+      "tags": "music"
+    },
+    "mureka-9.5": {
+      "vendor": "Skywork",
+      "description": "昆仑万维天工于2026‑08‑18 正式上线，基于 MusiCoT 音乐思维链，弱化 AI 机械感、优化人声与长片段一致性的端到端 AI 音乐生成大模型",
+      "tags": "music"
+    },
+    "music-3.0": {
+      "vendor": "MiniMax",
+      "description": "MiniMaxr推出的新一代端到端 AI 音乐生成模型，依托更强语义理解，可通过文本、歌词生成具备真实演奏细节、高自然度人声的完整歌曲与纯音乐，音质趋近商业录音棚水准",
+      "tags": "music",
+      "released_at": "2026-07-16T00:00:00+08:00",
+      "source": "https://platform.minimax.io/docs/release-notes/models"
+    },
+    "music-cover": {
+      "vendor": "MiniMax",
+      "description": "MiniMax推出的音频转音频专用 AI 翻唱模型，可锁定原曲旋律骨架，按文字提示完整重构曲风、编曲与人声，还支持修改歌词生成全新改编版本",
+      "tags": "music",
+      "released_at": "2026-04-10T00:00:00+08:00",
+      "source": "https://news.aibase.com/news/27025"
+    },
+    "nano-banana": {
+      "vendor": "Google",
+      "description": "Nano Banana（Gemini 2.5 Flash Image）主打自然语言精准修图、跨轮次稳定保持人物主体一致性",
+      "tags": "image",
+      "endpoints": "[\"openai\"]",
+      "retired_at": "2027-03-15T00:00:00+08:00",
+      "deprecation_note": "上游计划下线，请升级至 gemini-3.1-flash-lite-image，详见 https://ai.google.dev/gemini-api/docs/deprecations"
+    },
+    "omni-moderation-latest": {
+      "vendor": "OpenAI",
+      "description": "OpenAI 基于 GPT-4o 的多模态内容审核模型，支持文本与图像的有害内容检测，覆盖暴力、自残、性内容等 13 个分类，多语言表现显著提升",
+      "tags": "moderation",
+      "released_at": "2024-09-26T00:00:00-07:00",
+      "source": "https://developers.openai.com/api/docs/changelog"
+    },
+    "pixverse/pixverse-lipsync": {
+      "vendor": "阿里巴巴",
+      "description": "PixVerse 于 2025 年 7 月 14 日上线的独立 AI 口型同步模型，支持输入视频搭配音频 / 文本，驱动人物生成与语音匹配的自然口型，用于视频配音、多语言本地化制作",
+      "tags": "video",
+      "released_at": "2025-06-21T00:00:00+08:00",
+      "source": "https://docs.platform.pixverse.ai/changelog-2394996m0.md"
+    },
+    "pixverse/pixverse-motioncontrol": {
+      "vendor": "阿里巴巴",
+      "description": "PixVerse 于 2026 年 1 月 26 日随 V5.6 上线的动作迁移 AI 模型，支持传入静态人物图像与参考动作视频，将参考视频姿态动作迁移至目标图像生成连贯动画，常用于角色舞蹈、动作复刻",
+      "tags": "video",
+      "released_at": "2026-02-28T00:00:00+08:00",
+      "source": "https://docs.platform.pixverse.ai/changelog-2394996m0.md"
+    },
+    "pixverse/pixverse-upscale": {
+      "vendor": "阿里巴巴",
+      "description": "PixVerse 于 2026 年 3 月 30 日上线的 AI 视频超分增强模型，支持输入视频智能提升至 4K 分辨率，同步完成细节修复、降噪与画面优化，用于成片画质升级交付",
+      "tags": "video",
+      "released_at": "2026-06-16T00:00:00+08:00",
+      "source": "https://docs.platform.pixverse.ai/changelog-2394996m0.md"
+    },
+    "qwen-image-3.0": {
+      "vendor": "阿里巴巴",
+      "description": "阿里云千问 2026‑07‑21 发布的第三代图像生成基础模型，支持 4.5k token 长提示词、10px 小字、12 种语言渲染，主打复杂版面与生产力向文生图、图像编辑能力",
+      "tags": "image",
+      "released_at": "2026-08-04T00:00:00+08:00",
+      "source": "https://help.aliyun.com/zh/model-studio/newly-released-models"
+    },
+    "qwen-image-3.0-pro": {
+      "vendor": "阿里巴巴",
+      "description": "阿里云千问第三代旗舰图像生成模型，2026‑08‑05 正式开放 API，支持 4.5k token 长提示词、10px 小字渲染、多语言复杂版面生成，主打商业生产力级文生图与图像编辑",
+      "tags": "image",
+      "released_at": "2026-07-20T00:00:00+08:00",
+      "source": "https://help.aliyun.com/zh/model-studio/newly-released-models"
+    },
+    "qwen3-asr-flash": {
+      "vendor": "阿里巴巴",
+      "description": "阿里通义基于 Qwen3-Omni 打造、支持 Prompt 上下文优化、可识 11 国语言 + 方言与带伴奏歌曲的高性能闭源语音转文字模型, 25token/秒",
+      "tags": "asr",
+      "endpoints": "[\"openai\"]",
+      "released_at": "2025-09-08T00:00:00+08:00",
+      "source": "https://help.aliyun.com/zh/model-studio/newly-released-models"
+    },
+    "qwen3-asr-flash-realtime": {
+      "vendor": "阿里巴巴",
+      "description": "通义千问 Qwen3 系列面向流式低延迟场景的实时极速语音识别模型，支持多语言方言、强抗噪，适配会议直播、车载语音等实时转写场景",
+      "tags": "asr-realtime",
+      "endpoints": "[\"openai\"]",
+      "released_at": "2025-10-27T00:00:00+08:00",
+      "source": "https://help.aliyun.com/zh/model-studio/newly-released-models"
+    },
+    "qwen3-omni-flash": {
+      "vendor": "阿里巴巴",
+      "description": "Qwen3-Omni Flash 是由 alibaba-cn 提供的人工智能模型。",
+      "tags": "chat,vision",
+      "endpoints": "[\"openai\"]",
+      "released_at": "2025-09-17T00:00:00+08:00",
+      "source": "https://help.aliyun.com/zh/model-studio/newly-released-models"
+    },
+    "qwen3-rerank": {
+      "vendor": "阿里巴巴",
+      "description": "基于 Qwen3 的纯文本重排序模型，支持 100+ 语言，可对最多 500 个文本候选按与 query 的相关性精排，适合 RAG、知识库、搜索等纯文本检索场景。",
+      "tags": "rerank",
+      "released_at": "2025-10-21T00:00:00+08:00",
+      "source": "https://help.aliyun.com/zh/model-studio/newly-released-models"
+    },
+    "qwen3-tts-flash": {
+      "vendor": "阿里巴巴",
+      "description": "通义千问轻量化极速流式语音合成模型，内置海量官方音色、极低首包延迟，主打实时对话、车载播报等低时延通用朗读场景",
+      "tags": "tts",
+      "released_at": "2025-09-16T00:00:00+08:00",
+      "source": "https://help.aliyun.com/zh/model-studio/newly-released-models"
+    },
+    "qwen3-vl-embedding": {
+      "vendor": "阿里巴巴",
+      "description": "阿里通义 2026 年开源、基于 Qwen3-VL 的多模态检索嵌入模型，可将文本、图像、文档与视频映射到统一向量空间，实现高精度跨模态检索",
+      "tags": "embedding",
+      "released_at": "2026-01-21T00:00:00+08:00",
+      "source": "https://help.aliyun.com/zh/model-studio/newly-released-models"
+    },
+    "qwen3-vl-rerank": {
+      "vendor": "阿里巴巴",
+      "description": "基于 Qwen3-VL 的多模态重排序模型，query 和候选文档均支持文本/图片/视频混合输入，适合文搜图、图搜视频、图文混排文档等跨模态检索场景。",
+      "tags": "rerank",
+      "released_at": "2026-01-29T00:00:00+08:00",
+      "source": "https://help.aliyun.com/zh/model-studio/newly-released-models"
+    },
+    "qwen3.5-plus": {
+      "vendor": "阿里巴巴",
+      "description": "原生视觉语言系列Plus模型，基于混合架构设计，融合了线性注意力机制与稀疏混合专家模型，实现了更高的推理效率。在多项任务评测中，3.5系列均展现出与当前顶尖前沿模型相媲美的卓越性能，模型效果在纯文本与多模态方面相较3系列均实现飞跃式进步。",
+      "tags": "chat,think,vision",
+      "released_at": "2026-02-15T00:00:00+08:00",
+      "source": "https://help.aliyun.com/zh/model-studio/newly-released-models"
+    },
+    "qwen3.6-plus": {
+      "vendor": "阿里巴巴",
+      "description": "2026 年 4 月最新旗舰大模型，主打超强编程与智能体（Agent）能力，多模态推理与氛围编程（Vibe Coding）",
+      "tags": "chat,think,vision",
+      "endpoints": "[\"openai\"]",
+      "released_at": "2026-04-02T00:00:00+08:00",
+      "source": "https://www.alibabacloud.com/en/press-room/alibaba-unveils-qwen3-6-plus-to-accelerate-agentic"
+    },
+    "qwen3.7-max": {
+      "vendor": "阿里巴巴",
+      "description": "阿里云通义千问团队于 2026 年 5 月 20 日发布的面向智能体时代的新一代旗舰大模型，采用万亿参数 MoE 架构，在编程、推理和长周期自主任务执行能力上实现突破，曾完成长达 35 小时、超 1000 次工具调用的全自主内核优化任务",
+      "tags": "chat,think,vision",
+      "released_at": "2026-05-20T00:00:00+08:00",
+      "source": "https://help.aliyun.com/zh/model-studio/newly-released-models"
+    },
+    "qwen3.7-plus": {
+      "vendor": "阿里巴巴",
+      "description": "阿里通义 2026 年 6 月推出的多模态智能体基座，在 Qwen3.7 文本能力基础上，强化视觉理解、GUI 操作、视觉编码与真实世界推理，可统一处理图像 / 视频 / 文本并在 GUI/CLI 环境完成端到端任务",
+      "tags": "chat,think,vision",
+      "released_at": "2026-06-02T00:00:00+08:00",
+      "source": "https://finance.sina.com.cn/tech/digi/2026-06-02/doc-inhzyhiy3416019.shtml"
+    },
+    "qwen3.8-flash": {
+      "vendor": "阿里巴巴",
+      "description": "阿里通义千问于 2026‑08‑26 发布的下一代架构多模态 MoE 大模型，总参 125B 单 token 激活 6B，原生 262K 上下文可扩至 1M，支持 vision 图文理解，在 Agent、编码、长流程办公场景性价比突出",
+      "tags": "chat,think,vision",
+      "released_at": "2026-08-26T00:00:00+08:00",
+      "source": "https://help.aliyun.com/zh/model-studio/newly-released-models"
+    },
+    "qwen3.8-max": {
+      "vendor": "阿里巴巴",
+      "description": "阿里巴巴通义千问2026 年 8 月 3 日上线总参数量 2.4 万亿 MoE 架构的原生多模态旗舰大模型，擅长代码开发、长文本处理与多模态智能体任务",
+      "tags": "chat,think,vision",
+      "endpoints": "[\"openai\"]",
+      "released_at": "2026-08-02T00:00:00+08:00",
+      "source": "https://help.aliyun.com/zh/model-studio/newly-released-models"
+    },
+    "qwen3.8-omni-flash": {
+      "vendor": "阿里巴巴",
+      "description": "阿里千问于 2026-09-18 发布的新一代原生全模态大模型，支持文本 / 图像 / 音频 / 视频输入、1M 上下文，主打音视频 Agent 能力，可自主规划任务与调用工具完成多模态工作流",
+      "tags": "chat,think,vision",
+      "released_at": "2026-09-17T00:00:00+08:00",
+      "source": "https://help.aliyun.com/zh/model-studio/newly-released-models"
+    },
+    "S2V-01": {
+      "vendor": "MiniMax",
+      "description": "MiniMax 为 “海螺 AI” 打造的单图主体参考视频生成模型，核心能力是上传一张人物 / 主体图 + 文本提示，即可生成主体稳定、细节还原度高、自由度强的短视频，大幅降低角色一致性与创作成本",
+      "tags": "video",
+      "released_at": "2025-01-10T00:00:00+08:00",
+      "source": "https://www.minimax.io/news/s2v-01-release"
+    },
+    "search_pro": {
+      "vendor": "智谱",
+      "description": "智谱自研搜索Pro版：搜索结果召回率更高",
+      "tags": "web-search-api",
+      "endpoints": "[\"openai\"]",
+      "released_at": "2025-04-14T00:00:00+08:00",
+      "source": "https://docs.bigmodel.cn/cn/update/new-releases"
+    },
+    "search_pro_quark": {
+      "vendor": "智谱",
+      "description": "夸克搜索：搜索时效性强、覆盖多行业领域",
+      "tags": "web-search-api",
+      "endpoints": "[\"openai\"]",
+      "released_at": "2025-04-14T00:00:00+08:00",
+      "source": "https://docs.bigmodel.cn/cn/update/new-releases"
+    },
+    "search_pro_sogou": {
+      "vendor": "智谱",
+      "description": "搜狗搜索：耗时短，支持搜狗百科、搜狗问问检索",
+      "tags": "web-search-api",
+      "endpoints": "[\"openai\"]",
+      "released_at": "2025-04-14T00:00:00+08:00",
+      "source": "https://docs.bigmodel.cn/cn/update/new-releases"
+    },
+    "search_std": {
+      "vendor": "智谱",
+      "description": "智谱自研搜索基础版：速度快，高性价比",
+      "tags": "web-search-api",
+      "endpoints": "[\"openai\"]",
+      "released_at": "2025-04-14T00:00:00+08:00",
+      "source": "https://docs.bigmodel.cn/cn/update/new-releases"
+    },
+    "seed-audio-1.0": {
+      "vendor": "字节跳动",
+      "description": "字节跳动自研的多任务音频大模型，支持语音合成、音频生成与音频编辑，具备高保真人声与环境音效生成能力",
+      "tags": "tts,second",
+      "endpoints": "[\"openai\"]",
+      "released_at": "2026-07-20T00:00:00+08:00",
+      "source": "https://seed.bytedance.com/en/blog/from-speech-to-audio-creation-introducing-the-seed-audio-1-0-audio-creation-model"
+    },
+    "seed-tts-1.1": {
+      "vendor": "字节跳动",
+      "description": "字节跳动推出的 Seed-TTS 系列中的一个版本，它是基于自回归 Transformer 的大规模文本转语音模型，能生成与人类语音几乎无法区分的高质量语音，在语音上下文学习、说话人相似度和自然度方面表现出色。",
+      "tags": "tts",
+      "endpoints": "[\"openai\"]"
+    },
+    "seed-tts-2.0": {
+      "vendor": "字节跳动",
+      "description": "字节跳动推出的对话式语音合成模型，依托上下文语义理解机制，支持精细化情感控制、零样本音色复刻与长文本连贯朗读，可生成高拟人度、低机械感的真人级语音",
+      "tags": "tts",
+      "released_at": "2025-10-16T00:00:00+08:00",
+      "source": "https://www.ithome.com/0/889/888.htm"
+    },
+    "speech-2.8-hd": {
+      "vendor": "MiniMax",
+      "description": "MiniMax 出品演播室级高清 TTS 模型，主打广播级音质、精细化情绪标签、多语种与音色克隆，面向有声书、专业配音等高保真场景",
+      "tags": "tts",
+      "released_at": "2026-01-23T00:00:00+08:00",
+      "source": "https://platform.minimax.io/docs/release-notes/models"
+    },
+    "speech-2.8-turbo": {
+      "vendor": "MiniMax",
+      "description": "MiniMax 轻量化极速 TTS 模型，低延迟高性价比，音质贴近 HD，适配实时对话、数字人等高并发场景",
+      "tags": "tts",
+      "released_at": "2026-01-23T00:00:00+08:00",
+      "source": "https://platform.minimax.io/docs/release-notes/models"
+    },
+    "step-3.5-flash": {
+      "vendor": "阶跃星辰",
+      "description": "顶尖推理能力与快速可靠的执行能力。能够完成对复杂任务的分解、计划，可快速可靠地调用工具执行任务，胜任逻辑推理、数学、软件工程、深度研究等各种复杂任务。",
+      "tags": "chat,think",
+      "released_at": "2026-02-02T00:00:00+08:00",
+      "source": "https://baike.baidu.com/item/Step%203.5%20Flash/67327492"
+    },
+    "suno_extend": {
+      "vendor": "Suno",
+      "description": "Suno 内置音频续写功能，可从指定时间点解析原曲调性、曲风与人声，无缝生成匹配原作的主歌、桥段、尾奏等全新音乐段落，支持循环加长歌曲、自定义续写内容与风格微调",
+      "tags": "music",
+      "endpoints": "[\"openai\"]"
+    },
+    "suno_generate-persona": {
+      "vendor": "Suno",
+      "description": "通过截取歌曲人声片段提取声线、曲风特征生成专属虚拟歌手音色标识，生成的 personaId 可用于作曲、续写、翻唱等任务，全程锁定统一演唱音色与作品风格",
+      "tags": "music",
+      "endpoints": "[\"openai\"]"
+    },
+    "suno_midi": {
+      "vendor": "Suno",
+      "description": "将分离后的音轨转换为 MIDI 格式,为每个乐器提供详细的音符信息",
+      "tags": "music"
+    },
+    "suno_music": {
+      "vendor": "Suno",
+      "description": "基于深度学习训练的多模态 AI 系统，可根据文本提示或参考音频，自动生成包含旋律、编曲与人声的完整歌曲，具备多风格、多语言与专业级音质输出能力",
+      "icon": "Suno.Color",
+      "tags": "music",
+      "endpoints": "[\"openai\"]"
+    },
+    "suno_replace-section": {
+      "vendor": "Suno",
+      "description": "Suno replace-section 是精准替换歌曲指定时段片段、保留其余内容并自动匹配原曲调性节奏的局部重生成功能，无需整曲重做即可修改歌词与编曲",
+      "tags": "music",
+      "endpoints": "[\"openai\"]"
+    },
+    "suno_upload-cover": {
+      "vendor": "Suno",
+      "description": "通过在保留其核心旋律的同时将音轨转换为新样式来覆盖音轨。它结合了 Suno 的上传功能，使用户能够上传音频文件进行处理。预期的结果是刷新了具有新风格的音轨，同时保持了原始旋律的完整性",
+      "tags": "music"
+    },
+    "suno_vocal-removal": {
+      "vendor": "Suno",
+      "description": "将音乐音轨分割为人声和伴奏两个独立的部分，或者分离各种乐器的声音",
+      "tags": "music",
+      "endpoints": "[\"openai\"]"
+    },
+    "suno_voice-check": {
+      "vendor": "Suno",
+      "description": "检查指定自定义音色的可用状态，验证其是否已训练完成、可正常用于音乐生成",
+      "tags": "music"
+    },
+    "suno_voice-generate": {
+      "vendor": "Suno",
+      "description": "传入验证任务 ID 与用户朗读验证短语的录音，发起自定义音色克隆训练，返回训练任务 ID",
+      "tags": "music"
+    },
+    "suno_voice-regenerate": {
+      "vendor": "Suno",
+      "description": "基于已有验证任务 ID 重新生成新的活体验证短语，用于验证失败 / 过期重试",
+      "tags": "music"
+    },
+    "suno_voice-validate": {
+      "vendor": "Suno",
+      "description": "提交原始人声音频片段，创建自定义音色的活体验证短语任务，返回验证任务 ID",
+      "tags": "music"
+    },
+    "suno_wav": {
+      "vendor": "Suno",
+      "description": "将现有音乐转换为高质量WAV格式。",
+      "tags": "music"
+    },
+    "Tripo/Tripo-H3.1": {
+      "vendor": "阿里巴巴",
+      "description": "Tripo/Tripo-H3.1 是 VAST 推出的高保真 3D 生成大模型，支持文生 3D、单图 / 多图转 3D，输出高精度高模与高清 PBR 贴图，面向影视渲染、数字藏品、3D 打印等高精度资产制作场景",
+      "tags": "3d",
+      "released_at": "2026-04-27T00:00:00+08:00",
+      "source": "https://help.aliyun.com/zh/model-studio/newly-released-models"
+    },
+    "Tripo/Tripo-P1.0": {
+      "vendor": "阿里巴巴",
+      "description": "Tripo/Tripo-P1.0 是 VAST 推出的原生三维概率生成 3D 大模型，可通过文本 / 图片在数秒内输出拓扑规整、可直接导入游戏引擎的生产级实时网格资产",
+      "tags": "3d",
+      "released_at": "2026-04-27T00:00:00+08:00",
+      "source": "https://help.aliyun.com/zh/model-studio/newly-released-models"
+    },
+    "v30_1080p_jimeng": {
+      "vendor": "字节跳动",
+      "description": "jimeng_1080p_pro下审核版",
+      "tags": "video",
+      "released_at": "2025-09-02T00:00:00+08:00",
+      "source": "https://www.stdaily.com/web/gdxw/2025-09/02/content_394033.html"
+    },
+    "v30_jimeng": {
+      "vendor": "字节跳动",
+      "description": "jimeng_v30下审核版",
+      "tags": "video",
+      "released_at": "2025-09-02T00:00:00+08:00",
+      "source": "https://www.stdaily.com/web/gdxw/2025-09/02/content_394033.html"
+    },
+    "v30_pro_jimeng": {
+      "vendor": "字节跳动",
+      "description": "jimeng_v30_pro下审核版",
+      "tags": "video",
+      "released_at": "2025-09-02T00:00:00+08:00",
+      "source": "https://www.stdaily.com/web/gdxw/2025-09/02/content_394033.html"
+    },
+    "veo-3.1-fast-generate-preview": {
+      "vendor": "Google",
+      "description": "Google 领先的视频生成模型，能够根据文本提示或图像生成高保真、具有逼真效果和原生音频的视频。fast版本速度更快,价格更低",
+      "tags": "video,second",
+      "endpoints": "[\"gemini\",\"openai\"]",
+      "retired_at": "2026-10-22T00:00:00+08:00",
+      "deprecation_note": "上游计划下线，详见 https://ai.google.dev/gemini-api/docs/deprecations"
+    },
+    "veo-3.1-generate-preview": {
+      "vendor": "Google",
+      "description": "Google 领先的视频生成模型，能够根据文本提示或图像生成高保真、具有逼真效果和原生音频的视频。",
+      "tags": "video,second",
+      "endpoints": "[\"gemini\",\"openai\"]",
+      "retired_at": "2026-10-22T00:00:00+08:00",
+      "deprecation_note": "上游计划下线，详见 https://ai.google.dev/gemini-api/docs/deprecations"
+    },
+    "veo-3.1-lite-generate-preview": {
+      "vendor": "Google",
+      "description": "Google于 2026-04-02 上线的 Veo3.1 轻量化预览 AI 视频模型，支持文生 / 图生视频并原生生成音频，主打低成本批量生成 4–8 秒短视频，在 Vertex AI、Gemini API 开放预览调用",
+      "tags": "video",
+      "released_at": "2026-03-31T00:00:00-07:00",
+      "retired_at": "2026-10-22T00:00:00+08:00",
+      "deprecation_note": "上游计划下线，详见 https://ai.google.dev/gemini-api/docs/deprecations",
+      "source": "https://ai.google.dev/gemini-api/docs/changelog"
+    },
+    "videoretalk": {
+      "vendor": "阿里巴巴",
+      "description": "阿里人像驱动演唱视频--悦动人像，支持人像口型同步模型，输入人物视频与人声音频，可生成人物口型匹配配音的全新视频，支持指定目标人脸、自动适配音视频时长",
+      "tags": "video",
+      "released_at": "2024-12-10T00:00:00+08:00",
+      "source": "https://help.aliyun.com/zh/model-studio/newly-released-models"
+    },
+    "vidu2.0": {
+      "vendor": "Vidu",
+      "description": "生数科技推出的商业级视频生成模型，它实现单片段生成速度突破秒级，支持 4K 超清分辨率输出，成本低至行业平均水平的 43%，且在风格一致性、首尾帧过渡等方面表现出色",
+      "tags": "video",
+      "endpoints": "[\"openai\"]",
+      "released_at": "2025-01-15T00:00:00+08:00",
+      "source": "https://www.ithome.com/0/824/916.htm"
+    },
+    "viduq1": {
+      "vendor": "Vidu",
+      "description": "生数科技推出的新一代高可控 AI 视频生成模型，它能以 1080P 分辨率生成 5 秒、24 帧的高质量视频，在多主体细节控制、音效同步、画质清晰度等方面表现出色，适用于影视、动漫、广告等多种创作场景。",
+      "tags": "video",
+      "endpoints": "[\"openai\"]",
+      "released_at": "2025-04-21T00:00:00+08:00",
+      "source": "https://www.163.com/dy/article/JTOS7KU60514R9P4.html"
+    },
+    "viduq2": {
+      "vendor": "Vidu",
+      "description": "vidu生图模型\n官方文档:https://platform.vidu.cn/docs/reference-to-image",
+      "tags": "image",
+      "released_at": "2025-10-21T00:00:00+08:00",
+      "source": "https://platform.vidu.com/docs/api-reference/updates"
+    },
+    "viduq2-pro": {
+      "vendor": "Vidu",
+      "description": "生数科技发布的图生视频大模型专业版，它能精准捕捉微表情和复杂动作，运镜专业自然，支持多主体一致性输入，生成速度快且价格优惠。",
+      "tags": "video",
+      "endpoints": "[\"openai\"]",
+      "released_at": "2025-09-24T00:00:00+08:00",
+      "source": "https://platform.vidu.com/docs/api-reference/updates"
+    },
+    "viduq2-turbo": {
+      "vendor": "Vidu",
+      "description": "生数科技发布的图生视频大模型快速版，它能精准捕捉微表情和复杂动作，运镜专业自然，支持多主体一致性输入，生成速度快且价格优惠。",
+      "tags": "video",
+      "endpoints": "[\"openai\"]",
+      "released_at": "2025-09-24T00:00:00+08:00",
+      "source": "https://platform.vidu.com/docs/api-reference/updates"
+    },
+    "viduq3-pro": {
+      "vendor": "Vidu",
+      "description": "高效生成优质音视频内容，让视频内容更生动、更形象、更立体",
+      "tags": "video",
+      "endpoints": "[\"openai\"]",
+      "released_at": "2026-01-27T00:00:00+08:00",
+      "source": "https://platform.vidu.com/docs/api-reference/updates"
+    },
+    "viduq3-turbo": {
+      "vendor": "Vidu",
+      "description": "生数科技于 2026-02-11 日上线的 Vidu Q3 系列高速轻量化 AI 视频生成模型，支持文 / 图 / 首尾帧生视频、声画同出，最高 1080p、最长 16 秒，主打低成本快速批量短视频与短剧素材创作",
+      "tags": "video",
+      "released_at": "2026-02-11T00:00:00+08:00",
+      "source": "https://platform.vidu.com/docs/api-reference/updates"
+    },
+    "volc.seedasr.auc": {
+      "vendor": "字节跳动",
+      "description": "豆包大模型语音识别 2.0 版（Doubao-Seed-ASR-2.0） 是字节跳动火山引擎推出的新一代语音识别系统，突破性支持多模态视觉辅助识别、13 种外语、强上下文推理，大幅提升专有名词与混淆词准确率 1token/秒",
+      "tags": "asr",
+      "endpoints": "[\"openai\"]",
+      "released_at": "2025-12-05T00:00:00+08:00",
+      "source": "https://finance.sina.com.cn/roll/2025-12-05/doc-infztuae7737919.shtml"
+    },
+    "volc.seedasr.sauc.duration": {
+      "vendor": "字节跳动",
+      "description": "火山引擎于 2025-12-05 上市的豆包流式语音识别模型 2.0（时长计费版），支持 13 种语种、具备上下文理解能力的实时语音转文字服务",
+      "tags": "asr-realtime",
+      "released_at": "2025-12-05T00:00:00+08:00",
+      "source": "https://finance.sina.com.cn/stock/bxjj/2025-12-05/doc-infzttzy9885421.shtml"
+    },
+    "wan2.5-i2v-preview": {
+      "vendor": "阿里巴巴",
+      "description": "阿里通义万相 2.5 系列中的图生视频模型，它支持 24 帧 / 秒的 1080P 高清视频生成，能精准理解运镜等复杂指令，首次实现音画同步，可根据输入的图片和音频生成结构完整、情节连贯且画面质感细腻的电影级视频。",
+      "tags": "video",
+      "endpoints": "[\"openai\"]",
+      "released_at": "2025-09-19T00:00:00+08:00",
+      "source": "https://help.aliyun.com/zh/model-studio/newly-released-models"
+    },
+    "wan2.6-i2v": {
+      "vendor": "阿里巴巴",
+      "description": "通义万相-首尾帧生视频模型，只需要提供首帧和尾帧图片，便能根据提示词生成一段丝滑流畅的动态视频",
+      "tags": "video",
+      "released_at": "2025-12-03T00:00:00+08:00",
+      "source": "https://help.aliyun.com/zh/model-studio/newly-released-models"
+    },
+    "wan2.6-r2v": {
+      "vendor": "阿里巴巴",
+      "description": "通义万相-参考生视频模型支持参考输入视频中的角色形象和音色，搭配提示词生成保持角色一致性的视频",
+      "tags": "video",
+      "released_at": "2025-12-16T00:00:00+08:00",
+      "source": "https://help.aliyun.com/zh/model-studio/newly-released-models"
+    },
+    "wan2.6-t2v": {
+      "vendor": "阿里巴巴",
+      "description": "通义万相-文生视频模型通过一句话即可生成视频，视频呈现丰富的艺术风格及影视级画质",
+      "tags": "video",
+      "released_at": "2025-12-03T00:00:00+08:00",
+      "source": "https://help.aliyun.com/zh/model-studio/newly-released-models"
+    },
+    "wan2.7-i2v": {
+      "vendor": "阿里巴巴",
+      "description": "图生视频：将单张或多张静态图片转化为动态连贯视频，保留原图主体细节并赋予流畅运动与镜头语言的图生视频模型。",
+      "tags": "video",
+      "released_at": "2026-04-03T00:00:00+08:00",
+      "source": "https://help.aliyun.com/zh/model-studio/newly-released-models"
+    },
+    "wan2.7-image": {
+      "vendor": "阿里巴巴",
+      "description": "万相2.7图像生成与编辑模型支持文生图、文生组图、图生组图、图像编辑、多图参考生成，满足多样化生成与集成需求。",
+      "tags": "image",
+      "released_at": "2026-04-01T00:00:00+08:00",
+      "source": "https://help.aliyun.com/zh/model-studio/newly-released-models"
+    },
+    "wan2.7-image-pro": {
+      "vendor": "阿里巴巴",
+      "description": "万相2.7图像生成与编辑模型支持文生图、文生组图、图生组图、图像编辑、多图参考生成，满足多样化生成与集成需求。专业版，支持4K高清输出",
+      "tags": "image",
+      "released_at": "2026-04-01T00:00:00+08:00",
+      "source": "https://help.aliyun.com/zh/model-studio/newly-released-models"
+    },
+    "wan2.7-r2v": {
+      "vendor": "阿里巴巴",
+      "description": "参考生视频：基于图像、视频等多模态参考素材，精准复刻动作、运镜、风格与特效，支持多主体参考的视频生成模型。",
+      "tags": "video",
+      "released_at": "2026-04-03T00:00:00+08:00",
+      "source": "https://help.aliyun.com/zh/model-studio/newly-released-models"
+    },
+    "wan2.7-t2v": {
+      "vendor": "阿里巴巴",
+      "description": "文生视频：阿里通义 Wan2.7 系列的文生视频模型，可依据自然语言文本描述直接生成 720P-1080P、2-15 秒的高清视频。",
+      "tags": "video",
+      "endpoints": "[\"openai\"]",
+      "released_at": "2026-04-03T00:00:00+08:00",
+      "source": "https://help.aliyun.com/zh/model-studio/newly-released-models"
+    },
+    "wan2.7-videoedit": {
+      "vendor": "阿里巴巴",
+      "description": "视频编辑：通过自然语言指令对已有视频进行元素增删、场景替换、风格转换、剧情调整等精细化编辑的 AI 视频编辑模型。\n",
+      "tags": "video",
+      "released_at": "2026-04-03T00:00:00+08:00",
+      "source": "https://help.aliyun.com/zh/model-studio/newly-released-models"
+    },
+    "wan3.0-video": {
+      "vendor": "阿里巴巴",
+      "description": "阿里通义于 2026‑08‑24 推出的全能参考式 AI 视频生成大模型， 支持最长 30 秒 1080p 视频、原生音频同步与文档直接转视频能力",
+      "tags": "video",
+      "released_at": "2026-08-06T00:00:00+08:00",
+      "source": "https://help.aliyun.com/zh/model-studio/newly-released-models"
+    },
+    "wan3.0-video-prime": {
+      "vendor": "阿里巴巴",
+      "description": "阿里通义于 2026‑08‑24 推出, wan3.0-video加速版本，在画质尽量对齐标准版的前提下，优化推理链路、队列优先级更高，任务等待与生成耗时显著缩短；但单价也更高，适合快速迭代出片",
+      "tags": "video",
+      "released_at": "2026-08-20T00:00:00+08:00",
+      "source": "https://help.aliyun.com/zh/model-studio/newly-released-models"
+    },
+    "whisper-1": {
+      "vendor": "OpenAI",
+      "description": "Whisper 可以将语音转录为文本，并将多种语言翻译成英语",
+      "tags": "asr",
+      "endpoints": "[]",
+      "released_at": "2022-09-21T00:00:00-07:00",
+      "retired_at": "2027-02-26T00:00:00+08:00",
+      "deprecation_note": "上游计划下线,详见 https://developers.openai.com/api/docs/deprecations",
+      "source": "https://openai.com/index/whisper/"
+    },
+    "wiki": {
+      "vendor": "Wikipedia",
+      "description": "维基百科中文版",
+      "tags": "chat",
+      "endpoints": "[\"openai\"]"
+    },
+    "wiki-en": {
+      "vendor": "Wikipedia",
+      "description": "维基百科英文版",
+      "tags": "chat"
+    },
+    "z-image-turbo": {
+      "vendor": "阿里巴巴",
+      "description": "阿里通义轻量化极速文生图扩散模型，8 步采样、原生中英文字渲染、可生成高清写实图像",
+      "tags": "image",
+      "endpoints": "[\"openai\"]",
+      "released_at": "2025-12-18T00:00:00+08:00",
+      "source": "https://help.aliyun.com/zh/model-studio/newly-released-models"
+    }
+  }
+}
