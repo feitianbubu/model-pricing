@@ -17,8 +17,6 @@ type catalogModel struct {
 	Icon            string `json:"icon,omitempty"`
 	Tags            string `json:"tags,omitempty"`
 	Endpoints       string `json:"endpoints,omitempty"`
-	NameRule        int    `json:"name_rule,omitempty"`
-	Status          *int   `json:"status,omitempty"`
 	ReleasedAt      string `json:"released_at,omitempty"`
 	RetiredAt       string `json:"retired_at,omitempty"`
 	DeprecationNote string `json:"deprecation_note,omitempty"`
@@ -28,7 +26,6 @@ type catalogModel struct {
 type catalogVendor struct {
 	Description string `json:"description,omitempty"`
 	Icon        string `json:"icon,omitempty"`
-	Status      *int   `json:"status,omitempty"`
 }
 
 type catalogFile struct {
@@ -68,16 +65,8 @@ func unixOrZero(value string) (int64, error) {
 	return t.Unix(), nil
 }
 
-func statusOrOne(status *int) int {
-	if status == nil {
-		return 1
-	}
-	return *status
-}
-
-// writeCatalog publishes the gateway's metadata-sync format. Every locale gets
-// the same file because the gateway requests one per UI language.
-func writeCatalog(path, outDir string) (int, error) {
+// Every locale gets the same file because the gateway requests one per UI language.
+func writeCatalog(path, outDir string, allowlist map[string]struct{}) (int, error) {
 	raw, err := os.ReadFile(path)
 	if err != nil {
 		return 0, err
@@ -88,6 +77,9 @@ func writeCatalog(path, outDir string) (int, error) {
 	}
 	models := make([]newapiModel, 0, len(file.Models))
 	for name, m := range file.Models {
+		if _, ok := allowlist[name]; !ok {
+			return 0, fmt.Errorf("model %q is not in the allowlist", name)
+		}
 		if m.Vendor != "" {
 			if _, ok := file.Vendors[m.Vendor]; !ok {
 				return 0, fmt.Errorf("model %q: vendor %q is not in vendors", name, m.Vendor)
@@ -103,14 +95,14 @@ func writeCatalog(path, outDir string) (int, error) {
 		}
 		models = append(models, newapiModel{
 			ModelName: name, VendorName: m.Vendor, Description: m.Description, Icon: m.Icon,
-			Tags: m.Tags, Endpoints: m.Endpoints, NameRule: m.NameRule, Status: statusOrOne(m.Status),
+			Tags: m.Tags, Endpoints: m.Endpoints, Status: 1,
 			ReleaseTime: released, DeprecatedTime: retired, DeprecationNote: m.DeprecationNote,
 		})
 	}
 	sort.Slice(models, func(i, j int) bool { return models[i].ModelName < models[j].ModelName })
 	vendors := make([]newapiVendor, 0, len(file.Vendors))
 	for name, v := range file.Vendors {
-		vendors = append(vendors, newapiVendor{Name: name, Description: v.Description, Icon: v.Icon, Status: statusOrOne(v.Status)})
+		vendors = append(vendors, newapiVendor{Name: name, Description: v.Description, Icon: v.Icon, Status: 1})
 	}
 	sort.Slice(vendors, func(i, j int) bool { return vendors[i].Name < vendors[j].Name })
 
@@ -118,24 +110,29 @@ func writeCatalog(path, outDir string) (int, error) {
 	for _, locale := range []string{"zh", "en", "ja"} {
 		dirs = append(dirs, filepath.Join(outDir, "api", "i18n", locale, "newapi"))
 	}
+	modelsJSON, err := envelope(models)
+	if err != nil {
+		return 0, err
+	}
+	vendorsJSON, err := envelope(vendors)
+	if err != nil {
+		return 0, err
+	}
 	for _, dir := range dirs {
 		if err := os.MkdirAll(dir, 0o755); err != nil {
 			return 0, err
 		}
-		if err := writeEnvelope(filepath.Join(dir, "models.json"), models); err != nil {
+		if err := os.WriteFile(filepath.Join(dir, "models.json"), modelsJSON, 0o644); err != nil {
 			return 0, err
 		}
-		if err := writeEnvelope(filepath.Join(dir, "vendors.json"), vendors); err != nil {
+		if err := os.WriteFile(filepath.Join(dir, "vendors.json"), vendorsJSON, 0o644); err != nil {
 			return 0, err
 		}
 	}
 	return len(models), nil
 }
 
-func writeEnvelope(path string, data any) error {
+func envelope(data any) ([]byte, error) {
 	encoded, err := json.MarshalIndent(map[string]any{"success": true, "message": "", "data": data}, "", "  ")
-	if err != nil {
-		return err
-	}
-	return os.WriteFile(path, append(encoded, '\n'), 0o644)
+	return append(encoded, '\n'), err
 }

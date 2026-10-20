@@ -164,7 +164,7 @@ func main() {
 	}
 	fmt.Printf("wrote %s (%d models, factor %v)\n", *out, len(modelNames(data)), *factor)
 
-	count, err := writeCatalog(*catalogPath, filepath.Dir(*out))
+	count, err := writeCatalog(*catalogPath, filepath.Dir(*out), allowlist)
 	if err != nil {
 		log.Fatalf("catalog %s: %v", *catalogPath, err)
 	}
