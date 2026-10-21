@@ -894,6 +894,13 @@
       "released_at": "2026-06-01T00:00:00+08:00",
       "source": "https://platform.minimax.io/docs/release-notes/models"
     },
+    "MiniMax-M3.1-Flash": {
+      "vendor": "MiniMax",
+      "description": "MiniMax 开源高效主力模型，原生多模态、1M 上下文，面向 Agent 推理、工具调用与编程任务，支持 effort 调节思考深度",
+      "tags": "chat,think,vision",
+      "released_at": "2026-10-19T00:00:00+08:00",
+      "source": "https://platform.minimaxi.com/docs/release-notes/models"
+    },
     "MultiLanguageOCR": {
       "vendor": "字节跳动",
       "description": "火山引擎于 2022-10-17 日上线，智能视觉（即梦 AI）多语种 OCR，可自动识别图片内中英日韩德法俄等 50 + 语种混合文字，输出文本与语种信息，适配模糊、倾斜、复杂背景等实景图像识别场景",
