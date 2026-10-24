@@ -818,6 +818,14 @@
       "released_at": "2026-07-16T00:00:00+08:00",
       "source": "https://platform.kimi.com/docs/changelog"
     },
+    "kimi-k3.1-pro": {
+      "vendor": "Moonshot",
+      "description": "Moonshot K3.1 系列首个旗舰模型，3 万亿级参数，支持 100 万 token 上下文、视觉输入与工具调用，可调推理强度，代码、3D 创作、金融研究和长程 Agent 能力较 K3 显著提升",
+      "tags": "chat,think,vision",
+      "endpoints": "[\"openai\"]",
+      "released_at": "2026-10-24T00:00:00+08:00",
+      "source": "https://platform.kimi.com/docs/guide/kimi-k3-1-pro-quickstart.md"
+    },
     "kling-v3": {
       "vendor": "快手",
       "description": "快手 2026 年 2 月推出的原生音画同步 AI 视频生成模型，支持最长 15 秒多镜头叙事、4K 分辨率与强角色一致性，含标准版与 Omni 多模态版",
