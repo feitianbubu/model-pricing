@@ -76,7 +76,7 @@ func main() {
 			if err != nil {
 				log.Fatalf("model %q: scale billing_expr: %v", name, err)
 			}
-			expressions[name] = scaled
+			expressions[name] = ReorderTierTerms(scaled)
 		}
 		if len(placeholders) > 0 {
 			sort.Strings(placeholders)

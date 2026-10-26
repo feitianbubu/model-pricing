@@ -3,6 +3,7 @@ package main
 import (
 	"fmt"
 	"maps"
+	"regexp"
 	"slices"
 	"strings"
 
@@ -16,7 +17,7 @@ import (
 // containing one is a USD price. Keep in sync with the gateway's
 // pkg/billingexpr compile env ("u" is the task usage accessor).
 var quantityIdents = map[string]bool{
-	"p": true, "c": true, "len": true, "cr": true, "cc": true, "cc1h": true,
+	"p": true, "c": true, "len": true, "cr": true, "cc": true, "cc1h": true, "cc12h": true,
 	"img": true, "img_cr": true, "img_o": true, "ai": true, "ao": true,
 	"image_count": true, "u": true,
 }
@@ -200,4 +201,40 @@ func subtreeHasQuantity(node ast.Node) bool {
 		identifier, ok := candidate.(*ast.IdentifierNode)
 		return ok && quantityIdents[identifier.Value]
 	}) != nil
+}
+
+// The gateway pricing UI only renders a tier body written in this exact
+// order; any other order falls back to showing the raw expression.
+var displayTermOrder = []string{"p", "c", "cr", "cc", "img_cr", "cc1h", "cc12h", "img", "img_o", "ai", "ao"}
+
+var (
+	plainTierRe = regexp.MustCompile(`tier\("([^"]*)",\s*([^()"]*)\)`)
+	plainTermRe = regexp.MustCompile(`^\s*([a-z_0-9]+)\s*\*\s*([0-9.eE+-]+)\s*$`)
+)
+
+// ReorderTierTerms rewrites each tier body that is a plain sum of
+// "variable * price" terms into displayTermOrder. Addition is
+// commutative, so the billed amount is unchanged.
+func ReorderTierTerms(exprStr string) string {
+	return plainTierRe.ReplaceAllStringFunc(exprStr, func(match string) string {
+		parts := plainTierRe.FindStringSubmatch(match)
+		prices := make(map[string]string)
+		for term := range strings.SplitSeq(parts[2], "+") {
+			m := plainTermRe.FindStringSubmatch(term)
+			if m == nil || !slices.Contains(displayTermOrder, m[1]) || prices[m[1]] != "" {
+				return match
+			}
+			prices[m[1]] = m[2]
+		}
+		if prices["p"] == "" || prices["c"] == "" {
+			return match
+		}
+		terms := make([]string, 0, len(prices))
+		for _, name := range displayTermOrder {
+			if price := prices[name]; price != "" {
+				terms = append(terms, name+" * "+price)
+			}
+		}
+		return `tier("` + parts[1] + `", ` + strings.Join(terms, " + ") + ")"
+	})
 }

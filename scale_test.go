@@ -89,3 +89,18 @@ func TestMergeOverrideFieldsCNY(t *testing.T) {
 		t.Fatal("model priced in both sections must be rejected")
 	}
 }
+
+func TestReorderTierTerms(t *testing.T) {
+	cases := []struct{ name, expr, want string }{
+		{"output moved after input", `len <= 272000 ? tier("0_272k", p * 6.4 + cr * 0.64 + cc * 8 + cc12h * 16 + c * 32) : tier("272k_plus", p * 12.8 + cr * 1.28 + cc * 16 + cc12h * 32 + c * 48)`, `len <= 272000 ? tier("0_272k", p * 6.4 + c * 32 + cr * 0.64 + cc * 8 + cc12h * 16) : tier("272k_plus", p * 12.8 + c * 48 + cr * 1.28 + cc * 16 + cc12h * 32)`},
+		{"multibyte tier name kept", `tier("480p·none", cr * 1 + p * 2 + c * 3)`, `tier("480p·none", p * 2 + c * 3 + cr * 1)`},
+		{"non-plain body untouched", `tier("audio", max(len - ai, 0) * 0.688 + ai * 6.096 + c * 4.896)`, `tier("audio", max(len - ai, 0) * 0.688 + ai * 6.096 + c * 4.896)`},
+		{"usage terms untouched", `tier("base", u("tokens") * 15.68 / 1000000)`, `tier("base", u("tokens") * 15.68 / 1000000)`},
+		{"missing output untouched", `tier("embed", p * 0.2)`, `tier("embed", p * 0.2)`},
+	}
+	for _, tc := range cases {
+		t.Run(tc.name, func(t *testing.T) {
+			assert.Equal(t, tc.want, ReorderTierTerms(tc.expr))
+		})
+	}
+}
