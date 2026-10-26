@@ -284,6 +284,13 @@
       "released_at": "2026-09-16T00:00:00+08:00",
       "source": "https://i.ifeng.com/c/8wStnR1hIiJ"
     },
+    "doubao-seed-2-1-lite-260915": {
+      "vendor": "字节跳动",
+      "description": "字节 Seed 2.1 系列轻量模型，支持深度思考与文本、图像、视频、音频多模态理解，1M 上下文，兼顾效果与成本，适合高并发通用场景",
+      "tags": "chat,think,vision",
+      "released_at": "2026-09-16T00:00:00+08:00",
+      "source": "https://ark.volcengine.com/region:cn-beijing/model/detail?Id=doubao-seed-2-1-lite"
+    },
     "doubao-seed-evolving": {
       "vendor": "字节跳动",
       "description": "火山引擎于 2026 年 6 月 23 日推出、面向 Coding 与 Agent 场景的持续迭代型 Seed 大模型，依托统一 Model ID 周级自动更新，无需切换接口即可持续获取最新模型能力",
