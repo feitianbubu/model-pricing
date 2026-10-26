@@ -268,6 +268,8 @@
       "description": "旗舰级全能通用模型，面向 Agent 时代的复杂推理与长链路任务执行场景。强调多模态理解、长上下文推理、结构化生成与工具增强执行。复杂指令与多约束执行能力突出，可稳定应对多步复杂规划、复杂图文推理、视频内容理解与高难度分析等场景。",
       "tags": "chat,think,vision",
       "released_at": "2026-02-14T00:00:00+08:00",
+      "retired_at": "2026-11-24T14:00:00+08:00",
+      "deprecation_note": "火山第十批下线，请迁移至 doubao-seed-2-1-lite-260915，详见 https://docs.volcengine.com/docs/82379/1350667",
       "source": "https://seed.bytedance.com/en/blog/seed2-0-%E6%AD%A3%E5%BC%8F%E5%8F%91%E5%B8%83"
     },
     "doubao-seed-2-1-pro-260628": {
@@ -340,6 +342,8 @@
       "tags": "image",
       "endpoints": "[\"openai\"]",
       "released_at": "2025-09-09T00:00:00+08:00",
+      "retired_at": "2026-11-24T14:00:00+08:00",
+      "deprecation_note": "火山第十批下线，请迁移至 doubao-seedream-5-0-pro-260628，详见 https://docs.volcengine.com/docs/82379/1350667",
       "source": "https://seed.bytedance.com/en/blog/%E4%B8%8D%E6%AD%A2%E4%BC%9A-%E7%94%BB-%E6%9B%B4%E4%BC%9A-%E6%83%B3-seedream-4-0-%E5%9B%BE%E5%83%8F%E5%88%9B%E4%BD%9C%E6%A8%A1%E5%9E%8B%E6%AD%A3%E5%BC%8F%E5%8F%91%E5%B8%83"
     },
     "doubao-seedream-4-5-251128": {
@@ -348,6 +352,8 @@
       "tags": "image",
       "endpoints": "[\"openai\"]",
       "released_at": "2025-12-03T00:00:00+08:00",
+      "retired_at": "2026-11-24T14:00:00+08:00",
+      "deprecation_note": "火山第十批下线，请迁移至 doubao-seedream-5-0-pro-260628，详见 https://docs.volcengine.com/docs/82379/1350667",
       "source": "https://finance.eastmoney.com/a/202512033581724048.html"
     },
     "doubao-seedream-5-0-260128": {
@@ -356,6 +362,8 @@
       "tags": "image",
       "endpoints": "[\"openai\"]",
       "released_at": "2026-02-13T00:00:00+08:00",
+      "retired_at": "2026-11-24T14:00:00+08:00",
+      "deprecation_note": "火山第十批下线，请迁移至 doubao-seedream-5-0-pro-260628，详见 https://docs.volcengine.com/docs/82379/1350667",
       "source": "https://seed.bytedance.com/en/blog/deeper-thinking-more-accurate-generation-introducing-seedream-5-0-lite"
     },
     "doubao-seedream-5-0-pro-260628": {
