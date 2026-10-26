@@ -66,6 +66,7 @@
   },
   "cny": {
     "billing_expr": {
+      "image-01-live": "tier(\"image\", fixed(0.025)) * image_count",
       "MiniMax-M2": "tier(\"standard\", p * 2.1 + c * 8.4 + cr * 0.21 + cc * 2.625)",
       "MiniMax-M2.1": "tier(\"standard\", p * 2.1 + c * 8.4 + cr * 0.21 + cc * 2.625)",
       "MiniMax-M2.5": "tier(\"standard\", p * 2.1 + c * 8.4 + cr * 0.21 + cc * 2.625)",
@@ -132,6 +133,7 @@
       "z-image-turbo": "u(\"prompt_extend\") == true ? tier(\"prompt_extend\", u(\"image_count\") * 0.2) : tier(\"base\", u(\"image_count\") * 0.1)"
     },
     "billing_mode": {
+      "image-01-live": "tiered_expr",
       "MiniMax-M2": "tiered_expr",
       "MiniMax-M2.1": "tiered_expr",
       "MiniMax-M2.5": "tiered_expr",
@@ -256,7 +258,6 @@
       "happyhorse-1.1-t2v": 0.9,
       "hy-3d-3.1": 2.4,
       "hy-3d-express": 1.8,
-      "image-01-live": 0.025,
       "jimeng_realman_avatar_picture_omni_v15": 1.0,
       "jimeng_v30": 0.3,
       "jimeng_v30_1080p": 0.6,
