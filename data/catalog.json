@@ -625,6 +625,13 @@
       "released_at": "2026-09-29T00:00:00-07:00",
       "source": "https://openai.com/index/introducing-gpt-6-1-sol/"
     },
+    "gpt-6.1-terra": {
+      "vendor": "OpenAI",
+      "description": "OpenAI GPT-6 系列中端模型，GPT-5.6 Terra 升级版，面向视觉推理、电脑操作与日常办公写作，速度快、成本低，API Token 定价为 GPT-6.1 Sol 的一半",
+      "tags": "chat,think,vision",
+      "released_at": "2026-10-26T00:00:00-07:00",
+      "source": "https://openai.com/index/introducing-gpt-6-1-terra/"
+    },
     "gpt-image-1.5": {
       "vendor": "OpenAI",
       "description": "GPT-Image-1.5 是 OpenAI 于 2025 年 12 月 17 日发布的旗舰级图像生成与编辑模型，生成速度较前代最高提升 4 倍，支持精准多轮编辑且保持细节一致性，文字渲染更清晰。",
