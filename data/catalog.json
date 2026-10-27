@@ -106,7 +106,8 @@
   "models": {
     "charge": {
       "vendor": "Local",
-      "description": "网关扣费模型"
+      "description": "网关扣费模型",
+      "tags": "charge"
     },
     "claude-fable-5": {
       "vendor": "Anthropic",
