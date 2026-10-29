@@ -819,6 +819,13 @@
       "released_at": "2026-10-24T00:00:00+08:00",
       "source": "https://platform.kimi.com/docs/guide/kimi-k3-1-pro-quickstart.md"
     },
+    "kling-4.0": {
+      "vendor": "快手",
+      "description": "快手可灵新一代视频生成模型，单次原生生成 3-30 秒带立体声的音画视频，支持文生、图生、最多 10 张关键帧、全能参考(图片/视频/主体/音色)与视频编辑",
+      "tags": "video",
+      "released_at": "2026-10-15T00:00:00+08:00",
+      "source": "https://klingai.com/dev/model-release/kling-4"
+    },
     "kling-v3": {
       "vendor": "快手",
       "description": "快手 2026 年 2 月推出的原生音画同步 AI 视频生成模型，支持最长 15 秒多镜头叙事、4K 分辨率与强角色一致性，含标准版与 Omni 多模态版",
