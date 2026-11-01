@@ -458,7 +458,7 @@
     "gemini-omni-1.1-flash-preview": {
       "vendor": "Google",
       "description": "Google Gemini Omni 1.1 Flash 预览版，Vertex Interactions API 上的快速对话式视频生成与编辑模型，支持文生/图生视频、视频延长与首尾帧插值，生成 3–10 秒带音频视频，输出 360p/720p/1080p/4K",
-      "tags": "video,second",
+      "tags": "video",
       "released_at": "2026-08-27T00:00:00-07:00",
       "source": "https://docs.cloud.google.com/gemini-enterprise-agent-platform/models/gemini/omni-1-1-flash"
     },
