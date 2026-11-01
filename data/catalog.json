@@ -455,6 +455,13 @@
       "description": "Google 于 2026‑10‑06 发布的高效率图像生成与对话式编辑模型，作为 Nano Banana 2 的迭代版本，在维持 Flash 级速度与成本优势的同时，提升画质、提示词遵从度、多轮角色一致性、文本渲染等能力，最高支持 4K 输出、14 张参考图融合与搜索接地能力",
       "tags": "image"
     },
+    "gemini-omni-1.1-flash-preview": {
+      "vendor": "Google",
+      "description": "Google Gemini Omni 1.1 Flash 预览版，Vertex Interactions API 上的快速对话式视频生成与编辑模型，支持文生/图生视频、视频延长与首尾帧插值，生成 3–10 秒带音频视频，输出 360p/720p/1080p/4K",
+      "tags": "video,second",
+      "released_at": "2026-08-27T00:00:00-07:00",
+      "source": "https://docs.cloud.google.com/gemini-enterprise-agent-platform/models/gemini/omni-1-1-flash"
+    },
     "glm-4.6": {
       "vendor": "智谱",
       "description": "GLM-4.6 是由 zhipuai-coding-plan 提供的人工智能模型。",

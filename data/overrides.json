@@ -38,6 +38,7 @@
   },
   "billing_mode": {
     "gemini-nano-banana-2.1": "tiered_expr",
+    "gemini-omni-1.1-flash-preview": "tiered_expr",
     "gpt-image-2.5-flare": "tiered_expr",
     "gpt-image-2.5-sunburst": "tiered_expr",
     "jev-1.13.0": "tiered_expr",
@@ -48,6 +49,7 @@
   },
   "billing_expr": {
     "gemini-nano-banana-2.1": "tier(\"standard\", p * 2.4 + c * 48)",
+    "gemini-omni-1.1-flash-preview": "u(\"resolution\") == \"360p\" ? tier(\"360p\", u(\"seconds\") * 0.0541) : u(\"resolution\") == \"720p\" ? tier(\"720p\", u(\"seconds\") * 0.1622) : u(\"resolution\") == \"1080p\" ? tier(\"1080p\", u(\"seconds\") * 0.2433) : tier(\"4k\", u(\"seconds\") * 0.4865)",
     "gpt-image-2.5-flare": "tier(\"standard\", p * 8 + cr * 2 + img * 12.8 + img_cr * 3.2 + c * 48)",
     "gpt-image-2.5-sunburst": "tier(\"standard\", p * 8 + cr * 2 + img * 12.8 + img_cr * 3.2 + c * 48)",
     "jev-1.13.0": "tier(\"base\", u(\"input_tokens\") * 0.0672 / 1000000)",
