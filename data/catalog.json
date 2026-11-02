@@ -75,6 +75,10 @@
       "icon": "Wikipedia.Color"
     },
     "Zhipu AI Coding Plan": {},
+    "xAI": {
+      "description": "xAI 模型供应商，Grok 系列",
+      "icon": "Grok.Color"
+    },
     "即梦": {
       "description": "即梦 AI 模型供应商",
       "icon": "Jimeng.Color"
@@ -662,6 +666,13 @@
       "tags": "voice-chat",
       "released_at": "2026-07-06T00:00:00-07:00",
       "source": "https://developers.openai.com/api/docs/changelog"
+    },
+    "grok-4.7": {
+      "vendor": "xAI",
+      "description": "xAI 面向编码、智能体任务与知识工作的旗舰模型，500K 上下文，支持文本与图像输入、工具调用、结构化输出和四档可调推理强度，在复杂任务上会更长时间推理并自检结果",
+      "tags": "chat,think,vision",
+      "released_at": "2026-09-30T00:00:00-07:00",
+      "source": "https://docs.x.ai/docs/models"
     },
     "happyhorse-1.0-i2v": {
       "vendor": "阿里巴巴",
