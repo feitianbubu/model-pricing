@@ -898,6 +898,8 @@
       "description": "MiniMax 最新旗舰 LLM2.5",
       "tags": "chat,think",
       "released_at": "2026-02-12T00:00:00+08:00",
+      "retired_at": "2026-11-18T00:00:00+08:00",
+      "deprecation_note": "上游计划下线，请升级至 MiniMax-M3.1-Flash，详见 https://platform.minimax.cn/docs/faq/models",
       "source": "https://www.minimax.io/news/minimax-m25"
     },
     "MiniMax-M2.7": {
@@ -905,6 +907,8 @@
       "description": "主打「模型自我进化」的 Agent 旗舰大模型，通过 Agent Harness 深度参与自身训练迭代，实现高性价比与强工具调用能力。",
       "tags": "chat,think,vision",
       "released_at": "2026-03-18T00:00:00+08:00",
+      "retired_at": "2026-11-18T00:00:00+08:00",
+      "deprecation_note": "上游计划下线，请升级至 MiniMax-M3.1-Flash，详见 https://platform.minimax.cn/docs/faq/models",
       "source": "https://platform.minimax.io/docs/release-notes/models"
     },
     "MiniMax-M3": {
