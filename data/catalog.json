@@ -1358,6 +1358,13 @@
       "released_at": "2026-02-11T00:00:00+08:00",
       "source": "https://platform.vidu.com/docs/api-reference/updates"
     },
+    "viduq4-preview": {
+      "vendor": "Vidu",
+      "description": "生数科技 2026-10-08 上线的 Vidu Q4 预览版视频生成模型，支持图生视频与参考生视频，3–16 秒，最高 4K、24fps，按分辨率积分计费",
+      "tags": "video",
+      "released_at": "2026-10-08T00:00:00+08:00",
+      "source": "https://platform.vidu.cn/docs/api-reference/updates"
+    },
     "volc.seedasr.auc": {
       "vendor": "字节跳动",
       "description": "豆包大模型语音识别 2.0 版（Doubao-Seed-ASR-2.0） 是字节跳动火山引擎推出的新一代语音识别系统，突破性支持多模态视觉辅助识别、13 种外语、强上下文推理，大幅提升专有名词与混淆词准确率 1token/秒",
