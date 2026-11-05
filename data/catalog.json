@@ -765,6 +765,13 @@
       "released_at": "2026-07-06T00:00:00+08:00",
       "source": "https://www.ithome.com/0/973/106.htm"
     },
+    "hy4": {
+      "vendor": "Tencent",
+      "description": "腾讯混元于 2026-11-04 发布的 Hy4 正式版，总参 770B、激活 49B MoE，支持 1M 上下文，相比 preview 强化 Agent 与长程生产力任务，首次引入视觉理解与 Computer Use",
+      "tags": "chat,think,vision",
+      "released_at": "2026-11-04T00:00:00+08:00",
+      "source": "https://cloud.tencent.com/document/product/1823/130675"
+    },
     "hy4-preview": {
       "vendor": "Tencent",
       "description": "腾讯混元于 2026‑08‑28 发布的开源 MoE 大语言模型，总参 770B、激活 49B，支持 1M 上下文，面向代码、办公、科研、游戏开发等生产力场景",
