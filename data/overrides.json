@@ -39,6 +39,7 @@
   "billing_mode": {
     "gemini-nano-banana-2.1": "tiered_expr",
     "gemini-omni-1.1-flash-preview": "tiered_expr",
+    "gemini-omni-1.2-flash": "tiered_expr",
     "gpt-image-2.5-flare": "tiered_expr",
     "gpt-image-2.5-sunburst": "tiered_expr",
     "gpt-image-2.6-flare": "tiered_expr",
@@ -52,6 +53,7 @@
   "billing_expr": {
     "gemini-nano-banana-2.1": "tier(\"standard\", p * 2.4 + c * 48)",
     "gemini-omni-1.1-flash-preview": "tier(\"standard\", u(\"input_tokens\") * 2.4 / 1000000 + u(\"output_tokens\") * 14.4 / 1000000 + u(\"video_tokens\") * 28 / 1000000)",
+    "gemini-omni-1.2-flash": "tier(\"standard\", u(\"input_tokens\") * 2.4 / 1000000 + u(\"output_tokens\") * 14.4 / 1000000 + u(\"video_tokens\") * 19.2 / 1000000)",
     "gpt-image-2.5-flare": "tier(\"standard\", p * 8 + cr * 2 + img * 12.8 + img_cr * 3.2 + c * 48)",
     "gpt-image-2.5-sunburst": "tier(\"standard\", p * 8 + cr * 2 + img * 12.8 + img_cr * 3.2 + c * 48)",
     "gpt-image-2.6-flare": "tier(\"standard\", p * 8 + cr * 2 + img * 12.8 + img_cr * 3.2 + c * 48)",

@@ -466,6 +466,13 @@
       "released_at": "2026-08-27T00:00:00-07:00",
       "source": "https://docs.cloud.google.com/gemini-enterprise-agent-platform/models/gemini/omni-1-1-flash"
     },
+    "gemini-omni-1.2-flash": {
+      "vendor": "Google",
+      "description": "Google Gemini Omni 1.2 Flash 正式版，Vertex Interactions API 上的快速对话式视频生成与编辑模型，支持文生/图生/多参考图视频、视频延长与首尾帧插值，生成 3–15 秒带音频视频，输出 360p/720p/1080p/4K",
+      "tags": "video",
+      "released_at": "2026-11-05T00:00:00-08:00",
+      "source": "https://docs.cloud.google.com/gemini-enterprise-agent-platform/models/gemini/omni-1-2-flash"
+    },
     "glm-4.6": {
       "vendor": "智谱",
       "description": "GLM-4.6 是由 zhipuai-coding-plan 提供的人工智能模型。",
