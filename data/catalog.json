@@ -435,6 +435,8 @@
       "description": "谷歌 2026 年 7 月推出的主力原生多模态商用轻量模型，相较 3.5 Flash 代码与智能体能力增强、Token 利用率更高、定价下调，适配大规模多步骤任务、代码开发与图文音视频处理",
       "tags": "chat,think,vision",
       "released_at": "2026-07-21T00:00:00-07:00",
+      "retired_at": "2026-11-19T00:00:00+08:00",
+      "deprecation_note": "上游计划下线，请升级至 gemini-3.8-flash，详见 https://docs.cloud.google.com/vertex-ai/generative-ai/docs/learn/model-versions",
       "source": "https://9to5google.com/2026/07/21/gemini-3-6-flash-launch/"
     },
     "gemini-3.7-flash": {
