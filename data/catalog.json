@@ -127,6 +127,13 @@
       "released_at": "2026-09-01T00:00:00-07:00",
       "source": "https://platform.claude.com/docs/en/release-notes/overview"
     },
+    "claude-fable-5-2": {
+      "vendor": "Anthropic",
+      "description": "Anthropic 面向高强度推理与长周期 Agent 任务的旗舰大模型，1M 上下文、128K 最大输出、常开自适应思考，较 Fable 5.1 提速约 30% 且价格下调 20%",
+      "tags": "chat,think,vision",
+      "released_at": "2026-11-09T00:00:00-08:00",
+      "source": "https://platform.claude.com/docs/en/release-notes/overview"
+    },
     "claude-haiku-4-5-20251001": {
       "vendor": "Anthropic",
       "description": "具备延伸思考与上下文感知能力，以两倍于 Sonnet 4 的速度、三分之一的成本提供接近前沿的编程、推理及图文处理性能，适用于实时交互、大规模部署等场景。",
