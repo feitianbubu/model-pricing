@@ -895,6 +895,13 @@
       "released_at": "2026-07-31T00:00:00+08:00",
       "source": "https://platform.minimax.io/docs/release-notes/models"
     },
+    "MiniMax-H3-Image": {
+      "vendor": "MiniMax",
+      "description": "MiniMax 开源图像生成与编辑模型，指令遵循精准，文生图与多图参考编辑一体，支持 1K/2K/4K 与任意宽高比输出",
+      "tags": "image",
+      "released_at": "2026-11-10T00:00:00+08:00",
+      "source": "https://platform.minimaxi.com/docs/guides/image-generation"
+    },
     "MiniMax-H3-Max": {
       "vendor": "MiniMax",
       "description": "MiniMax 于 2026-8-29 联合 fal.ai 推出，是面向低时延实时场景的 H3 加速视频基座模型，主打超高吞吐、快速生成 768P 带原生立体声的 5‑15 秒短视频，适配 AI 直播、流式视频生成等业务场景",

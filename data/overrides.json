@@ -69,6 +69,7 @@
   "cny": {
     "billing_expr": {
       "image-01-live": "tier(\"image\", fixed(0.025)) * image_count",
+      "MiniMax-H3-Image": "tier(\"standard\", p * 15 + img * 10 + c * 25)",
       "MiniMax-M2": "tier(\"standard\", p * 2.1 + c * 8.4 + cr * 0.21 + cc * 2.625)",
       "MiniMax-M2.1": "tier(\"standard\", p * 2.1 + c * 8.4 + cr * 0.21 + cc * 2.625)",
       "MiniMax-M2.5": "tier(\"standard\", p * 2.1 + c * 8.4 + cr * 0.21 + cc * 2.625)",
@@ -138,6 +139,7 @@
     },
     "billing_mode": {
       "image-01-live": "tiered_expr",
+      "MiniMax-H3-Image": "tiered_expr",
       "MiniMax-M2": "tiered_expr",
       "MiniMax-M2.1": "tiered_expr",
       "MiniMax-M2.5": "tiered_expr",
