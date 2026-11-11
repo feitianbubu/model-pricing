@@ -463,6 +463,13 @@
       "description": "Google 于 2026-0930 发布的旗舰前沿大模型，主打长流程深度推理，最高支持 100 万 token 输出，重点面向软件工程、网络安全防御、金融法律等复杂专业任务",
       "tags": "chat,think,vision"
     },
+    "gemini-4-carbon": {
+      "vendor": "Google",
+      "description": "Google 最强推理模型，面向长时间持续的智能体编码、复杂软件工程、多模态知识工作与科学推理，支持 100 万 token 上下文与三档思考强度",
+      "tags": "chat,think,vision",
+      "released_at": "2026-11-10T00:00:00-08:00",
+      "source": "https://aistudio.google.com/docs/changelog"
+    },
     "gemini-nano-banana-2.1": {
       "vendor": "Google",
       "description": "Google 于 2026‑10‑06 发布的高效率图像生成与对话式编辑模型，作为 Nano Banana 2 的迭代版本，在维持 Flash 级速度与成本优势的同时，提升画质、提示词遵从度、多轮角色一致性、文本渲染等能力，最高支持 4K 输出、14 张参考图融合与搜索接地能力",
