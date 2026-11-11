@@ -460,12 +460,14 @@
     },
     "gemini-4-argon": {
       "vendor": "Google",
-      "description": "Google 于 2026-0930 发布的旗舰前沿大模型，主打长流程深度推理，最高支持 100 万 token 输出，重点面向软件工程、网络安全防御、金融法律等复杂专业任务",
-      "tags": "chat,think,vision"
+      "description": "Gemini 4 系列高效前沿推理模型，响应更快、单轮 token 消耗更低，支持 100 万 token 上下文与长输出，适合复杂编码、智能体、数学与科学任务",
+      "tags": "chat,think,vision",
+      "released_at": "2026-10-13T00:00:00-07:00",
+      "source": "https://aistudio.google.com/docs/changelog"
     },
     "gemini-4-carbon": {
       "vendor": "Google",
-      "description": "Google 最强推理模型，面向长时间持续的智能体编码、复杂软件工程、多模态知识工作与科学推理，支持 100 万 token 上下文与三档思考强度",
+      "description": "Gemini 4 系列最强推理模型，擅长长时间持续的智能体编码、复杂软件工程、多模态知识工作与科学推理，支持 100 万 token 上下文与三档思考强度",
       "tags": "chat,think,vision",
       "released_at": "2026-11-10T00:00:00-08:00",
       "source": "https://aistudio.google.com/docs/changelog"
@@ -678,14 +680,14 @@
     },
     "gpt-image-2.6-flare": {
       "vendor": "OpenAI",
-      "description": "OpenAI 于 2026 年 11 月 4 日发布、面向 API 的图像生成与编辑模型，为 2.6 系列速度优先版本，新增 complexity 规划档位、markup 标注引导编辑、SVG 与动态 GIF 输出，适合交互式快速迭代场景",
+      "description": "速度优先的图像生成与编辑模型，适合交互式快速迭代，支持 complexity 规划档位、markup 标注引导编辑、SVG 与动态 GIF 输出",
       "tags": "image",
       "released_at": "2026-11-04T00:00:00-08:00",
       "source": "https://developers.openai.com/api/docs/changelog"
     },
     "gpt-image-2.6-sunburst": {
       "vendor": "OpenAI",
-      "description": "OpenAI 于 2026 年 11 月 4 日发布的 GPT-Image-2.6-Sunburst 是 API 端图像生成编辑模型，主打复杂构图与精细编辑，新增 complexity 规划档位、markup 标注引导编辑、SVG 与动态 GIF 输出",
+      "description": "擅长复杂构图与精细编辑的图像生成与编辑模型，支持 complexity 规划档位、markup 标注引导编辑、SVG 与动态 GIF 输出",
       "tags": "image",
       "released_at": "2026-11-04T00:00:00-08:00",
       "source": "https://developers.openai.com/api/docs/changelog"
@@ -790,7 +792,7 @@
     },
     "hy4": {
       "vendor": "Tencent",
-      "description": "腾讯混元于 2026-11-04 发布的 Hy4 正式版，总参 770B、激活 49B MoE，支持 1M 上下文，相比 preview 强化 Agent 与长程生产力任务，首次引入视觉理解与 Computer Use",
+      "description": "770B 总参、49B 激活的 MoE 旗舰大模型，支持 1M 上下文，强化 Agent 与长程生产力任务，具备视觉理解与 Computer Use 能力",
       "tags": "chat,think,vision",
       "released_at": "2026-11-04T00:00:00+08:00",
       "source": "https://cloud.tencent.com/document/product/1823/130675"
@@ -1411,7 +1413,7 @@
     },
     "viduq4-preview": {
       "vendor": "Vidu",
-      "description": "生数科技 2026-10-08 上线的 Vidu Q4 预览版视频生成模型，支持图生视频与参考生视频，3–16 秒，最高 4K、24fps，按分辨率积分计费",
+      "description": "支持图生视频与参考生视频的预览版视频生成模型，时长 3–16 秒，最高 4K、24fps，按分辨率积分计费",
       "tags": "video",
       "released_at": "2026-10-08T00:00:00+08:00",
       "source": "https://platform.vidu.cn/docs/api-reference/updates"
