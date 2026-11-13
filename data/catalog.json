@@ -377,6 +377,13 @@
       "released_at": "2026-07-08T00:00:00+08:00",
       "source": "https://seed.bytedance.com/en/blog/beyond-generation-it-understands-design-introducing-seedream-5-0-pro"
     },
+    "doubao-seedream-5-5-261028": {
+      "vendor": "字节跳动",
+      "description": "图像创作模型，强化多轮精准编辑与局部定位修改，支持原生透明背景（RGBA）出图，图层拆分最多 1 张底图加 99 个图层并可返回富文本 OCR",
+      "tags": "image",
+      "released_at": "2026-10-28T00:00:00+08:00",
+      "source": "https://www.volcengine.com/docs/82379/1159178"
+    },
     "fun-asr-realtime": {
       "vendor": "阿里巴巴",
       "description": "阿里云百炼通义实验室推出的流式实时语音识别模型，依托 WebSocket 双工流式传输实现百毫秒级低延迟转写，支持 30 种语言、16 种方言，具备上下文纠错、热词定制、VAD 智能断句、字级时间戳输出能力，适配直播字幕、实时会议、在线语音通话等云端实时音频识别场景",
