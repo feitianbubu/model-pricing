@@ -343,6 +343,13 @@
       "released_at": "2026-07-31T00:00:00+08:00",
       "source": "https://m.thepaper.cn/newsDetail_forward_33740258"
     },
+    "doubao-seedance-2-5-flash-261115": {
+      "vendor": "字节跳动",
+      "description": "轻量版视频生成模型，支持文生视频、首帧与首尾帧生视频、全模态参考、视频编辑和视频延长，单段最长 30 秒，输出 480p 与 720p，成本更低，适合高频批量的视频生成场景",
+      "tags": "video",
+      "released_at": "2026-11-15T00:00:00+08:00",
+      "source": "https://docs.volcengine.com/docs/ark/seedance-2-5"
+    },
     "doubao-seedream-4-0-250828": {
       "vendor": "字节跳动",
       "description": "字节 Seed 团队 2025 年推出的新一代商用图像生成模型，原生支持 4K 高清输出、多图融合与批量组图生成，推理速度大幅提升，中文文字渲染、人物主体一致性与精细图像编辑能力行业顶尖",
