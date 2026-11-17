@@ -668,7 +668,7 @@
       "tags": "image",
       "released_at": "2025-12-16T00:00:00-08:00",
       "retired_at": "2026-12-01T00:00:00+08:00",
-      "deprecation_note": "上游计划下线，请升级至 gpt-image-2，详见 https://developers.openai.com/api/docs/deprecations",
+      "deprecation_note": "上游计划下线，请升级至 gpt-image-2.6-sunburst 或 gpt-image-2.6-flare，详见 https://developers.openai.com/api/docs/deprecations",
       "source": "https://developers.openai.com/api/docs/changelog"
     },
     "gpt-image-2": {
