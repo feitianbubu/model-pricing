@@ -1175,6 +1175,13 @@
       "released_at": "2026-09-17T00:00:00+08:00",
       "source": "https://help.aliyun.com/zh/model-studio/newly-released-models"
     },
+    "qwen4-max": {
+      "vendor": "阿里巴巴",
+      "description": "新一代旗舰多模态模型，集文本生成、图片 / 视频理解与深度思考于一体，1M 上下文，面向编程、办公、前端设计和复杂智能体任务，支持联网搜索、工具调用与结构化输出",
+      "tags": "chat,think,vision",
+      "released_at": "2026-11-16T00:00:00+08:00",
+      "source": "https://help.aliyun.com/zh/model-studio/qwen4-max"
+    },
     "S2V-01": {
       "vendor": "MiniMax",
       "description": "MiniMax 为 “海螺 AI” 打造的单图主体参考视频生成模型，核心能力是上传一张人物 / 主体图 + 文本提示，即可生成主体稳定、细节还原度高、自由度强的短视频，大幅降低角色一致性与创作成本",
