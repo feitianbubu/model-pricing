@@ -662,6 +662,20 @@
       "released_at": "2026-10-26T00:00:00-07:00",
       "source": "https://openai.com/index/introducing-gpt-6-1-terra/"
     },
+    "gpt-6.2-astra": {
+      "vendor": "OpenAI",
+      "description": "面向最高难度项目的旗舰模型，可端到端完成软件构建与修改、电脑操作和文档处理，105 万上下文，最大输出 12.8 万 token",
+      "tags": "chat,think,vision",
+      "released_at": "2026-11-17T00:00:00-08:00",
+      "source": "https://developers.openai.com/api/docs/models/gpt-6.2-astra"
+    },
+    "gpt-6.2-sol": {
+      "vendor": "OpenAI",
+      "description": "以更低成本处理复杂工作的主力模型，面向日常编程与智能体工作流",
+      "tags": "chat,think,vision",
+      "released_at": "2026-11-17T00:00:00-08:00",
+      "source": "https://developers.openai.com/api/docs/models/gpt-6.2-sol"
+    },
     "gpt-image-1.5": {
       "vendor": "OpenAI",
       "description": "GPT-Image-1.5 是 OpenAI 于 2025 年 12 月 17 日发布的旗舰级图像生成与编辑模型，生成速度较前代最高提升 4 倍，支持精准多轮编辑且保持细节一致性，文字渲染更清晰。",
