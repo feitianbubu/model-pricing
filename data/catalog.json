@@ -486,6 +486,20 @@
       "released_at": "2026-11-10T00:00:00-08:00",
       "source": "https://aistudio.google.com/docs/changelog"
     },
+    "gemini-4-hydrogen": {
+      "vendor": "Google",
+      "description": "Gemini 4 系列快速高性价比模型，兼顾速度与效率，适合日常编码与智能体工作流，支持四档思考强度",
+      "tags": "chat,think,vision",
+      "released_at": "2026-11-12T00:00:00-08:00",
+      "source": "https://aistudio.google.com/docs/changelog"
+    },
+    "gemini-4-neon": {
+      "vendor": "Google",
+      "description": "Gemini 4 系列前沿智能模型，端到端任务完成速度快，适合复杂软件工程、知识工作与科学任务，支持 100 万 token 上下文与四档思考强度",
+      "tags": "chat,think,vision",
+      "released_at": "2026-11-18T00:00:00-08:00",
+      "source": "https://aistudio.google.com/docs/changelog"
+    },
     "gemini-nano-banana-2.1": {
       "vendor": "Google",
       "description": "Google 于 2026‑10‑06 发布的高效率图像生成与对话式编辑模型，作为 Nano Banana 2 的迭代版本，在维持 Flash 级速度与成本优势的同时，提升画质、提示词遵从度、多轮角色一致性、文本渲染等能力，最高支持 4K 输出、14 张参考图融合与搜索接地能力",
