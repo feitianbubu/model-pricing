@@ -41,7 +41,7 @@ func main() {
 	factor := flag.Float64("factor", 1.6, "real-USD to accounting-USD multiplier (real exchange rate / USDExchangeRate)")
 	cnyRate := flag.Float64("cny-rate", 5, "CNY to accounting-USD divisor (USDExchangeRate) applied to the overrides \"cny\" block")
 	overridesPath := flag.String("overrides", "data/overrides.json", "hand-maintained entries in accounting units")
-	modelsPath := flag.String("models", "data/models.json", "allowlist of published model names; the only thing that decides membership")
+	modelsPath := flag.String("models", "data/models.json", "allowlist of published model names; with the catalog retired_at dates, the only thing that decides membership")
 	out := flag.String("out", "docs/ratio_config.json", "output path served by GitHub Pages")
 	catalogPath := flag.String("catalog", "data/catalog.json", "hand-maintained model metadata published for the gateway metadata sync")
 	flag.Parse()
@@ -110,18 +110,13 @@ func main() {
 	if err != nil {
 		log.Fatalf("load overrides: %v", err)
 	}
-	// Membership comes only from the allowlist, never from channel state, so
-	// a disabled channel cannot make a model flicker out of the preset.
-	for _, field := range syncFields {
-		entries, ok := data[field].(map[string]any)
-		if !ok {
-			continue
-		}
-		for name := range entries {
-			if _, listed := allowlist[name]; !listed {
-				delete(entries, name)
-			}
-		}
+	catalog, err := loadCatalog(*catalogPath)
+	if err != nil {
+		log.Fatalf("catalog %s: %v", *catalogPath, err)
+	}
+	retired, err := retiredModels(catalog, time.Now())
+	if err != nil {
+		log.Fatalf("catalog %s: %v", *catalogPath, err)
 	}
 	for field, entries := range local {
 		target, ok := data[field].(map[string]any)
@@ -136,15 +131,28 @@ func main() {
 			target[name] = value
 		}
 	}
+	// Membership comes only from the allowlist and catalog retirement dates, never
+	// from channel state, so a disabled channel cannot make a model flicker out.
+	for _, field := range syncFields {
+		entries, ok := data[field].(map[string]any)
+		if !ok {
+			continue
+		}
+		for name := range entries {
+			if _, listed := allowlist[name]; !listed || retired[name] {
+				delete(entries, name)
+			}
+		}
+	}
 	priced := modelNames(data)
 	var uncovered []string
 	for name := range allowlist {
-		if _, ok := priced[name]; !ok {
+		if _, ok := priced[name]; !ok && !retired[name] {
 			uncovered = append(uncovered, name)
 		}
 	}
 	sort.Strings(uncovered)
-	fmt.Printf("allowlisted %d models, priced %d, uncovered %d: %v\n", len(allowlist), len(priced), len(uncovered), uncovered)
+	fmt.Printf("allowlisted %d models, priced %d, retired %d, uncovered %d: %v\n", len(allowlist), len(priced), len(retired), len(uncovered), uncovered)
 
 	// struct keeps the summary fields ahead of the large data map
 	payload, err := json.MarshalIndent(struct {
@@ -164,7 +172,7 @@ func main() {
 	}
 	fmt.Printf("wrote %s (%d models, factor %v)\n", *out, len(modelNames(data)), *factor)
 
-	count, err := writeCatalog(*catalogPath, filepath.Dir(*out), allowlist)
+	count, err := writeCatalog(catalog, filepath.Dir(*out), allowlist)
 	if err != nil {
 		log.Fatalf("catalog %s: %v", *catalogPath, err)
 	}

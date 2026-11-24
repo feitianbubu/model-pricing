@@ -65,16 +65,38 @@ func unixOrZero(value string) (int64, error) {
 	return t.Unix(), nil
 }
 
-// Every locale gets the same file because the gateway requests one per UI language.
-func writeCatalog(path, outDir string, allowlist map[string]struct{}) (int, error) {
+// Models are often still served for a while after retired_at, so their prices
+// stay in the preset for this long before the gateway's price sync stops offering them.
+const retiredPriceGrace = 30 * 24 * time.Hour
+
+func loadCatalog(path string) (catalogFile, error) {
+	var file catalogFile
 	raw, err := os.ReadFile(path)
 	if err != nil {
-		return 0, err
+		return file, err
 	}
-	var file catalogFile
-	if err := json.Unmarshal(raw, &file); err != nil {
-		return 0, err
+	return file, json.Unmarshal(raw, &file)
+}
+
+func retiredModels(file catalogFile, now time.Time) (map[string]bool, error) {
+	retired := make(map[string]bool)
+	for name, m := range file.Models {
+		if m.RetiredAt == "" {
+			continue
+		}
+		at, err := time.Parse(time.RFC3339, m.RetiredAt)
+		if err != nil {
+			return nil, fmt.Errorf("model %q: retired_at: %w", name, err)
+		}
+		if now.Sub(at) >= retiredPriceGrace {
+			retired[name] = true
+		}
 	}
+	return retired, nil
+}
+
+// Every locale gets the same file because the gateway requests one per UI language.
+func writeCatalog(file catalogFile, outDir string, allowlist map[string]struct{}) (int, error) {
 	models := make([]newapiModel, 0, len(file.Models))
 	for name, m := range file.Models {
 		if _, ok := allowlist[name]; !ok {
