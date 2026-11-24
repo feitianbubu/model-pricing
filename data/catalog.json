@@ -1221,6 +1221,8 @@
       "description": "MiniMax 为 “海螺 AI” 打造的单图主体参考视频生成模型，核心能力是上传一张人物 / 主体图 + 文本提示，即可生成主体稳定、细节还原度高、自由度强的短视频，大幅降低角色一致性与创作成本",
       "tags": "video",
       "released_at": "2025-01-10T00:00:00+08:00",
+      "retired_at": "2026-12-08T00:00:00+08:00",
+      "deprecation_note": "MiniMax 官方模型列表已不再收录，请升级至 MiniMax-H3（参考生成），详见 https://platform.minimaxi.com/docs/faq/models",
       "source": "https://www.minimax.io/news/s2v-01-release"
     },
     "search_pro": {
