@@ -844,6 +844,8 @@
       "description": "腾讯混元于 2026‑08‑28 发布的开源 MoE 大语言模型，总参 770B、激活 49B，支持 1M 上下文，面向代码、办公、科研、游戏开发等生产力场景",
       "tags": "chat,think",
       "released_at": "2026-08-28T00:00:00+08:00",
+      "retired_at": "2026-12-07T00:00:00+08:00",
+      "deprecation_note": "上游计划下线，请升级至 hy4，详见 https://cloud.tencent.com/announce/detail/2559",
       "source": "http://www.news.cn/tech/20260828/b12d8417291b4193ba9e5d435a1a40db/c.html"
     },
     "hyper3d-gen2-260112": {
