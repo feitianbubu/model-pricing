@@ -596,7 +596,7 @@
       "tags": "asr",
       "released_at": "2025-03-20T00:00:00-07:00",
       "retired_at": "2027-02-26T00:00:00+08:00",
-      "deprecation_note": "上游计划下线,详见 https://developers.openai.com/api/docs/deprecations",
+      "deprecation_note": "OpenAI 计划下线,详见 https://developers.openai.com/api/docs/deprecations",
       "source": "https://developers.openai.com/api/docs/changelog"
     },
     "gpt-5-search-api": {
@@ -845,7 +845,7 @@
       "tags": "chat,think",
       "released_at": "2026-08-28T00:00:00+08:00",
       "retired_at": "2026-12-07T00:00:00+08:00",
-      "deprecation_note": "上游计划下线，请升级至 hy4，详见 https://cloud.tencent.com/announce/detail/2559",
+      "deprecation_note": "腾讯云计划下线，请升级至 hy4，详见 https://cloud.tencent.com/announce/detail/2559",
       "source": "http://www.news.cn/tech/20260828/b12d8417291b4193ba9e5d435a1a40db/c.html"
     },
     "hyper3d-gen2-260112": {
@@ -1573,7 +1573,7 @@
       "tags": "asr",
       "released_at": "2022-09-21T00:00:00-07:00",
       "retired_at": "2027-02-26T00:00:00+08:00",
-      "deprecation_note": "上游计划下线,详见 https://developers.openai.com/api/docs/deprecations",
+      "deprecation_note": "OpenAI 计划下线,详见 https://developers.openai.com/api/docs/deprecations",
       "source": "https://openai.com/index/whisper/"
     },
     "wiki": {
