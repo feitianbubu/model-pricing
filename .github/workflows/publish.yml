@@ -50,4 +50,6 @@ jobs:
       - uses: actions/upload-pages-artifact@v5
         with:
           path: docs
+      # the artifact is not always listed the moment the upload returns
+      - run: sleep 3
       - uses: actions/deploy-pages@v5
