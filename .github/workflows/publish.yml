@@ -21,7 +21,10 @@ jobs:
     runs-on: ubuntu-latest
     environment: github-pages
     steps:
+      # a re-run after its first attempt pushed a bump must build from that bump
       - uses: actions/checkout@v7
+        with:
+          ref: main
       - uses: actions/setup-go@v7
         with:
           go-version: '1.25'
