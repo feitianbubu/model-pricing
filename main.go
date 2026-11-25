@@ -8,6 +8,7 @@
 package main
 
 import (
+	"bytes"
 	"encoding/json"
 	"flag"
 	"fmt"
@@ -155,19 +156,29 @@ func main() {
 	fmt.Printf("allowlisted %d models, priced %d, retired %d, uncovered %d: %v\n", len(allowlist), len(priced), len(retired), len(uncovered), uncovered)
 
 	// struct keeps the summary fields ahead of the large data map
-	payload, err := json.MarshalIndent(struct {
-		Success     bool           `json:"success"`
-		GeneratedAt string         `json:"generated_at"`
-		ModelCount  int            `json:"model_count"`
-		Data        map[string]any `json:"data"`
-	}{true, time.Now().UTC().Format(time.RFC3339), len(priced), data}, "", "  ")
-	if err != nil {
-		log.Fatalf("marshal output: %v", err)
+	type output struct {
+		Success    bool           `json:"success"`
+		UpdatedAt  string         `json:"updated_at"`
+		ModelCount int            `json:"model_count"`
+		Data       map[string]any `json:"data"`
+	}
+	render := func(updatedAt string) []byte {
+		payload, err := json.MarshalIndent(output{true, updatedAt, len(priced), data}, "", "  ")
+		if err != nil {
+			log.Fatalf("marshal output: %v", err)
+		}
+		return append(payload, '\n')
+	}
+	payload := render(time.Now().UTC().Format(time.RFC3339))
+	previous, _ := os.ReadFile(*out)
+	var last output
+	if json.Unmarshal(previous, &last) == nil && bytes.Equal(render(last.UpdatedAt), previous) {
+		payload = previous
 	}
 	if err := os.MkdirAll(filepath.Dir(*out), 0o755); err != nil {
 		log.Fatalf("mkdir: %v", err)
 	}
-	if err := os.WriteFile(*out, append(payload, '\n'), 0o644); err != nil {
+	if err := os.WriteFile(*out, payload, 0o644); err != nil {
 		log.Fatalf("write %s: %v", *out, err)
 	}
 	fmt.Printf("wrote %s (%d models, factor %v)\n", *out, len(modelNames(data)), *factor)

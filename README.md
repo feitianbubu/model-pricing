@@ -1,6 +1,6 @@
 # model-pricing
 
-new-api 网关的**定价源**和**模型资料源**。从 [basellm/llm-metadata](https://github.com/basellm/llm-metadata) 固定在 `data/basellm.sha` 的提交取官方定价并换算为网关记账单位，按 `data/models.json` 白名单过滤，再叠加 `data/overrides.json` 手工维护的条目，生成 `ratio_config.json`；`data/catalog.json` 生成模型资料目录。产物由 GitHub Pages 托管，不进 git：输出由源码 + 固定的 basellm 版本决定，变化都可在 `git log -p data/` 追溯；唯一随构建日期变的是已下架模型的退出（见下）。
+new-api 网关的**定价源**和**模型资料源**。从 [basellm/llm-metadata](https://github.com/basellm/llm-metadata) 固定在 `data/basellm.sha` 的提交取官方定价并换算为网关记账单位，按 `data/models.json` 白名单过滤，再叠加 `data/overrides.json` 手工维护的条目，生成 `ratio_config.json`；`data/catalog.json` 生成模型资料目录。产物由 GitHub Pages 托管；其中 `docs/ratio_config.json` 同时入库，价格变化直接看 `git log -p docs/ratio_config.json`，模型资料目录 `docs/api/` 不入库。
 
 改价格只改本仓库；网关在「同步模型定价」里指向：
 
@@ -21,7 +21,7 @@ data/overrides ──┘
 - `data/models.json` 是发布模型的**唯一**名单，与渠道启用状态无关：上架加一行，下线删一行（原因写在提交信息里）。overrides 里的模型也必须在名单内，否则构建中止。
 - `data/catalog.json` 里 `retired_at` 已过 30 天的模型自动退出价格预设（名单与资料目录里仍保留），网关「同步模型定价」不再列出它；30 天是留给"过了下架时间但仍在服务"的宽限期，延期下架就改 `retired_at`。
 - 网关同步不会因预设缺某模型而删除本地价格，下线模型删行后网关侧价格保持不变。
-- 输出顶层 `model_count` 是去重后的模型总数,打开 Pages 链接即可查看;网关同步只读 `data`,不受影响。
+- 输出顶层 `model_count` 是去重后的模型总数，`updated_at` 是内容上次变化的时间（内容不变则重新生成也不动）；网关同步只读 `data`，不受影响。
 - 名单内未配价的模型（已退出预设的除外）每次构建打印清单；任何表达式解析失败会中止构建——宁可数据陈旧，不可价格错误。
 
 ## 缩放规则
@@ -42,12 +42,12 @@ data/overrides ──┘
 ## 运行
 
 ```bash
-go run .   # 输出 docs/ratio_config.json 与 docs/api/（已 gitignore）
+go run .   # 输出 docs/ratio_config.json（随改动一起提交）与 docs/api/（已 gitignore）
 go test ./...
 ```
 
 ## 部署
 
 1. Settings → Pages → Source 选 `GitHub Actions`；
-2. `.github/workflows/publish.yml`：push 只按固定版本生成并部署，不产生提交；每日 cron（03:23 UTC）对比 basellm 最新版，仅当白名单模型价格变化时提交 `chore: bump basellm`（提交信息附价格 diff），此时本地需 pull；
+2. `.github/workflows/publish.yml`：push 只按固定版本生成并部署，不产生提交；每日 cron（03:23 UTC）先按固定版本重新生成，入库的 `ratio_config.json` 落后（漏提交、下架模型到期退出）就提交 `chore: regenerate ratio_config`，再对比 basellm 最新版，仅当价格变化时提交 `chore: bump basellm`，有提交时本地需 pull；
 3. GitHub 会在仓库约 60 天无活动后自动停用 scheduled workflow（发邮件提醒，重新启用即可）。
