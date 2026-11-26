@@ -1,10 +1,14 @@
 {
   "success": true,
-  "updated_at": "2026-11-25T13:10:57Z",
+  "updated_at": "2026-11-26T03:32:42Z",
   "model_count": 221,
   "data": {
     "billing_expr": {
+      "MiniMax-H3": "u(\"resolution\") == \"2K\" ? tier(\"2K\", u(\"seconds\") * 0.16 + u(\"input_video_seconds\") * 0.16 + u(\"input_images\") * 0.04) : tier(\"768P\", u(\"seconds\") * 0.1 + u(\"input_video_seconds\") * 0.1 + u(\"input_images\") * 0.04)",
       "MiniMax-H3-Image": "tier(\"standard\", p * 3 + img * 2 + c * 5)",
+      "MiniMax-H3-Max": "u(\"resolution\") == \"480P\" ? tier(\"480P\", u(\"seconds\") * 0.066 + u(\"input_video_seconds\") * 0.074 + u(\"input_images\") * 0.1) : tier(\"768P\", u(\"seconds\") * 0.1 + u(\"input_video_seconds\") * 0.194 + u(\"input_images\") * 0.1)",
+      "MiniMax-Hailuo-02": "u(\"resolution\") == \"512P\" ? tier(\"512P\", u(\"seconds\") * 0.02) : u(\"resolution\") == \"1080P\" ? tier(\"1080P\", u(\"seconds\") * 0.11668) : tier(\"768P\", u(\"seconds\") * 0.08)",
+      "MiniMax-Hailuo-2.3": "u(\"resolution\") == \"1080P\" ? tier(\"1080P\", u(\"seconds\") * 0.11668) : tier(\"768P\", u(\"seconds\") * 0.08)",
       "MiniMax-M2": "tier(\"standard\", p * 0.42 + c * 1.68 + cr * 0.042 + cc * 0.525)",
       "MiniMax-M2.1": "tier(\"standard\", p * 0.42 + c * 1.68 + cr * 0.042 + cc * 0.525)",
       "MiniMax-M2.5": "tier(\"standard\", p * 0.42 + c * 1.68 + cr * 0.042 + cc * 0.525)",
@@ -12,6 +16,7 @@
       "MiniMax-M3": "len \u003c= 512000 ? tier(\"short\", p * 0.42 + c * 1.68 + cr * 0.084) : tier(\"long\", p * 0.84 + c * 3.36 + cr * 0.168)",
       "MiniMax-M3.1-Flash": "tier(\"standard\", p * 0.2 + c * 0.8 + cr * 0.02)",
       "MultiLanguageOCR": "tier(\"base\", u(\"image_count\") * 0.003)",
+      "S2V-01": "tier(\"base\", u(\"seconds\") * 0.1)",
       "claude-fable-5": "tier(\"standard\", p * 16 + c * 80 + cr * 1.6 + cc * 20 + cc1h * 32)",
       "claude-fable-5-1": "tier(\"standard\", p * 16 + c * 80 + cr * 0.4 + cc * 20 + cc1h * 32)",
       "claude-fable-5-2": "tier(\"standard\", p * 12.8 + c * 64 + cr * 0.32 + cc * 16 + cc1h * 25.6)",
@@ -140,7 +145,11 @@
       "z-image-turbo": "u(\"prompt_extend\") == true ? tier(\"prompt_extend\", u(\"image_count\") * 0.04) : tier(\"base\", u(\"image_count\") * 0.02)"
     },
     "billing_mode": {
+      "MiniMax-H3": "tiered_expr",
       "MiniMax-H3-Image": "tiered_expr",
+      "MiniMax-H3-Max": "tiered_expr",
+      "MiniMax-Hailuo-02": "tiered_expr",
+      "MiniMax-Hailuo-2.3": "tiered_expr",
       "MiniMax-M2": "tiered_expr",
       "MiniMax-M2.1": "tiered_expr",
       "MiniMax-M2.5": "tiered_expr",
@@ -148,6 +157,7 @@
       "MiniMax-M3": "tiered_expr",
       "MiniMax-M3.1-Flash": "tiered_expr",
       "MultiLanguageOCR": "tiered_expr",
+      "S2V-01": "tiered_expr",
       "claude-fable-5": "tiered_expr",
       "claude-fable-5-1": "tiered_expr",
       "claude-fable-5-2": "tiered_expr",
@@ -287,11 +297,6 @@
       "volc.seedasr.sauc.duration": 0
     },
     "model_price": {
-      "MiniMax-H3": 0.1,
-      "MiniMax-H3-Max": 0.1,
-      "MiniMax-Hailuo-02": 0.8,
-      "MiniMax-Hailuo-2.3": 0.8,
-      "S2V-01": 0.6,
       "Tripo/Tripo-H3.1": 0.28,
       "Tripo/Tripo-P1.0": 0.56,
       "animate-anyone-gen2": 0.016,
