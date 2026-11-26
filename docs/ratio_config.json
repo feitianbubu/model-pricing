@@ -1,6 +1,6 @@
 {
   "success": true,
-  "updated_at": "2026-11-26T03:32:42Z",
+  "updated_at": "2026-11-26T14:02:00Z",
   "model_count": 221,
   "data": {
     "billing_expr": {
@@ -106,6 +106,7 @@
       "kimi-k3": "tier(\"standard\", p * 4 + c * 20 + cr * 0.4 + cc * 4 + cc1h * 8)",
       "kimi-k3.1-pro": "tier(\"standard\", p * 2.6 + c * 13.6 + cr * 0.26 + cc * 2.6 + cc1h * 5.2)",
       "kling-4.0": "tier(\"base\", u(\"units\") * 0.2)",
+      "kling-v3": "tier(\"base\", u(\"units\") * 0.2)",
       "qwen-image-3.0": "tier(\"base\", u(\"image_count\") * 0.036 + u(\"input_image_count\") * 0.004)",
       "qwen-image-3.0-pro": "u(\"output_image_type\") == \"qima_output_2k\" ? tier(\"2k\", u(\"image_count\") * 0.1 + u(\"input_image_count\") * 0.004) : tier(\"1k\", u(\"image_count\") * 0.05 + u(\"input_image_count\") * 0.004)",
       "qwen3-235b-a22b": "tier(\"standard\", p * 0.4 + c * 4)",
@@ -247,6 +248,7 @@
       "kimi-k3": "tiered_expr",
       "kimi-k3.1-pro": "tiered_expr",
       "kling-4.0": "tiered_expr",
+      "kling-v3": "tiered_expr",
       "qwen-image-3.0": "tiered_expr",
       "qwen-image-3.0-pro": "tiered_expr",
       "qwen3-235b-a22b": "tiered_expr",
@@ -363,7 +365,6 @@
       "gpt-realtime-2.1-mini": 8,
       "hitem3d-2-0-251223": 8,
       "hyper3d-gen2-260112": 6,
-      "kling-v3": 100000,
       "nano-banana": 0.24,
       "omni-moderation-latest": 0.1,
       "qwen3-asr-flash-realtime": 33,
